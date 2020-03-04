@@ -1,0 +1,3 @@
+Costruire la vostra soluzione un pò alla volta. La prima soluzione che testate non deve necessariamente guardare a tutti i subtask.
+Di fatto, potrebbe non ambire a risolvere nessuno di essi poichè voi stessi avete la responsabilità di progettarvi i vostri subtask per sperimentare ogni singolo aspetto e zona di ombra. Se imparerete come affrontare le difficolà una alla volta, per piccoli passi, farete molta strada.
+Cominciate da subito a crescere e rafforzare la vostra metodologia ed il vostro modo di approcciarvi ai problemi.

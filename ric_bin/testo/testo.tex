@@ -1,0 +1,160 @@
+% Template per generare
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{sfmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usepackage{enumitem}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempio}[2]{
+  \noindent\begin{minipage}{\textwidth}
+    \begin{tabular}{|p{11cm}|p{5cm}|}
+      \hline
+      \textbf{File \file{input.txt}} & \textbf{File \file{output.txt}}\\
+      \hline
+      \tt \small #1 &
+      \tt \small #2 \\
+      \hline
+    \end{tabular}
+  \end{minipage}
+}
+
+% Dati del task
+\newcommand{\gara}{.}
+\newcommand{\nome}{Ricerca binaria}
+\newcommand{\nomebreve}{ric\_bin}
+
+\begin{document}
+  
+  
+  % Intestazione
+  \noindent{\Large \gara}
+  \vspace{0.5cm}
+  
+  \noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
+  \vspace{0.2cm}\\
+  
+  % Descrizione del task
+  \section*{Descrizione del problema}
+  
+  \noindent
+  Devi scrivere un programma che indovina un numero. Il tuo programma dovr\`a contenere una funzione:
+  
+  \vspace{0.2cm}
+  
+  \noindent
+  \texttt{void ricerca(long long int n)}
+  
+  \vspace{0.2cm}
+  
+  \noindent
+  Il parametro $n$ che viene passato alla funzione è un limite superiore sul vlore del numero da indovinare. A questo punto il tuo programma deve indovinare il numero naturale $x$ compreso tra $1$ e $n$. Per fare un tentativo, dovrai richiamare la funzione:
+  
+  \vspace{0.2cm}
+  
+  \noindent
+  \texttt{int guess(long long int g)}
+  
+  \vspace{0.2cm}
+  
+  \noindent
+  che (assumendo che $g$ sia la vostra proposta e $x$ sia la vera risposta) ritorna:
+  \begin{itemize}[noitemsep]
+    \item $1$, se $g > x$
+    \item $-1$, se $g < x$
+    \item $0$, se $g = x$
+  \end{itemize}
+  
+  \noindent
+  Quando conosce la risposta, il tuo programma dovrà ``consegnarla'' usando la funzione:
+  
+  \vspace{0.2cm}
+  
+  \noindent
+  \texttt{void answer(long long int risposta)}
+  
+  \vspace{0.2cm}
+  
+  \noindent
+  e speriamo che sia corretta!
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [5 punti]:} il numero $x$ da indovinare è $42$.
+    \item \textbf{Subtask 1 [7 punti]:} non vi è limite sul numero di chiamate a \texttt{guess}.
+    \item \textbf{Subtask 2 [12 punti]:} vengono consentite solo $n/2$ chiamate a \texttt{guess}.
+    \item \textbf{Subtask 3 [33 punti]:} viene permesso solo quel minimo numero di chiamate a \texttt{guess} che pur di giocare ottimamente consenta sempre, anche se sfortunati (caso peggiore), di individuare il numero misterioso $x$.
+    \item \textbf{Subtask 4 [35 punti]:} come sopra, ma l'avversario è ora libero di cambiare il numero che ha in mente in corso di partita, purché rispetti le informazioni già date nel corso della partita.
+  \end{itemize}
+  
+  % Assunzioni
+  \section*{Assunzioni}
+  \begin{itemize}[nolistsep, noitemsep]
+    \item Il programma termina dopo la prima chiamata alla funzione \texttt{answer} oppure allo scadere del tempo limite.
+    \item $1 \le n \le 100\,000\,000\,000$.
+  \end{itemize}
+
+  % Cosa sottomettere
+  \section*{Cosa deve contenere il File da Sottomettere, e come viene gestito dal server}
+
+  L'estensione del file che sottometti, *.c, *.cpp oppure *.pas,
+  determina se esso viene compilato col compilatore del C (gcc),
+  del c++ (g++) oppure del PASCAL (fpc).
+  Le opzioni di compilazione, specifiche al linguaggio,
+  sono riportate nel dettaglio sulla pagina "Descrizione" del problema
+  in modo che tu possa simulare esattamente in locale cosa succede sul server.
+  I comandi di compilazione riportati assumono che il nome del file sottomesso (privato di estensione) coincida col nome del problema.
+
+  Nel caso di un problema come questo, dove il tuo programma interagisce
+  con un ambiente pi\`u ampio (il grader, e talvolta anche con delle librerie o degli headers da includere), i comandi di compilazione riportati compilano ed assemblano i vari pezzi (il tuo programma, il grader, gli eventuali headers).
+  Se vuoi testare il comportamento del tutto in locale,
+  devi allora scaricarti il nostro grader (o la versione semplificata dello stesso) che rendiamo disponibile tra gli allegati alla pagina del problema.
+
+  Tra gli allegati potremmo inoltre fornire una soluzione di esempio che,
+  pur essendo compilabile sia in locale che dal server (ove ad esso sottomessa),
+  faccia pochi o nessun punto in quanto non significativa per il problema
+  in questione.
+
+  In questo caso la struttura del file \texttt{<nome\_problema>.<estensione\_linguaggio>} che devi sottomettere \`e la seguente:
+
+\begin{verbatim}
+int guess(long long int val);
+void answer(long long int risp);
+
+void ricerca(long long int n) {
+ ...
+}
+\end{verbatim}
+  
+e l'esempio compilabile reso disponibile al sito \`e il seguente:
+\begin{verbatim}
+int guess(long long int val);
+void answer(long long int risp);
+
+void ricerca(long long int n) {
+  int g = guess(n/2);
+  if (g == 0) answer(n/2);
+  if (g > 0) answer(1);
+  if (g < 0) answer(n);
+}
+\end{verbatim}
+
+Non risolver\`a molte istanze ma \`e compilabile sia in locale (se nella stessa cartella collocate anche il grader reso disponibile alla pagina del problema) sia ove sottoposto al server.
+  
+\end{document}

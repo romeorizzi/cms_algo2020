@@ -1,0 +1,61 @@
+\renewcommand{\nomebreve}{io\_file}
+\renewcommand{\titolo}{Gestire {\bf i}nput ed {\bf o}utput da file}
+
+\mbox{\ }
+\vspace{-0.6cm}
+
+\introduzione{}
+
+Ricevete in input un numero intero e,
+in output, dovete ritornare lo stesso identico numero. Nessuna elaborazione \`e richiesta (\`e un esercizio di test ed acclimatamento).
+
+Mi spiego meglio:
+nella stessa cartella in cui il vostro programma verr\`a messo in esecuzione
+si trova un file di testo di nome \texttt{input.txt}.
+In questo file \`e scritto solamente un intero.
+Voi dovete creare un file di testo di nome \texttt{output.txt}
+e ricopiarci dentro lo stesso identico valore intero.
+In pratica, col file \texttt{output.txt},
+creerete una copia del file \texttt{input.txt}.
+
+   
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{17}{17}
+
+% Assunzioni
+\sezionetesto{Assunzioni}
+\begin{itemize}[nolistsep, noitemsep]
+  \item il numero intero in questione ha valore assoluto al massimo $1000$,
+        pu\`o quindi essere convenientemete memorizzato in una variabile \texttt{int} del C o c++, oppure in una variabile di tipo \texttt{integer} del Pascal.
+\end{itemize}
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [30 punti]:} il tuo programma deve risolvere correttamente il caso d'esempio del testo (non vi serve nemmeno leggere l'input).
+    \item \textbf{Subtask 2 [30 punti]:} il numero contenuto nel file \texttt{input.txt} \`e $13$.
+    \item \textbf{Subtask 3 [40 punti]:} nessuna restrizione (oltre quella sul valore assoluto espressa nella sezione di ``Assunzioni'' generali).
+  \end{itemize}
+
+
+  \section*{Note generali sul sistema di sottoposizione (con valutazione a feedback immediato) delle vostre soluzioni}
+
+Al sistema di sottoposizione va sottomesso solo il file sorgente del vostro programma. Il nostro server compiler\`a tale sorgente avvalendosi del compilatore
+suggerito dall'estensione del file da voi sottomesso.
+
+\vspace{0.2cm}
+\begin{tabular}{|l|l|l|}
+\hline
+  linguaggio adottato  & estensione file sottomesso & compilatore/interprete utilizzato dal server  \\ \hline
+\hline               
+  python  & .py  & python3 \\ \hline
+  bash    & .sh  & bash \\ \hline
+  c++     & .cpp & g++ \\ \hline
+  C       & .c   & gcc \\ \hline
+  Pascal  & .pas & fpc \\ \hline
+\hline               
+\end{tabular}
+
+\vspace{0.2cm}
+Consigliamo di testare la soluzione in locale prima di sottometterla.
+Se riscontrate difformit\`a di comportamento tra quanto in locale a quanto sul server, le esatte opzioni di compilazione utilizzate dal server sul singolo problema sono riportate nella pagina del problema sul sito.

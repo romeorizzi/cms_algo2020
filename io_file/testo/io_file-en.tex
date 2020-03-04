@@ -1,0 +1,64 @@
+\renewcommand{\nomebreve}{io\_file}
+\renewcommand{\titolo}{Managing {\bf i}nput and {\bf o}utput from file}
+
+\mbox{\ }
+\vspace{-1.2cm}
+
+\introduzione{}
+
+Your program should take in an integer number as its input
+and output the very same number, no elaboration is required  
+(this is a start up exercise to get into the system).
+
+More precisely:
+in the same directory where you your program will be run,
+there is a text file, i.e. an ASCII file, named \texttt{input.txt}.
+This file comprises one single line, containing only an integer.
+Your program must create another text file named \texttt{output.txt}
+comprising one single line, containing the very same integer.
+In practice, the file \texttt{output.txt},
+will end up being a copy of the file \texttt{input.txt}.
+
+   
+% Esempi
+\sezionetesto{input/output example}
+\esempio{17}{17}
+
+% Assunzioni
+\sezionetesto{Assumptions}
+\begin{itemize}[nolistsep, noitemsep]
+  \item the absolute value of the input number is at most $1000$.
+        Therefore, the number can be conveniently stored within 
+        a C or c++ variable of type \texttt{int}, or within 
+        a Pascal variable of type \texttt{integer}.
+\end{itemize}
+  
+  \section*{Subtasks}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [30 punti]:} your program is required to work correctly at least on the example of the test (you do not even need to read the input).
+    \item \textbf{Subtask 2 [30 punti]:} the number contained in the file \texttt{input.txt} is $13$.
+    \item \textbf{Subtask 3 [40 punti]:} no special restriction (beyond the one on the maximum absolute value given in the general ``Assumptions'' section).
+  \end{itemize}
+
+
+  \section*{General notes on the submission system (with evaluation and immediate feedback) of your solutions}
+
+You are required to submit only the text file of the source code of your program.
+Our server will compile your source code with the compiler suggested by the extension of your file, according to the following table.
+
+\vspace{0.2cm}
+\begin{tabular}{|l|l|l|}
+\hline
+  programming language & file extension & compiler/interpreter employed by the server  \\ \hline
+\hline               
+  python  & .py  & python3 \\ \hline
+  bash    & .sh  & bash \\ \hline
+  c++     & .cpp & g++ \\ \hline
+  C       & .c   & gcc \\ \hline
+  Pascal  & .pas & fpc \\ \hline
+\hline               
+\end{tabular}
+\vspace{0.2cm}
+
+We advice you to test your solution in local before submitting it.
+In case you suspect that the remote behaviour of your submission differs from what in local, the exact compiling options employed by the server in compling your source code are reported on the page of the problem on the site of the contest.
