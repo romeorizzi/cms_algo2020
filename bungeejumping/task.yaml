@@ -1,0 +1,5 @@
+memory_limit: 512
+name: bungeejumping
+time_limit: 5.0
+title: Jump Jump
+token_mode: infinite

@@ -1,0 +1,53 @@
+\renewcommand{\nomebreve}{bungeejumping}
+\renewcommand{\titolo}{Jump Jump}
+
+\introduzione{}
+
+Un jumper deve portarsi dalla prima cella $v[0]$ di un vettore $v$ all'ultima cella $v[N-1]$, tramite una sequenza di salti.
+I salti avvengono secondo le seguenti regole:
+Quando il jumper di trova nella cella $i$-esima del vettore ($0\leq i \leq N-1$)
+egli può portarsi nella cella $i\pm (v[i] - r)$ correndo un rischio di gravità $r\geq 0$. La compagnia di assicurazioni gli chiede un premio pari al massimo valore di rischio $r$ incorso da un salto lungo il percorso stabilito (classe di rischio).
+Aiuta il jumper ad individuare un percorso che mantenga il rischio il più basso possibile.
+
+
+
+
+\sezionetesto{Dati di input}
+La prima riga del file \verb'input.txt' contiene un interi positivo $N$, la lunghezza del vettore.
+La seconda riga del file contiene gli $N$ valori del vettore, nell'ordine, e separati da spazi.
+Si vedano i due esempi.
+
+\sezionetesto{Dati di output}
+Nel file \verb'output.txt' si scriva un'unica riga contenente
+un unico numero naturale: il minimo premio possibile da pagare per la polizza.\\
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{
+7
+
+3 3 3 3 3 3 3
+}{0}
+
+\esempio{
+8
+
+3 3 3 3 3 3 3 3
+}{1}
+
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le N \le 500$.
+\end{itemize}
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i due esempi del testo.
+    \item \textbf{Subtask 2 [20 punti]:} $N \leq 10$.
+    \item \textbf{Subtask 3 [40 punti]:} $v[i] \leq 100$ per ogni $i = 0,1,\ldots, N-1$.
+    \item \textbf{Subtask 4 [40 punti]:} nessuna restrizione.
+  \end{itemize}
+  
