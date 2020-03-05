@@ -1,0 +1,89 @@
+\renewcommand{\nomebreve}{rank\_unrank\_ABstrings}
+\renewcommand{\titolo}{Rank ed unrank di stringhe su alfabeto binario}
+
+\introduzione{}
+
+Una stringa è una sequenza finita di caratteri presi da un qualche alfabeto di riferimento. Ad esempio, $s=ABBA$ è una stringa sull'alfabeto $\{A,B\}$.
+Indichiamo con $len(s)$ il numero di caratteri della stringa~$s$, in questo caso $4$. Ci concentreremo sulle sole stringhe sull'alfabeto $\{A,B\}$, non prevediamo altri caratteri.
+Ecco le $2^3=8$ stringhe di lunghezza~$3$ disposte in ordine lessicografico:\\
+
+\noindent
+\hspace{2cm}
+\begin{minipage}[c]{.30\textwidth}
+\begin{itemize}
+\item[stringa~$0$:] AAA
+\item[stringa~$1$:] AAB
+\item[stringa~$2$:] ABA
+\item[stringa~$3$:] ABB
+\end{itemize}
+\end{minipage}
+\hspace{10.0mm}
+\begin{minipage}[c]{.30\textwidth}
+\begin{itemize}  
+\item[stringa~$4$:] BAA
+\item[stringa~$5$:] BAB
+\item[stringa~$6$:] BBA
+\item[stringa~$7$:] BBB
+\end{itemize}
+\end{minipage}
+
+\bigskip
+\noindent
+Ci servirebbe una tua implementazione della seguente funzione che riceve in ingresso una stringa $s$ e ritorna la sua posizione (detta anche \emph{rango}) nell'ordine delle $2^{len(s)}$ stringhe di lunghezza $len(s)$.
+
+\begin{verbatim}
+def ABstring2rank(s):
+    return 42
+\end{verbatim}
+
+Pagherebbe inoltre una tua implementazione della seguente funzione che riceve in ingresso un numero naturale $length$ ed un numero naturale $r < 2^{length}$ e
+restituisce la $r$-esima stringa (sempre con riferimento all'ordine lessicografico) di lunghezza $length$.
+
+\begin{verbatim}
+def ABstring_of_len_and_rank(length, r):
+    return "ABBA"
+\end{verbatim}
+
+
+Trovi un template della soluzione nel file \textbf{\file{AB\_strings\_rank\_and\_unrank\_template\_sol.py}}, dovrai solo risistemare l'implementazione delle due funzione richieste che al momento restituisce sempre la stessa risposta (anche un orologio rotto segna l'ora esatta due volte al giorno). Realizzarne correttamente anche una sola delle due già ti consegna dei punti.
+
+
+\sezionetesto{Dati di input}
+Il vostro programma riceve in input o una stringa~$s$ sull'alfabeto $\{A, B\}$
+oppure una coppia di numeri naturali $length$ ed $r$ separati da uno spazio. 
+
+\sezionetesto{Dati di output}
+
+Nel primo caso (mi riferisco ai due casi di possibile input) il programma restituisce la posizione occupata da $s$ tra le stringhe su $\{A,B\}$ di lunghezza $len(s)$ disposte in ordine lessicografico; si noti che la primissima di tali stringhe, quella composta di sole $A$, ha rango~$0$.
+
+Nel secondo caso dobbiamo restituire la stringa di rango~$r$ tra le $2^{len}$ stringhe di lunghezza in $length$.
+
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+\esempio{ABAB}{5}
+\esempio{AAAA}{0}
+\esempio{BAAAAAAB}{129}
+\esempio{8 129}{BAAAAAAB}
+
+% Assunzioni
+\sezionetesto{Assunzioni}
+\begin{itemize}[nolistsep, noitemsep]
+  \item tratteremo solo stringhe di lunghezza tra $1$ e $100$
+\end{itemize}
+
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 2 [10 punti]:} $len(s) \le 1$, rank implementato correttamente.
+    \item \textbf{Subtask 3 [10 punti]:} $length \le 1$, unrank implementato correttamente.
+    \item \textbf{Subtask 4 [10 punti]:} $len(s) \le 2$, rank implementato correttamente.
+    \item \textbf{Subtask 5 [10 punti]:} $length \le 2$, unrank implementato correttamente.
+    \item \textbf{Subtask 6 [10 punti]:} $len(s) \le 3$, rank implementato correttamente.
+    \item \textbf{Subtask 7 [10 punti]:} $length \le 3$, unrank implementato correttamente.
+    \item \textbf{Subtask 8 [10 punti]:} $len(s) \le 10$, rank implementato correttamente.
+    \item \textbf{Subtask 9 [10 punti]:} $length \le 10$, unrank implementato correttamente.
+    \item \textbf{Subtask 10 [10 punti]:} $len(s) \le 100$, rank implementato correttamente.
+    \item \textbf{Subtask 11 [10 punti]:} $length \le 100$, unrank implementato correttamente.
+  \end{itemize}
+  

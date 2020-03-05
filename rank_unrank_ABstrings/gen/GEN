@@ -1,0 +1,80 @@
+# File usato per descrivere gli input. Le parti della riga dopo un # vengono
+# ignorate. Le righe non banali (ovvero contenenti qualcosa oltre a whitespace
+# prima del primo #) vengono passate al generatore e generano un input ciascuna.
+# Se una riga inizia con "#ST:" (senza le virgolette) viene usata per delimitare
+# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask. Se
+# sono presenti i subtask, è necessario che la somma dei punti di ogni subtask
+# sia 100.
+
+# subtask 1
+#ST: 0
+COPY testo/input0.txt
+COPY testo/input1.txt
+COPY testo/input2.txt
+COPY testo/input3.txt
+
+# subtask 2
+#ST: 10
+RANK A
+RANK B
+
+# subtask 3
+#ST: 10
+UNRANK 1 1
+UNRANK 1 0
+
+# subtask 4
+#ST: 10
+RANK AA
+RANK AB
+RANK BA
+RANK BB
+
+# subtask 5
+#ST: 10
+UNRANK 2 0
+UNRANK 2 1
+UNRANK 2 2
+UNRANK 2 3
+
+# subtask 6
+#ST: 10
+RANK ABA
+RANK BAB
+RANK AAA
+RANK BBB
+
+# subtask 7
+#ST: 10
+UNRANK 3 3
+UNRANK 3 7
+UNRANK 3 0
+UNRANK 3 1
+
+# subtask 8
+#ST: 10
+RANK ABABABABAB
+RANK BABABABABA
+RANK AAAAABBBBB
+RANK AAAAAAABBA
+
+# subtask 9
+#ST: 10
+UNRANK 10 4
+UNRANK 10 128
+UNRANK 10 32
+UNRANK 10 1020
+ 
+# subtask 10
+#ST: 10
+RANK AAAABBBBAAAABBBBBAAABBBBAAAABBBBBBBB
+RANK AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBB
+RANK BBBBAAAAAAAAAAAAABBAAAAAAAAAABBBBBBB
+RANK AAAAAAAAAAAAAAABBBBBBAAAAAAAAAAAAAAA
+
+# subtask 11
+#ST: 10
+UNRANK 60 443279443
+UNRANK 60 443222431
+UNRANK 60 0
+UNRANK 60 101000101

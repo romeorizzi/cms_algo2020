@@ -1,0 +1,9 @@
+memory_limit: 256
+name: rank_unrank_ABstrings
+time_limit: 1.0
+title: Rank ed unrank di stringhe su alfabeto binario
+infile: ""
+outfile: ""
+token_mode: disabled
+public_testcases: all
+

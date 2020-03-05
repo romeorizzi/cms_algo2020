@@ -41,7 +41,6 @@ void answer(long long int x) {
 }
 
 int main() {
-  srand(8753);
 
 #ifdef EVAL
   file = fopen("input.txt", "r");

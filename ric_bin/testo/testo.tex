@@ -64,7 +64,7 @@
   \vspace{0.2cm}
   
   \noindent
-  Il parametro $n$ che viene passato alla funzione è un limite superiore sul vlore del numero da indovinare. A questo punto il tuo programma deve indovinare il numero naturale $x$ compreso tra $1$ e $n$. Per fare un tentativo, dovrai richiamare la funzione:
+  Il parametro $n$ che viene passato alla funzione è un limite superiore sul valore del numero da indovinare. A questo punto il tuo programma deve indovinare il numero naturale $x$ compreso tra $1$ e $n$. Per fare un tentativo, dovrai richiamare la funzione:
   
   \vspace{0.2cm}
   
@@ -82,7 +82,7 @@
   \end{itemize}
   
   \noindent
-  Quando conosce la risposta, il tuo programma dovrà ``consegnarla'' usando la funzione:
+  Non appena ha tutti gli elementi necessari per conoscere il numero da indovinare, il tuo programma dovrà consegnare la sua risposta definitiva con una chiamata alla funzione:
   
   \vspace{0.2cm}
   
@@ -92,7 +92,8 @@
   \vspace{0.2cm}
   
   \noindent
-  e speriamo che sia corretta!
+  la partita tra il tuo programma ed il nostro di correzione finisce quì,
+  col controllo che la risposta definitiva prodotta dal tuo sia corretta!
   
   \section*{Subtask}
   \begin{itemize}
@@ -126,11 +127,8 @@
   Se vuoi testare il comportamento del tutto in locale,
   devi allora scaricarti il nostro grader (o la versione semplificata dello stesso) che rendiamo disponibile tra gli allegati alla pagina del problema.
 
-  Tra gli allegati potremmo inoltre fornire una soluzione di esempio che,
-  pur essendo compilabile sia in locale che dal server (ove ad esso sottomessa),
-  faccia pochi o nessun punto in quanto non significativa per il problema
-  in questione.
-
+  Tra gli allegati trovi dei grader (o templates). Questi contengono solo uno scheletro di massima della soluzione, e quando presenti, ti conviene partire da essi nel produrre il codice da poi sottomettere. Essi coprono gli aspetti più rutinari della programmazione ma evitano di spoilerare il problema e la sua soluzione: se li sottometti senza inserire in essi le logiche per risolvere il problema vedrai che otterrai pochi o nessun punto. Sono queste logiche che ti chiediamo di produrre. Questi grader possono aiutare a disambiguare i dettagli più tecnici della consegna e partire da essi nell'ottenere il tuto codice rende più probabile che una volta che la tua soluzione gira bene in locale allora girerà senza problemi anche sul server di correzione. Resta il fatto che ti conviene sempre fare (ed organizzarti) un lavoro di sperimentazione in locale quando metti a punto la tua soluzione, prima di sottometterla. Invece: può avere senso sottomettere una soluzione non pensata per fare tutti (o anche nessuno dei) punti se questo ti aiuta a capire cosa non funziona. Anche a queso servono i casi di prova. L'atteggiamento sperimentale è chiave, ed è esso stesso una competenza preziosa che affinerai con questi problemi. 
+  
   In questo caso la struttura del file \texttt{<nome\_problema>.<estensione\_linguaggio>} che devi sottomettere \`e la seguente:
 
 \begin{verbatim}
@@ -142,7 +140,7 @@ void ricerca(long long int n) {
 }
 \end{verbatim}
   
-e l'esempio compilabile reso disponibile al sito \`e il seguente:
+e l'esempio compilabile (grader) reso disponibile al sito \`e il seguente:
 \begin{verbatim}
 int guess(long long int val);
 void answer(long long int risp);
@@ -155,6 +153,6 @@ void ricerca(long long int n) {
 }
 \end{verbatim}
 
-Non risolver\`a molte istanze ma \`e compilabile sia in locale (se nella stessa cartella collocate anche il grader reso disponibile alla pagina del problema) sia ove sottoposto al server.
+Non risolver\`a molte istanze ma \`e compilabile sia in locale (se nella stessa cartella collocate anche il grader reso disponibile alla pagina del problema) sia ove sottoposto al server. Provare per credere. (Potete sottomettere quante volte volete. Se vi premono i punti sappiate che vale la regola del max.)
   
 \end{document}
