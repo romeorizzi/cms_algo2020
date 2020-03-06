@@ -2,19 +2,18 @@
 
 ## Descrizione del problema
 
-Devi scrivere un programma che indovina un numero. Il tuo programma dovrè contenere una funzione:
+Devi scrivere un programma che indovina un numero naturale da $1$ a $n$. Il tuo programma dovrà contenere una funzione:
 
 ```c
 void ricerca(long long int n)
 ```
-
-Il parametro `n` che viene passato alla funzione è un limite superiore sul valore del numero da indovinare. A questo punto il tuo programma deve indovinare il numero naturale `x` compreso tra `1` e `n`. Per fare un tentativo, dovrai richiamare la funzione:
+che, il grader del sistema di valutazione lancerà dopo aver scelto un numero naturale `x` compreso tra `1` e `n`. Compito della tua funzione è ricostruire quale sia il numero `x` a lei incognito raccogliendo informazioni tramite apposite chiamate alla funzione:
 
 ```c
 int guess(long long int g)
 ```
 
-che (assumendo che $g$ sia la vostra proposta e $x$ sia la vera risposta) ritorna:
+che, servita dal grader, ritorna:
 - `1` se `g > x`
 - `0` se `g = x`
 - `-1` se `g < x`
@@ -26,7 +25,7 @@ void answer(long long int risposta)
 ```
 
 la partita tra il tuo programma ed il nostro di correzione finisce quì,
-  col controllo che la risposta definitiva prodotta dal tuo sia corretta!
+  col controllo che 'risposta'='x', ossia che la risposta definitiva prodotta dal tuo algoritmo sia sempre corretta!
 
 ## Subtask
 - **Subtask 0 [5 punti]**: il numero `x` da indovinare è 42.
@@ -79,4 +78,3 @@ Resta il fatto che ti conviene sempre fare (ed organizzarti) un lavoro di sperim
 Nel caso di un problema di natura interattiva come questo, dove il tuo programma interagisce con un ambiente più ampio (il grader, e talvolta anche con delle librerie o degli headers da includere), i comandi di compilazione riportati alla pagina del problema compilano ed assemblano i vari pezzi (il tuo programma, il grader, gli eventuali headers) se avrai collocato questi componenti entro la stessa cartella (in locale ti conviene farti una cartella per problema).
 
 Quando alla pagina del problema ti viene fornito il nostro grader (o la versione semplificata dello stesso) devi scaricartelo in locale entro questa cartella se vuoi testare il comportamento del tutto in locale. Comprendere meglio a cosa servono ti può aiutare nel fare i tuoi test in locale, che è l'approccio corretto col quale andrai lontano. In questo caso tra gli allegati trovi anche un file README.txt che prova a fornire ulteriori chiarimenti proprio su questo punto.
-
