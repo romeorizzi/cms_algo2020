@@ -1,7 +1,21 @@
-*~
+# CMS
+.inode
 **/input
 **/output
+
+# backups
+*~
+*.bak
+
+# LaTex
 *.pdf
 *.aux
 *.log
-*.pyc
+
+# Byte-compiled / optimized / DLL files
+a.out
+__pycache__/
+*.py[cod]
+*$py.class
+
+
