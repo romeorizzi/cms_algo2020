@@ -12,7 +12,7 @@ static int subtask;
 static long long int min(long long int a, long long int b) { return a < b ? a : b; }
 static long long int max(long long int a, long long int b) { return a > b ? a : b; }
 
-int guess(long long int x) {
+int confronto_con(long long int x) {
   if (subtask == 4) {  // se posso cambiare numero segreto (contenuto nella variabile risposta)
     if (x > lower_bound + (upper_bound - lower_bound)/2 )
       risposta = lower_bound;
@@ -21,7 +21,7 @@ int guess(long long int x) {
     fprintf(file, "2 %lld\n", risposta);
   }
 
-  // comunico nel log la "guess" dell'utente
+  // comunico nel log la "confronto_con" dell'utente
   fprintf(file, "0 %lld\n", x);
 
   if (x > risposta) {

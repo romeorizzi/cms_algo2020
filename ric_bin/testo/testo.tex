@@ -69,7 +69,7 @@
   \vspace{0.2cm}
   
   \noindent
-  \texttt{int guess(long long int g)}
+  \texttt{int confronto_con(long long int g)}
   
   \vspace{0.2cm}
   
@@ -98,9 +98,9 @@
   \section*{Subtask}
   \begin{itemize}
     \item \textbf{Subtask 0 [5 punti]:} il numero $x$ da indovinare è $42$.
-    \item \textbf{Subtask 1 [7 punti]:} non vi è limite sul numero di chiamate a \texttt{guess}.
-    \item \textbf{Subtask 2 [12 punti]:} vengono consentite solo $n/2$ chiamate a \texttt{guess}.
-    \item \textbf{Subtask 3 [33 punti]:} viene permesso solo quel minimo numero di chiamate a \texttt{guess} che pur di giocare ottimamente consenta sempre, anche se sfortunati (caso peggiore), di individuare il numero misterioso $x$.
+    \item \textbf{Subtask 1 [7 punti]:} non vi è limite sul numero di chiamate a \texttt{confronto_con}.
+    \item \textbf{Subtask 2 [12 punti]:} vengono consentite solo $n/2$ chiamate a \texttt{confronto_con}.
+    \item \textbf{Subtask 3 [33 punti]:} viene permesso solo quel minimo numero di chiamate a \texttt{confronto_con} che pur di giocare ottimamente consenta sempre, anche se sfortunati (caso peggiore), di individuare il numero misterioso $x$.
     \item \textbf{Subtask 4 [35 punti]:} come sopra, ma l'avversario è ora libero di cambiare il numero che ha in mente in corso di partita, purché rispetti le informazioni già date nel corso della partita.
   \end{itemize}
   
@@ -125,7 +125,7 @@
     In questo caso la struttura del file \texttt{<nome\_problema>.<estensione\_linguaggio>} che devi sottomettere \`e la seguente:
 
 \begin{verbatim}
-int guess(long long int val);
+int confronto_con(long long int val);
 void answer(long long int risp);
 
 void ricerca(long long int n) {
@@ -136,11 +136,11 @@ void ricerca(long long int n) {
 Sempre in attachment alla pagina del problema trovi già un \emph{template} di soluzione parziale già compilabile.:
 
 \begin{verbatim}
-int guess(long long int val);
+int confronto_con(long long int val);
 void answer(long long int risp);
 
 void ricerca(long long int n) {
-  int g = guess(n/2);
+  int g = confronto_con(n/2);
   if (g == 0) answer(n/2);
   if (g > 0) answer(1);
   if (g < 0) answer(n);

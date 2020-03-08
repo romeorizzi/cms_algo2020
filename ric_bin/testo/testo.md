@@ -10,7 +10,7 @@ void ricerca(long long int n)
 che, il grader del sistema di valutazione lancerà dopo aver scelto un numero naturale `x` compreso tra `1` e `n`. Compito della tua funzione è ricostruire quale sia il numero `x` a lei incognito raccogliendo informazioni tramite apposite chiamate alla funzione:
 
 ```c
-int guess(long long int g)
+int confronto_con(long long int g)
 ```
 
 che, servita dal grader, ritorna:
@@ -29,9 +29,9 @@ la partita tra il tuo programma ed il nostro di correzione finisce quì,
 
 ## Subtask
 - **Subtask 0 [5 punti]**: il numero `x` da indovinare è 42.
-- **Subtask 1 [7 punti]**: non vi è limite sul numero di chiamate a `guess`.
-- **Subtask 2 [12 punti]**: vengono consentite solo `n/2` chiamate a `guess`.
-- **Subtask 3 [33 punti]**: viene permesso solo quel minimo numero di chiamate a `guess` che pur di giocare ottimamente consenta sempre, anche se sfortunati (caso peggiore), di individuare il numero misterioso `x`.
+- **Subtask 1 [7 punti]**: non vi è limite sul numero di chiamate a `confronto_con`.
+- **Subtask 2 [12 punti]**: vengono consentite solo `n/2` chiamate a `confronto_con`.
+- **Subtask 3 [33 punti]**: viene permesso solo quel minimo numero di chiamate a `confronto_con` che pur di giocare ottimamente consenta sempre, anche se sfortunati (caso peggiore), di individuare il numero misterioso `x`.
 - **Subtask 4 [35 punti]**: come sopra, ma l'avversario è ora libero di cambiare il numero che ha in mente in corso di partita, purché rispetti le informazioni già date nel corso della partita.
 
 ## Assunzioni
@@ -50,7 +50,7 @@ I comandi di compilazione riportati assumono che il nome del file sottomesso (pr
 In questo caso la struttura del file `<nome_problema>.<estensione_linguaggio>` che devi sottomettere è la seguente:
 
 ```c
-int guess(long long int val);
+int confronto_con(long long int val);
 void answer(long long int risp);
 
 void ricerca(long long int n) {
@@ -60,11 +60,11 @@ void ricerca(long long int n) {
 Sempre in attachment alla pagina del problema trovi già un _template_ di soluzione parziale già compilabile.:
 
 ```c
-int guess(long long int val);
+int confronto_con(long long int val);
 void answer(long long int risp);
 
 void ricerca(long long int n) {
-  int g = guess(n/2);
+  int g = confronto_con(n/2);
   if (g == 0) answer(n/2);
   if (g > 0) answer(1);
   if (g < 0) answer(n);

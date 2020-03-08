@@ -99,20 +99,20 @@ int main(int argc, char *argv[])
   long long int conta_chiamate = 0;
   while (1) {
     int tipo = safe_read(0, 2);
-    long long int guess = safe_read(1LL, upper_bound);
+    long long int confronto_con = safe_read(1LL, upper_bound);
     if (tipo == 0) {  // evento "l'utente prova a indovinare"
       conta_chiamate++;
     } else if (tipo == 1) {  // evento "l'utente da' la risposta"
-      if (guess == risposta) {
+      if (confronto_con == risposta) {
         check_fine_file();
         ex("Output corretto.", 1.0);
       }
       else ex("Risposta non corretta.", 0.0);
     } else {  // evento "l'avversario cambia la risposta"
-      risposta = guess;
+      risposta = confronto_con;
     }
     if (max_chiamate != -1 && conta_chiamate > max_chiamate) {
-      ex("Troppe chiamate alla funzione guess.", 0.0);
+      ex("Troppe chiamate alla funzione confronto_con.", 0.0);
     }
   }
 
