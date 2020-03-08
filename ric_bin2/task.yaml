@@ -1,5 +1,8 @@
-title: Ricerca binaria: approfondimenti
+title: Ricerca binaria -> approfondimenti
 name: ric_bin2
 time_limit: 1.0
 memory_limit: 256
 token_mode: infinite
+infile: ""
+outfile: ""
+
