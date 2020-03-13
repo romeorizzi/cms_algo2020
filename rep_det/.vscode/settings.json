@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "/usr/local/opt/python/bin/python3.7",
+    "files.associations": {
+        "set": "cpp",
+        "cstdio": "cpp",
+        "unordered_set": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "*.tcc": "cpp"
+    }
+}
