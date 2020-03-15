@@ -1,0 +1,8 @@
+name: clone_det
+title: Clone detector
+memory_limit: 512
+time_limit: 3.0
+infile: ''
+outfile: ''
+token_mode: disabled
+public_testcases: all
