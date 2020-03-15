@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Soluzione di rank_unrank_ABstrings, written by Romeo Rizzi 2018.12.04
 
