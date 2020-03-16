@@ -2,13 +2,13 @@
 
 ## Descrizione del problema
 
-Mi hanno chiesto una consulenza agli LindtRobustEggs' Headquarters, un palazzone modernissimo di $n=100$ piani in vetro e acciaio.
+Mi hanno chiesto una consulenza agli LindtRobustEggs' Headquarters, un palazzone modernissimo di `n = 100` piani in vetro e acciaio.
 Nel prossimo spot pubblicitario su una nuova linea di uova di Pasqua che (forse all'inizio anche per sbaglio) gli sono uscite super-resistenti, vorrebbero far cadere delle uova da una delle finestre del palazzo. Sono convinti che il video diventerà virale e che il prodotto andrà poi a ruba. Mi hanno chiesto di stabilire quale sia l'altezza massima del piano da cui far cadere le uova. Le assunzioni e belief di chi mi ha impartito la consegna sono:
  1. gli esiti possibili di un lancio sono solo due: uovo che si rompe, uovo che resta perfettamente intero, come nuovo;
  2. le uova sono tutte perfettamente identiche ed il comportamento osservato dipende solo dal piano di lancio, gli altri fattori aleatori non riescono ad influire;
- 3. se l'uovo si rompe quando lanciato dal piano $n'\in [1,n-1]$ allora si sarebbe rotto anche quando lanciato dal piano $n'+1$. Ogni uovo si romperà sicuramente quando lanciato dal piano $n'$ o superiore (l'ho ridetta più naturale, scusate il visssio).
+ 3. se l'uovo si rompe quando lanciato dal piano `n' nel range [1,n-1]` allora si sarebbe rotto anche quando lanciato dal piano `n'+1`. Ogni uovo si romperà sicuramente quando lanciato dal piano `n'` o superiore (l'ho ridetta più naturale, scusate la ripetizione).
 
-Purtroppo ho solo $k=2$ uova con cui condurre questa campagna di test, e, quando un uovo dovesse rompersi me lo sono giocato: non posso farne più nulla (se non mangiarmelo).
+Purtroppo ho solo `k = 2` uova con cui condurre questa campagna di test, e, quando un uovo dovesse rompersi me lo sono giocato: non posso farne più nulla (se non mangiarmelo).
 Sono interessato a minimizzare il numero di lanci per venire a conoscere quello che in gergo, alla LindtRobustEggs, viene chiamato il piano critico di rottura.
 
 
@@ -27,9 +27,9 @@ Chi vuole risolvere un problema come questo, non disdegna affrontare prima i cas
 | 3  | 2 |
 | 4  | ? |
 
-Sei invitato a proseguire nella compilazione di questa tabella. In realtà sarebbe forse più proprio chiamarla vettore, ma quando poi passerai a studiare il caso di $k$ generico spunterà una seconda dimensione e sarà a tutti gli effetti una tabella. Ma il consiglio metodologico se davvero __vuoi fare__ matematica e/o ingormatica, parti prima con il caso $k=2$.
+Sei invitato a proseguire nella compilazione di questa tabella. In realtà sarebbe forse più proprio chiamarla vettore, ma quando poi passerai a studiare il caso di `k` generico spunterà una seconda dimensione e sarà a tutti gli effetti una tabella. Ma il consiglio metodologico se davvero __vuoi fare__ matematica e/o informatica, parti prima con il caso `k = 2`.
 
-*Nota 1:*: Sul CMS vi è data la possibilità di fornire voi le istanze sulle quali volete che la vostra sottomissione venga valutata. Questo può consentirvi di risolvere dei vostri dubbi in modo autonomo. Ad esempio quì, se volete ottenere conferma sul valore corretto di $f(4)$ e/o dei successivi, potete sottomettere quella specifica istanza e testare su di essa il vostro algoritmo (o magari un algoritmo più stupido e sicuro che si limiti a stampare la risposta che reputate corretta per quell'istanza).
+*Nota 1:*: Sul CMS vi è data la possibilità di fornire voi le istanze sulle quali volete che la vostra sottomissione venga valutata. Questo può consentirvi di risolvere dei vostri dubbi in modo autonomo. Ad esempio quì, se volete ottenere conferma sul valore corretto di `f(4)` e/o dei successivi, potete sottomettere quella specifica istanza e testare su di essa il vostro algoritmo (o magari un algoritmo più stupido e sicuro che si limiti a stampare la risposta che reputate corretta per quell'istanza).
 
 *Nota 2:* Per altro non vi è vietato, anzi siete incoraggiati, a scambiarvi idee ed aiuto tra di voi, e/o a chiedere a noi (sia  sul Gruppo Telegram che privatamente, come reputate più opportuno).
 
@@ -50,13 +50,13 @@ Dalle risposte già riportate nella tabella sopra:
 |2  | 2 |
 
 ## Subtask
-- **Subtask 1 [10 punti]**: $k=2$, $n \leq 5$.
-- **Subtask 2 [10 punti]**: $k=2$, $n \leq 10$.
-- **Subtask 3 [10 punti]**: $k=2$, $n \leq 100$.
-- **Subtask 4 [10 punti]**: $k=2$, $n \leq 1000$.
-- **Subtask 5 [10 punti]**: $k=2$, $n \leq 1.000.000$.
-- **Subtask 1 [10 punti]**: $k\leq 10$, $n \leq 5$.
-- **Subtask 2 [10 punti]**: $k\leq 10$, $n \leq 10$.
-- **Subtask 3 [10 punti]**: $k\leq 10$, $n \leq 100$.
-- **Subtask 4 [10 punti]**: $k\leq 10$, $n \leq 1000$.
-- **Subtask 5 [10 punti]**: $k\leq 10$, $n \leq 1.000.000$.
+- **Subtask 1 [10 punti]**: `k = 2`, `n <= 5`.
+- **Subtask 2 [10 punti]**: `k = 2`, `n <= 10`.
+- **Subtask 3 [10 punti]**: `k = 2`, `n <= 100`.
+- **Subtask 4 [10 punti]**: `k = 2`, `n <= 1000`.
+- **Subtask 5 [10 punti]**: `k = 2`, `n <= 1.000.000`.
+- **Subtask 1 [10 punti]**: `k <= 10`, `n <= 5`.
+- **Subtask 2 [10 punti]**: `k <= 10`, `n <= 10`.
+- **Subtask 3 [10 punti]**: `k <= 10`, `n <= 100`.
+- **Subtask 4 [10 punti]**: `k <= 10`, `n <= 1000`.
+- **Subtask 5 [10 punti]**: `k <= 10`, `n <= 1.000.000`.

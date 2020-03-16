@@ -1,1 +1,2 @@
-valida.sh
+#!/bin/sh
+exit 0
