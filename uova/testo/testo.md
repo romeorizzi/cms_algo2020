@@ -3,7 +3,7 @@
 ## Descrizione del problema
 
 Mi hanno chiesto una consulenza agli LindtRobustEggs' Headquarters, un palazzone modernissimo di `n = 100` piani in vetro e acciaio.
-Nel prossimo spot pubblicitario su una nuova linea di uova di Pasqua che (forse all'inizio anche per sbaglio) gli sono uscite super-resistenti, vorrebbero far cadere delle uova da una delle finestre del palazzo. Sono convinti che il video diventerà virale e che il prodotto andrà poi a ruba. Mi hanno chiesto di stabilire quale sia l'altezza massima del piano da cui far cadere le uova. Le assunzioni e belief di chi mi ha impartito la consegna sono:
+Nel prossimo spot pubblicitario su una nuova linea di uova di Pasqua che (forse all'inizio anche per sbaglio) gli sono uscite super-resistenti, vorrebbero far cadere delle uova da una delle finestre del palazzo. Sono convinti che il video diventerà virale e che il prodotto andrà poi a ruba. Mi hanno chiesto di stabilire quale sia l'altezza massima del piano da cui far cadere le uova in modo da non romperle. Le assunzioni e belief di chi mi ha impartito la consegna sono:
  1. gli esiti possibili di un lancio sono solo due: uovo che si rompe, uovo che resta perfettamente intero, come nuovo;
  2. le uova sono tutte perfettamente identiche ed il comportamento osservato dipende solo dal piano di lancio, gli altri fattori aleatori non riescono ad influire;
  3. se l'uovo si rompe quando lanciato dal piano `n' nel range [1,n-1]` allora si sarebbe rotto anche quando lanciato dal piano `n'+1`. Ogni uovo si romperà sicuramente quando lanciato dal piano `n'` o superiore (l'ho ridetta più naturale, scusate la ripetizione).
@@ -42,12 +42,12 @@ Inutile che le ripeto quì, ne abbiamo parlato nel problema ric_bin2. Essendo me
 Dalle risposte già riportate nella tabella sopra:
 
 |input from stdin | output to stdout |
-|---|---|
-|1  | 1 |
+|----|---|
+|2  1| 1 |
 
 |input from stdin | output to stdout |
-|---|---|
-|2  | 2 |
+|----|---|
+|2  2| 2 |
 
 ## Subtask
 - **Subtask 1 [10 punti]**: `k = 2`, `n <= 5`.
