@@ -46,5 +46,5 @@ int calcola(int k, int n) {
 int main() {
   int K, N;
   scanf("%d%d", &K, &N);
-  printf("%d\n", calcola(K, N + 1));
+  printf("%d\n", calcola(K, N));
 }

@@ -13,8 +13,9 @@ typedef unsigned long long ull;
 int M[11][1000001];
 
 int calcola(int k, int n) {
-  if (n <= 1) return 0;
+  if (n == 0) return 0;
   if (k == 0) return INF;
+  if (n == 1) return 1;
 
   if (M[k][n]) return M[k][n] - 1;
 
@@ -45,5 +46,5 @@ int calcola(int k, int n) {
 int main() {
   int K, N;
   scanf("%d%d", &K, &N);
-  printf("%d\n", calcola(K, N + 1));
+  printf("%d\n", calcola(K, N));
 }

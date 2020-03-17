@@ -14,8 +14,9 @@ typedef unsigned long long ull;
 map<pair<int, int>, int> M;
 
 int calcola(int k, int n) {
-    if (n <= 1) return 0;
+    if (n == 0) return 0;
     if (k == 0) return INF;
+    if (n == 1) return 1;
 
     if (M.find(make_pair(k, n)) != M.end()) return M[make_pair(k, n)];
 
@@ -37,5 +38,5 @@ int calcola(int k, int n) {
 int main() {
   int K, N;
   scanf("%d%d", &K, &N);
-  printf("%d\n", calcola(K, N + 1));
+  printf("%d\n", calcola(K, N));
 }
