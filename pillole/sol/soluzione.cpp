@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-const int MAXN;
+const int MAXN = 30;
 int N;
 
 #define lint long long int 
@@ -25,7 +25,7 @@ lint compute(int I,int M){
 }
 
 int main(){
-  in >> N;
-  out << compute(N,0) << endl;
+  cin >> N;
+  cout << compute(N,0) << endl;
   return 0;
 }
