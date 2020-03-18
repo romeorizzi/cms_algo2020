@@ -4,7 +4,7 @@
 # Soluzione parziale (ricorsione semplice) di pillole, written by Romeo Rizzi 2020.03.18
 
 def ric(I,M):
-"""Ritorna il numero di modi diversi di svuotare un flaconcino che inizialmente contenga I pillole intere e M pillole mezze."""
+  """Ritorna il numero di modi diversi di svuotare un flaconcino che inizialmente contenga I pillole intere e M pillole mezze."""
   if I==0:
     return 1
   if M==0:
