@@ -2,6 +2,9 @@
 #include <assert.h>
 #include <stdarg.h>
 
+#include <set>
+#include <string>
+
 void
 ex(double res, const char *fmt, ...)
 {
@@ -21,6 +24,7 @@ main(int argc, char *argv[])
     FILE *in, *cor, *out;
     int N, i, j, correct_S, solution_S, I, M;
     char line[1024];
+    std::set<std::string> values;
 
     assert(argc == 4);
     assert(in = fopen(argv[1], "r"));
@@ -65,6 +69,9 @@ main(int argc, char *argv[])
 
         if (M != 0 || I != 0)
             ex(0.0, "Non hai consumato tutte le pillole alla riga %d", i);
+
+        if (!values.insert(std::string(line)).second)
+            ex(0.0, "Riga %d ripetuta", i);
     }
 
     ex(1.0, "Corretto");
