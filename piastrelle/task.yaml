@@ -1,0 +1,8 @@
+nome_breve: "piastrelle"
+nome: "Piastrellature"
+timeout: 1
+memlimit: 64
+token_mode: infinite
+infile: "input.txt"
+outfile: "output.txt"
+n_input: 20

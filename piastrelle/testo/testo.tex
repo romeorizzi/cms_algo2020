@@ -1,0 +1,100 @@
+% Template per generare 
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempio}[2]{
+\noindent\begin{minipage}{\textwidth}
+\begin{tabular}{|p{11cm}|p{5cm}|}
+	\hline
+	\textbf{File \file{input.txt}} & \textbf{File \file{output.txt}}\\
+	\hline
+	\tt \small #1 &
+	\tt \small #2 \\
+	\hline
+\end{tabular}
+\end{minipage}
+}
+
+% Dati del task
+\newcommand{\gara}{phd2015}
+\newcommand{\nome}{Piastrellature}
+\newcommand{\nomebreve}{piastrelle}
+
+\begin{document}
+% Intestazione
+\noindent{\Large \gara}
+\vspace{0.5cm}
+
+\noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
+
+% Descrizione del task
+\section*{Descrizione del problema}
+Pippo ha un corridoio di dimensione $1 \times N$ da piastellare. Lui ha a disposizione solo piastrelle di 
+dimensioni $1 \times 1$ e $1 \times 2$. Essendo questo il corridoio dell'ingresso di casa sua, lui vorrebbe che fosse il 
+più bello possibile, quindi ha bisogno di conoscere tutte le possibili disposizioni delle piastrelle che 
+potrebbe usare per completare il lavoro.
+
+% Input
+\section*{File di input}
+Il programma deve leggere da un file di nome \file{input.txt} nel quale è presente un unico intero $N$, la dimensione del corridoio.
+
+% Output
+\section*{File di output}
+Il programma deve scrivere in un file di nome \file{output.txt}. In ognuna delle $K$ righe stampate deve essere presente una disposizione valida usando il seguente formato:
+\begin{itemize}
+\item Le piastrelle $1 \times 1$ vengono rappresentate con \texttt{[O]} (lettera `o' maiuscola)
+\item Le piastrelle $1 \times 2$ vengono rappresentate con \texttt{[OOOO]} (quadrupla `o' maiuscola)
+\item Le piastrelle non vengono separate da alcun carattere
+\item Le righe devono essere in ordine lessicografico: prima quelle che iniziano con $1 \times 1$ poi quelle con $1 \times 2$
+\end{itemize}
+
+% Assunzioni
+\section*{Assunzioni}
+
+\begin{itemize}
+\item $1 \le N \le 25$
+\end{itemize}
+
+% Subtasks
+\section*{Subtask}
+\begin{itemize}
+\item \textbf{Subtask 1 [\phantom{1}5 punti]:} caso di esempio.
+\item \textbf{Subtask 2 [\phantom{1}5 punti]:} $N \le 5$.
+\item \textbf{Subtask 3 [30 punti]:} $N \le 10$.
+\item \textbf{Subtask 4 [30 punti]:} $N \le 15$.
+\item \textbf{Subtask 5 [30 punti]:} nessuna limitazione specifica.
+\end{itemize}
+
+% Esempi
+\section*{Esempio di input/output}
+\esempio{4}{
+[O][O][O][O]
+
+[O][O][OOOO]
+
+[O][OOOO][O]
+
+[OOOO][O][O]
+
+[OOOO][OOOO]
+}
+
+\end{document}

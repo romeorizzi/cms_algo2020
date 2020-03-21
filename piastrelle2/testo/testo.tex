@@ -1,0 +1,228 @@
+% Template per generare 
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempio}[2]{
+\noindent\begin{minipage}{\textwidth}
+\begin{tabular}{|p{11cm}|p{5cm}|}
+	\hline
+	\textbf{File \file{input.txt}} & \textbf{File \file{output.txt}}\\
+	\hline
+	\tt \small #1 &
+	\tt \small #2 \\
+	\hline
+\end{tabular}
+\end{minipage}
+}
+
+% Dati del task
+\newcommand{\gara}{algo2015}
+\newcommand{\nome}{Piastrellature di un corridoio $2\times n$ }
+\newcommand{\nomebreve}{piastrelle2}
+
+\begin{document}
+% Intestazione
+\noindent{\Large \gara}
+\vspace{0.5cm}
+
+\noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
+
+% Descrizione del task
+\section*{Descrizione del problema}
+Abbiamo un corridoio di dimensione $2 \times N$ da piastellare.
+Sono a disposizione solamente piastrelle di dimensioni $1 \times 1$ e $1 \times 2$; queste ultime possono essere ruotate di 90 gradi. Vorremmo conoscere tutte le possibili disposizioni delle piastrelle sul pavimento del corridoio $2 \times N$.
+Lista le possibili piastrellature una alla volta.
+Dato che ogni piastrella sar\`a adiacente ad al pi\`u $4$ piastrelle,
+risulta possibile labellare le piastrelle con i colori $\{1,2,3,4,5\}$
+in modo che piastrelle adiacenti abbiano colore diverso.
+Per specificare una singola piastrellatura del corridoio (tiling della griglia $2 \times N$ con pezzi di domino, ossia con sottogriglie $1\times 2$ oppure $2\times 1$), specifica solo il colore per ciascuna delle $2N$ celle del corridoio. 
+
+% Input
+\section*{File di input}
+Il programma deve leggere da un file di nome \file{input.txt} un unico intero $N$, che determina la dimensione del corridoio.
+
+% Output
+\section*{File di output}
+Il programma deve scrivere in un file di nome \file{output.txt}.
+La prima riga del file contiene un intero $K$, il numero di possibili piastrellature.
+Il file va organizzato in $3K$ righe.
+Per ogni $i=1,\ldots,K$,
+le righe $3i-1$ e $3i$ rappresentano l'$i$-esima piastrellatura,
+e la riga successiva a queste serve come spaziatura.
+Per specificare l'$i$-esima piastrellatura,
+si prenda un qualsiasi $5$-coloring della stessa e lo si riporti
+sulle due righe nel modo ovvio (rispettando cio\`e la topologia sottostante).
+
+% Assunzioni
+\section*{Assunzioni}
+
+\begin{itemize}
+\item tempo massimo: $2$ secondi.
+\end{itemize}
+
+% Subtasks
+\section*{Subtask}
+\begin{itemize}
+\item \textbf{Subtask 1 [5 punti]:} caso di esempio.
+\item \textbf{Subtask 2 [15 punti]:} $N \le 5$.
+\item \textbf{Subtask 3 [30 punti]:} $N \le 8$.
+\item \textbf{Subtask 4 [40 punti]:} $N \le 9$.
+\item \textbf{Subtask 5 [10 punti]:} $N \le 10$.
+\end{itemize}
+
+% Esempi
+\section*{Esempio di input/output}
+\esempio{3}{\scriptsize
+22
+
+1 2 1
+
+2 1 2
+
+\ 
+
+1 2 3 
+
+2 1 3 
+
+\  
+
+1 2 3 
+
+2 1 1 
+
+\  
+
+1 2 2 
+
+2 1 3 
+
+\  
+
+1 2 2 
+
+2 1 1 
+
+\  
+
+1 3 1 
+
+2 3 2 
+
+\  
+
+1 3 1 
+
+2 3 1 
+
+\  
+
+1 3 1 
+
+2 2 3 
+
+\  
+
+1 3 1 
+
+2 2 1 
+
+\  
+
+1 3 3 
+
+2 2 1 
+
+\  
+
+1 1 2 
+
+2 3 1 
+
+\  
+
+1 1 2 
+
+2 3 2 
+
+\  
+
+1 1 2 
+
+2 3 3 
+
+\  
+
+1 1 2 
+
+2 2 1 
+
+\  
+
+1 1 3 
+
+2 2 3 
+
+\  
+
+1 2 1 
+
+1 3 2 
+
+\  
+
+1 2 1 
+
+1 3 1 
+
+\  
+
+1 2 1 
+
+1 3 3 
+
+\  
+
+1 2 2 
+
+1 3 1 
+
+\  
+
+1 2 2 
+
+1 3 3 
+
+\  
+
+1 2 1
+
+1 2 3 
+
+\ 
+
+1 2 1
+
+1 2 1 
+
+}
+
+\end{document}
