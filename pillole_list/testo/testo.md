@@ -35,11 +35,27 @@ Potrai scrivere le righe dell'output nell'ordine che preferisci
 
 | input (da stdin) | output (su stdout) |
 |---|---|
-| 3 | 5 |
+| 1 | 1 |
+|   | IM |
 
 | input (da stdin) | output (su stdout) |
 |---|---|
-| 30 | 3814986502092304 |
+| 3 | 14 |
+|| IIIIMMMM |
+|| IIIMIMMM |
+|| IIIMMIMM |
+|| IIIMMMIM |
+|| IIMIIMMM |
+|| IIMIMIMM |
+|| IIMIMMIM |
+|| IIMMIIMM |
+|| IIMMIMIM |
+|| IMIIIMMM |
+|| IMIIMIMM |
+|| IMIIMMIM |
+|| IMIMIIMM |
+|| IMIMIMIM |
+
 
 ## Subtasks
 - **Subtask 1 [30pt]:** $N \leq 10$
