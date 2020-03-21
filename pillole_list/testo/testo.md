@@ -58,6 +58,7 @@ Potrai scrivere le righe dell'output nell'ordine che preferisci
 
 
 ## Subtasks
-- **Subtask 1 [30pt]:** $N \leq  5$
-- **Subtask 2 [30pt]:** $N \leq  8$
-- **Subtask 3 [40pt]:** $N \leq 10$
+- **Subtask 1 [25pt]:** $N \leq  4$
+- **Subtask 2 [25pt]:** $N \leq  6$
+- **Subtask 3 [25pt]:** $N \leq  8$
+- **Subtask 4 [25pt]:** $N \leq 10$
