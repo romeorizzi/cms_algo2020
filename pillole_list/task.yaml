@@ -6,3 +6,4 @@ infile: ''
 outfile: ''
 public_testcases: all
 token_mode: disabled
+feedback_level: full
