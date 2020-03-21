@@ -1,7 +1,7 @@
-nome_breve: "piastrelle"
-nome: "Piastrellature"
-timeout: 1
-memlimit: 64
+name: "piastrelle"
+title: "Piastrellature"
+time_limit: 2
+memory_limit: 64
 infile: "input.txt"
 outfile: "output.txt"
 score_mode: max_subtask
