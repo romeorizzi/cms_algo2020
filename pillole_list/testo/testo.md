@@ -1,4 +1,4 @@
-# Pillole di zia Lucilla (pillole)
+# Pillole di zia Lucilla, ora si elenchi (pillole_list)
 
 Il dottore ha dato a Zia Lucilla un flaconcino che contiene esattamente $N$ pillole,
 e le ha prescritto di assumere mezza pillola ogni giorno, alla sera prima di coricarsi.
