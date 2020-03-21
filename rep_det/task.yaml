@@ -2,7 +2,9 @@ name: rep_det
 title: Repetition Detector
 time_limit: 3.0
 memory_limit: 256
-infile: ''
-outfile: ''
-public_testcases: all
+infile: ""
+outfile: ""
+score_mode: max_subtask
 token_mode: disabled
+public_testcases: all
+feedback_level: full
