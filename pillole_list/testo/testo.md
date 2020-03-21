@@ -28,7 +28,7 @@ Dovrai scrivere in output $S+1$ righe:
 Potrai scrivere le righe dell'output nell'ordine che preferisci
 
 ## Assunzioni
-- $1 ≤ N ≤ 30$
+- $1 ≤ N ≤ 10$
 - L’output sarà abbastanza piccolo da poter essere mantenuto dentro un `long long int`
 
 ## Esempi di input/output
@@ -58,6 +58,6 @@ Potrai scrivere le righe dell'output nell'ordine che preferisci
 
 
 ## Subtasks
-- **Subtask 1 [30pt]:** $N \leq 10$
-- **Subtask 2 [30pt]:** $N \leq 20$
-- **Subtask 3 [40pt]:** $N \leq 30$
+- **Subtask 1 [30pt]:** $N \leq  5$
+- **Subtask 2 [30pt]:** $N \leq  8$
+- **Subtask 3 [40pt]:** $N \leq 10$
