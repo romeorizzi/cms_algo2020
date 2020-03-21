@@ -4,6 +4,8 @@ time_limit: 1.0
 title: Ricevere input ed erogare output sui canali standard
 infile: ""
 outfile: ""
+score_mode: max_subtask
 token_mode: disabled
 public_testcases: all
+feedback_level: full
 

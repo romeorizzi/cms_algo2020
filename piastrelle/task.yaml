@@ -1,8 +1,11 @@
-nome_breve: "piastrelle"
-nome: "Piastrellature"
-timeout: 1
-memlimit: 64
-token_mode: infinite
+name: "piastrelle"
+title: "Piastrellature"
+time_limit: 2
+memory_limit: 64
 infile: "input.txt"
 outfile: "output.txt"
-n_input: 20
+score_mode: max_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

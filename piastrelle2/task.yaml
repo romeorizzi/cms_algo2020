@@ -2,6 +2,10 @@ nome_breve: "piastrelle2"
 nome: "Piastrellature di un corridoio 2xn"
 timeout: 2
 memlimit: 256
-token_mode: infinite
 infile: "input.txt"
 outfile: "output.txt"
+score_mode: max_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

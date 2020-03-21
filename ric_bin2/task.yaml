@@ -2,7 +2,10 @@ title: Ricerca binaria -> approfondimenti
 name: ric_bin2
 time_limit: 1.0
 memory_limit: 256
-token_mode: infinite
 infile: ""
 outfile: ""
+score_mode: max_subtask
+token_mode: disabled
+public_testcases: all
+feedback_level: full
 
