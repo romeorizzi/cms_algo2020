@@ -40,6 +40,8 @@ Restituite in output un unico intero: il numero di trattamenti possibili, ossia 
 ## Subtasks
 - **Subtask 1 [25pt]:** $N \leq 10$
 - **Subtask 2 [25pt]:** $N \leq 20$
-- **Subtask 3 [25pt]:** $N \leq 28$
-- **Subtask 4 [25pt]:** $N \leq 30$
+- **Subtask 3 [25pt]:** $N \leq 30$
+- **Subtask 4 [25pt]:** $N \leq 32$
+- **Subtask 5 [0pt]:** $N \leq 35$
+
 
