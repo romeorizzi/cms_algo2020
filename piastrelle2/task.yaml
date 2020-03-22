@@ -4,7 +4,6 @@ timeout: 2
 memlimit: 256
 infile: "input.txt"
 outfile: "output.txt"
-score_mode: max_subtask
 token_mode: disabled
 public_testcases: all
 feedback_level: full

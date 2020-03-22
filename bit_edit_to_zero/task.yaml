@@ -4,7 +4,6 @@ time_limit: 0.4
 title: Da n a zero in meno mosse possibili
 infile: ""
 outfile: ""
-score_mode: max_subtask
 token_mode: disabled
 public_testcases: all
 feedback_level: full

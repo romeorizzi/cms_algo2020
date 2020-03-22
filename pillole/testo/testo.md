@@ -24,7 +24,7 @@ bottiglia all’inizio della cura.
 Restituite in output un unico intero: il numero di trattamenti possibili, ossia il numero di modi diversi in cui la zia può operare sulla bottiglietta fino a svuotarla completamente.
 
 ## Assunzioni
-- $1 ≤ N ≤ 35$
+- $1 ≤ N ≤ 32$
 - L’output sarà abbastanza piccolo da poter essere mantenuto dentro un `long long int`
 
 ## Esempi di input/output
@@ -41,5 +41,5 @@ Restituite in output un unico intero: il numero di trattamenti possibili, ossia 
 - **Subtask 1 [25pt]:** $N \leq 10$
 - **Subtask 2 [25pt]:** $N \leq 20$
 - **Subtask 3 [25pt]:** $N \leq 30$
-- **Subtask 4 [25pt]:** $N \leq 35$
+- **Subtask 4 [25pt]:** $N \leq 32$
 

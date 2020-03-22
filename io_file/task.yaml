@@ -2,7 +2,6 @@ memory_limit: 256
 name: io_file
 time_limit: 1.0
 title: Gestire input ed output da file
-score_mode: max_subtask
 token_mode: disabled
 public_testcases: all
 feedback_level: full

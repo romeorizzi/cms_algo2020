@@ -2,7 +2,6 @@ memory_limit: 512
 name: bungeejumping
 time_limit: 5.0
 title: Jump Jump
-score_mode: max_subtask
 token_mode: disabled
 public_testcases: all
 feedback_level: full
