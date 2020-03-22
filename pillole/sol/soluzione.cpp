@@ -6,14 +6,14 @@
 #include <iostream>
 using namespace std;
 
-const int MAXN = 30;
+const int MAXN = 50;
 int N;
 
-#define lint long long int 
+#define ulint unsigned long long int 
 
-lint memo[MAXN+1][MAXN+1];
+ulint memo[MAXN+1][MAXN+1];
 
-lint compute(int I,int M){
+ulint compute(int I,int M){
   //Ritorna il numero di modi diversi di svuotare un flaconcino che inizialmente contenga I pillole intere e M pillole mezze.  
   if(I==0)
     return 1;
