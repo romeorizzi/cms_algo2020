@@ -2,26 +2,24 @@
 # ignorate. Le righe non banali (ovvero contenenti qualcosa oltre a whitespace
 # prima del primo #) vengono passate al generatore e generano un input ciascuna.
 # Se una riga inizia con "#ST:" (senza le virgolette) viene usata per delimitare
-# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask. Se
-# sono presenti i subtask, è necessario che la somma dei punti di ogni subtask
-# sia 100.
+# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask.
+# Se sono presenti i subtask, la somma dei punti dei vari subtask DEVE dare 100.
 
-# N     S
+# N 
 #ST: 10
-6      -0
+6 
 #ST: 15
-11      2
+11
 #ST: 25
-1        12
-5        13
-10       14
-11       15
-12       16
-13       17
+1 
+5 
+10 
+12 
+13 
 #ST: 50
-1        22
-70       23
-800      24
-1000     25
-777      26
+1 
+70 
+800 
+1000 
+777
 
