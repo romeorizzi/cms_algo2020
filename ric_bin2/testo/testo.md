@@ -4,16 +4,27 @@
 
 Questo problema ha i seguenti obiettivi:
 
-* sbloccare chi di voi sia rimasto in sospeso con l'esercizio ric_bin proposto precedentemente, in particore chiedendo di concentrarti sulla determinazione del minimo numero di chiamate alla funzione guess che sarà sempre sufficiente ad indovinare il numero incognito.
+* sbloccare chi di voi sia rimasto in sospeso con l'esercizio `ric_bin` proposto precedentemente, in particore chiedendo di concentrarti sulla determinazione del minimo numero di chiamate alla funzione guess che sarà sempre sufficiente ad indovinare il numero incognito.
 
 * introdurre alla programmazione dinamica e incoraggiare all'approccio ricorsivo nella soluzione dei problemi.
 
-Devi scrivere un programma che, dato in input un numero intero positivo n,
-ritorni il più piccolo numero f(n) tale che esista
-una strategia S(n) su come chiamare la funzione guess che garantisca quanto segue:
-qualsiasi sia il valore del numero incognito x, con 1 <= x <= n, allora, applicando la strategia S(n), stabilirai il valore di x in al più f(n) domande.
+Nel problema `ric_bin` eri chiamato a determinare un numero naturale nell'intervallo $[1,n]$.
+Per determinarlo potevi chiamare una funzione `confronto_con(g)` la quale, assumendo che g sia la vostra proposta e $x$ il numero incognito da determinarsi, specificava quale dei seguenti tre fosse il caso:
++ $g > x$
++ $g < x$
++ $g = x$  
 
-Si noti che una strategia S(n) può essere vista come un albero la cui radice esprime la situazione del gioco prima di aver fatto la prima domanda (la prima chiamata a guess) e le foglie corrispondono alle situazioni in cui il valore di x è infine determinato. Le foglie sono esattamente n, una per ciascuno dei possibili valori di x. Ogni nodo dell'albero S(n) specifica quale sia la domanda che conviene fare (una delle domande ottime, in certi casi potrebbero essere più di una) e, se non è una foglia, ha tre figli, una per ogni possibile risposta della chiamata a guess.
+Una singola partita a questo gioco può essere vista come una sequenza di domande e risposte.
+L'obiettivo del giocatore è minimizzare il numero delle domande utilizzate per ottenere certezza sul valore di $x$. Tuttavia, anche giocando secondo uno schema deterministico prefissato a priori (ad esempio, qualora $n$ fosse $3$, allora stabilisco che la prima chiamata a `confronto_con(g)` avverrà sempre con $g=2$), è chiaro che il numero delle chiamate possa dipendere dal valore di $x$, che potrebbe quindi venire scelto dall'avversario per mettermii in difficoltà.
+
+Ti chiediamo di progettare una strategia che minimizzi il numero delle chiamate a `confronto_con(g)` sul più bastardo degli $x$ scelto poi dall'avversario.
+
+Quando ti sarai fatto chiarezza su come possa essere fatta una tale strategia (a seconda del valore di $n$ non è detto sia unica) dovrai scrivere un programma che, dato in input un numero intero positivo $n$, ritorni il più piccolo numero f(n) tale che esista
+una strategia $S(n)$ che garantisca quanto segue:
+qualsiasi sia il valore del numero incognito $x$, con $1 \leq x \leq n$, allora, applicando la strategia $S(n)$, stabilirai il valore di $x$ in al più $f(n)$ domande.
+
+Si noti che una strategia $S(n)$ può essere vista come un albero la cui radice esprime la situazione del gioco prima di aver fatto la prima domanda (la prima chiamata a `confronto_con(g)`) e le foglie corrispondono alle situazioni in cui il valore di $x$ è infine determinato.
+Di fatto le foglie saranno precisamente $n$, una per ciascuno dei possibili valori di x. Ogni nodo dell'albero $S(n)$ che non sia una foglia (ossia dove il valore di $x$ non sia stato ancora determinato con certezza) specifica quale sia la domanda che conviene fare (una delle domande ottime, in certi casi potrebbero essere più di una) in quella situazione. I figli di tale nodo non-foglia saranno al massimo $3$, e corrisponderanno sempre alle possibili risposte da parte di `confronto_con(g)`.
 
 In pratica, quando risolvi questo problema stai implicitamente progettando un tale albero che abbia altezza minima (altezza di un albero è la più lunga distanza di una foglia dalla radice).
 
