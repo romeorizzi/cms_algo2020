@@ -1,0 +1,62 @@
+\renewcommand{\nomebreve}{game2stacks}
+\renewcommand{\titolo}{Da quale dei due stacks rimuovere e quanto?}
+
+\introduzione{}
+
+Alice e Bob si alternano nell'atto di rimuovere pedine disposte in due pile.
+Ad ogni suo turno, ciascun giocatore deve scegliere una delle due pile e quante pedine rimuovere dalla pila scelta.
+Il giocatore che non riesce più a muovere (perchè il numero di pedine è ormai sceso a zero in entrambe le pile) perde la partita, mentre il suo avversario viene proclamato vincitore degli undergames 2018.12.05.
+
+Devi scrivere una funzione che riceve in input due parametri $n_1$ ed $n_2$ che specificano il numero di pedine attualmente presenti sul primo e sul secondo stack, rispettivamente. La funzione deve individuare se esista una mossa vincente e, in caso affermativo, dire quale. In caso contrario la funzione abbandona il gioco rifiutandosi di muovere.
+
+Trovi un template della soluzione nel file \textbf{\file{game2stacks\_template\_sol.py}} tra gli attachments, dovrai solo curare l'implementazione della funzione richiesta:
+
+\begin{verbatim}
+def play(n1, n2):
+    return (0,0)
+\end{verbatim}
+
+Attualmente {\tt play} ritorna sempre $(0,0)$, che equivale ad abbandonare la partita senza rimuovere alcuna pedina, da nessuna pila. Tuttavia questa è la risposta corretta solo in quelle situazioni in cui il giocatore non abbia una strategia vincente (ossia non possa vincere pur assumendo che l'avversario giochi ottimamente). Quando invece il giocatore sia in grado di vincere a gioco ottimo, allora vorremmo che la funzione {\tt play} computasse una mossa vincente e ritornasse il numero di pedine da rimuovere sui due stack (in generale almeno uno dei due numeri ritornati deve essere nullo). Il tuo compito è correggere/completare l'implementazione attuale della funzione {\tt play}. A volte si può vincere! 
+
+
+\sezionetesto{Dati di input}
+Il vostro programma riceve come suo input due numeri naturali $n_1$ ed $n_2$ che indicano il numero di pedine presenti su ciascuona delle due pile del gioco quando siete chiamati a compiere la vostra mossa.
+
+\sezionetesto{Dati di output}
+
+Dovete ritornare in output la coppia di numeri $(0,0)$ quando realizzate che la partita è ormai persa, in tutti gli altri casi dovete invece ritornare una codifica di una qualche mossa vincente. La mossa vincente è rappresentata da una coppia $(a,0)$ se prescrive di rimuovere $a$ pedine dalla prima pila; essa è invece rappresentata da una coppia $(0,b)$ se prescrive di rimuovere $b$ pedine dalla seconda pila. A livello di output dell'intero programma (gestito dal template, vi consigliamo di non modificare il template al di fuori della funzione {\tt play}), tali coppie ordinate vengono di fatto rese come puoi vedere nei seguenti due esempi.
+
+% Esempi
+\sezionetesto{Esempi di input/output}
+\esempio{2
+
+  4}{
+  0
+
+  2
+}
+
+\esempio{2
+
+  2}{
+  0
+
+  0
+}
+
+
+% Assunzioni
+\sezionetesto{Assunzioni}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $0 \le n_1, n_2 \le 10^{100}$.
+\end{itemize}
+
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 2 [30 punti]:} $n_1+n_2 \leq 10$.
+    \item \textbf{Subtask 3 [30 punti]:} $n_1, n_2  \leq 100$.
+    \item \textbf{Subtask 4 [10 punti]:} $n_1 = 4$, $n_2 \leq 10^{100}$.
+    \item \textbf{Subtask 5 [30 punti]:} $n_1, n_2  \leq 10^{100}$.
+  \end{itemize}
+  

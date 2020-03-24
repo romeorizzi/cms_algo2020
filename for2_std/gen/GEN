@@ -1,0 +1,27 @@
+# File usato per descrivere gli input. Le parti della riga dopo un # vengono
+# ignorate. Le righe non banali (ovvero contenenti qualcosa oltre a whitespace
+# prima del primo #) vengono passate al generatore e generano un input ciascuna.
+# Se una riga inizia con "#ST:" (senza le virgolette) viene usata per delimitare
+# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask. Se
+# sono presenti i subtask, è necessario che la somma dei punti di ogni subtask
+# sia 100.
+
+# N     S
+#ST: 10
+6      -0
+#ST: 15
+11      2
+#ST: 25
+1        12
+5        13
+10       14
+11       15
+12       16
+13       17
+#ST: 50
+1        22
+70       23
+800      24
+1000     25
+777      26
+

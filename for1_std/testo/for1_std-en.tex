@@ -1,0 +1,53 @@
+\renewcommand{\nomebreve}{for1\_std}
+\renewcommand{\titolo}{First exercise on {\tt for} - emulate the {\tt seq} command}
+
+\mbox{\ }
+\vspace{-1.6cm}
+
+
+\introduzione{}
+
+You receive in input a positive natural $N$ and,
+in output, you must yield the sorted sequence of the first $N$ natural numbers:\\
+
+  $1$  \ \ $2$  \ \ $3$  \ \ $4$  \ \ $\cdots$  \ \ $N-2$  \ \ $N-1$  \ \ $N$
+
+You can separate the $N$ output numbers with spaces or, if you prefer,
+with new lines, so that each number will go on a different line and you will be perfectly emulating the \verb'seq' command of the \verb'bash' shell.
+Those of you who have seen some python will rather think of:
+
+\verb'print range(1,N+1)'
+
+However, whatever the chosen programming language, try to get the job done by means of a for cycle. 
+
+\sezionetesto{input description}
+Your only input, got from \verb'stdin', is a positive integer number $N$.
+
+\sezionetesto{output description}
+You program should output on \verb'stdout' one single line containing the sequence\\
+
+  $1$  \ \ $2$  \ \ $3$  \ \ $4$  \ \ $\cdots$  \ \ $N-2$  \ \ $N-1$  \ \ $N$
+
+comprising the first $N$ positive natural number in their order.
+Any two consecutive numbers should be separated by spaces.
+
+
+% Esempi
+\sezionetesto{input/output example}
+\esempio{6}{1 2 3 4 5 6}
+\esempio{10}{1 2 3 4 5 6 7 8 9 10}
+
+% Assunzioni
+\sezionetesto{Assumptions}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le N \le 10\,000$.
+\end{itemize}
+  
+  \section*{Subtasks}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [10 punti]:} the two examples above.
+    \item \textbf{Subtask 1 [15 punti]:} $N = 17$.
+    \item \textbf{Subtask 2 [25 punti]:} $N \leq 20$.
+    \item \textbf{Subtask 4 [50 punti]:} no special restriction.
+  \end{itemize}
+  

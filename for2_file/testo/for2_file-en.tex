@@ -1,0 +1,54 @@
+\renewcommand{\nomebreve}{for2\_file}
+\renewcommand{\titolo}{nested for - computing multiplication tables}
+
+\introduzione{}
+
+You receive in input a positive natural number $N$ and,
+in output, you must return the whole multiplication table of size $N$,
+i.e., the $N\times N$ table of numbers which
+in row $i$ (where the multiples of number~$i$ appear)
+and column $j$  (where the multiples of number~$j$ appear),
+the value of the product $i\cdot j$ appears.
+
+\sezionetesto{input description}
+The first and only line of the file \verb'input.txt'
+contains a positive integer number $N$.
+
+\sezionetesto{output description}
+
+The file \verb'output.txt' contains the following $N\times N$ table:\\
+
+\begin{tabular}{cccccc}
+    $1$   &   $2$    &  $3$     & $\cdots$ &  $N-1$     &  $N$ \\
+    $2$   &   $4$    &  $6$     & $\cdots$ & $2N-2$     & $2N$ \\
+ $\vdots$ & $\vdots$ & $\ddots$ &          &   $\vdots$ &  $\vdots$ \\
+ $\vdots$ & $\vdots$ &          & $\ddots$ &   $\vdots$ &  $\vdots$ \\
+  $N-1$   & $2N-2$   & $3N-3$   & $\cdots$ & $N^2-2N+1$ & $N^2-N$ \\
+    $N$   &  $2N$    & $3N$     & $\cdots$ &    $N^2-N$ &  $N^2$
+\end{tabular}
+
+% Esempi
+\sezionetesto{input/output example}
+\esempio{4}{
+1 2 3 4
+
+2 4 6 8
+
+3 6 9 12
+
+4 8 12 16}
+
+% Assunzioni
+\sezionetesto{Assumptions}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le N \le 1\,000$.
+\end{itemize}
+  
+  \section*{Subtasks}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [10 punti]:} the example in the text.
+    \item \textbf{Subtask 1 [15 punti]:} $N = 11$.
+    \item \textbf{Subtask 2 [25 punti]:} $N \leq 13$.
+    \item \textbf{Subtask 4 [50 punti]:} no special restriction.
+  \end{itemize}
+  
