@@ -1,0 +1,5 @@
+title: Trova le affinità di.. stringa!
+name: string_matching
+time_limit: 1.0
+memory_limit: 256
+token_mode: infinite
