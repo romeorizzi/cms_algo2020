@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Template di soluzione di game2stacks
+# Soluzione di game2stacks, Romeo Rizzi 2020.03.25
 
 from __future__ import print_function
 import sys
