@@ -1,0 +1,9 @@
+name: pillole_list
+title: Pillole di zia Lucilla, ora si elenchi
+time_limit: 4.0
+memory_limit: 256
+infile: ''
+outfile: ''
+public_testcases: all
+token_mode: disabled
+feedback_level: full

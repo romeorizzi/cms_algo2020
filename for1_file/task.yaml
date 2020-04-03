@@ -1,0 +1,7 @@
+memory_limit: 256
+name: for1_file
+time_limit: 1.0
+title: Primo esercizio sul for - emulare seq
+token_mode: disabled
+public_testcases: all
+

@@ -1,0 +1,53 @@
+\renewcommand{\nomebreve}{for2\_std}
+\renewcommand{\titolo}{Esercizio sui for annidati - computo tabelline}
+
+\introduzione{}
+
+Ricevete in input un numero naturale positivo $N$ e,
+in output, dovete generare la tabellina per $N$,
+ossia una tabella di $N\times N$ numeri, dove,
+nella riga $i$-esima (quella relativa ai prodotti del numero $i$)
+e colonna $j$-esima  (quella relativa ai prodotti del numero $j$),
+compaia il valore $i\cdot j$.
+
+\sezionetesto{Dati di input}
+Il vostro programma riceve come suo input solamente un numero intero e positivo $N$.
+
+\sezionetesto{Dati di output}
+
+Il vostro programma dovrà stampare la sequente tabella $N\times N$:\\
+
+\begin{tabular}{cccccc}
+    $1$   &   $2$    &  $3$     & $\cdots$ &  $N-1$     &  $N$ \\
+    $2$   &   $4$    &  $6$     & $\cdots$ & $2N-2$     & $2N$ \\
+ $\vdots$ & $\vdots$ & $\ddots$ &          &   $\vdots$ &  $\vdots$ \\
+ $\vdots$ & $\vdots$ &          & $\ddots$ &   $\vdots$ &  $\vdots$ \\
+  $N-1$   & $2N-2$   & $3N-3$   & $\cdots$ & $N^2-2N+1$ & $N^2-N$ \\
+    $N$   &  $2N$    & $3N$     & $\cdots$ &    $N^2-N$ &  $N^2$
+\end{tabular}
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{4}{
+1 2 3 4
+
+2 4 6 8
+
+3 6 9 12
+
+4 8 12 16}
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le N \le 1\,000$.
+\end{itemize}
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [10 punti]:} l'esempio del testo.
+    \item \textbf{Subtask 1 [15 punti]:} $N = 11$.
+    \item \textbf{Subtask 2 [25 punti]:} $N \leq 13$.
+    \item \textbf{Subtask 4 [50 punti]:} nessuna restrizione.
+  \end{itemize}
+  

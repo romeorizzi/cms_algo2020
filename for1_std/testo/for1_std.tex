@@ -1,0 +1,47 @@
+\renewcommand{\nomebreve}{for1\_std}
+\renewcommand{\titolo}{Primo esercizio sul {\tt for} - emulare il comando {\tt seq} della {\tt bash}}
+
+\introduzione{}
+
+Ricevete in input un numero naturale positivo $N$ e,
+in output, dovete generare la sequenza:\\
+
+  $1$  \ \ $2$  \ \ $3$  \ \ $4$  \ \ $\cdots$  \ \ $N-2$  \ \ $N-1$  \ \ $N$
+
+dei primi $N$ numeri naturali positivi, in bell'ordine.
+Potete separare gli $N$ numeri in output tramite spazi oppure, se preferite, anche andando a capo emulando cos\'\i\ il comando \verb'seq' della \verb'bash' shell.
+Chi conosce python penser\`a invece a:
+
+\verb'print range(1,N+1)'
+
+Ma, qualunque sia il linguaggio scelto, cercate di ottenere il risultato avvalendovi di un ciclo for.
+
+\sezionetesto{Dati di input}
+In ingresso riceverete solamente un numero intero e positivo $N$.
+
+\sezionetesto{Dati di output}
+In uscita dovete mandare, su una sola riga e separati da spazi, i primi $N$ numeri naturali positivi, in bell'ordine.
+In altre parole, stampa su \verb'stdout' gli $N$ numeri della sequenza:\\
+
+  $1$  \ \ $2$  \ \ $3$  \ \ $4$  \ \ $\cdots$  \ \ $N-2$  \ \ $N-1$  \ \ $N$
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{6}{1 2 3 4 5 6}
+\esempio{10}{1 2 3 4 5 6 7 8 9 10}
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1 \le N \le 10\,000$.
+\end{itemize}
+  
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [10 punti]:} i due esempi del testo.
+    \item \textbf{Subtask 1 [15 punti]:} $N = 17$.
+    \item \textbf{Subtask 2 [25 punti]:} $N \leq 20$.
+    \item \textbf{Subtask 4 [50 punti]:} nessuna restrizione.
+  \end{itemize}
+  

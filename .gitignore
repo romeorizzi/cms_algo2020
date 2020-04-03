@@ -1,6 +1,8 @@
 .vscode/
 # CMS
 .inode
+.itime
+*_EVAL
 **/input
 **/output
 

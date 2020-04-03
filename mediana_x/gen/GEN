@@ -1,0 +1,45 @@
+#because this GEN file goes through generatore.sh, each instance line will essentially be copied into a separate input file
+#here, the fields of instance line are:
+# nBalls  subtask  seed
+#ST: 0
+  10       1       32151
+ 133       1       45675
+
+#ST: 0
+  20       2       37151
+ 113       2       65675
+
+#ST: 0
+   3       3       37451
+   3       3       45675
+
+#ST: 10
+  10       4       37441
+  20       4       38451
+  30       4       45674
+
+#ST: 20
+  12       5       65354
+  52       5       54745
+ 102       5       95942
+1000       5       83267
+
+#ST: 35
+ 100    6       54843
+ 200    6       64455
+ 500    6       64565
+ 700    6       48463
+ 990    6       68544
+1000    6       97683
+
+
+#ST: 35
+   100    7       64645
+   500    7       64856
+  1000    7       65423
+  5000    7       28545
+ 10000    7       85894
+ 50000    7       32855
+100000    7       54858
+
+

@@ -1,0 +1,148 @@
+% Template per generare
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{sfmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usepackage{enumitem}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempio}[2]{
+  \noindent\begin{minipage}{\textwidth}
+    \begin{tabular}{|p{11cm}|p{5cm}|}
+      \hline
+      \textbf{File \file{input.txt}} & \textbf{File \file{output.txt}}\\
+      \hline
+      \tt \small #1 &
+      \tt \small #2 \\
+      \hline
+    \end{tabular}
+  \end{minipage}
+}
+
+% Dati del task
+\newcommand{\gara}{.}
+\newcommand{\nome}{Find Max in Interactive Version}
+\newcommand{\nomebreve}{max\_x}
+
+\begin{document}
+  
+  
+  % Intestazione
+  \noindent{\Large \gara}
+  \vspace{0.5cm}
+  
+  \noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
+  \vspace{0.2cm}\\
+  
+  % Descrizione del task
+  \section*{Problem Description}
+    
+  \noindent
+  Write a procedure to find out the heaviest murble into a set of of $n$ murbles numbered from $0$ to $n-1$.
+  The file you are required to submit should hold the following structure:
+\begin{verbatim}
+#include "ourLibToPlay.h"
+
+void individua(long int n, long int maxLies) {
+   ...
+} 
+\end{verbatim}
+
+  \noindent
+  The parameter $n$ which gets passed to the function \texttt{individua} you must implement is the number of murbles under exam. The $n$ murbles all differ in weight.
+  You can use a scale by invoking, within your implementation of procedure \texttt{individua},
+  the following function: 
+  
+  \vspace{0.2cm}
+  
+  \noindent
+  \texttt{int pesa(long int bigliaA, long int bigliaB)}
+  
+  \vspace{0.2cm}
+  
+  \noindent
+  Function \texttt{pesa} returns
+  \begin{itemize}[noitemsep]
+    \item $-1$, if \texttt{bigliaA} is leighter than \texttt{bigliaB};
+    \item $1$,  if \texttt{bigliaA} is heavier than \texttt{bigliaB}.
+  \end{itemize}
+
+  In the more advanced subtask, the scale can tell some lies,
+  but only at most \texttt{maxLies} of them, the second input parameter of function \texttt{individua}.   
+  
+  \noindent
+  Once you are certain about the identity of the murble of maximum weight you can deliver it through a call to the function:
+  
+  \vspace{0.2cm}
+  
+  \noindent
+  \texttt{void pensoCheMaxSia(long int bigliaMax)}
+  
+  
+  \section*{Subtasks}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [1 punti]:} the heaviest murble is numbered $2$.
+    \item \textbf{Subtask 1 [2 punti]:} $n=2$, the scale is always true (\texttt{maxLies}$= 0$).
+    \item \textbf{Subtask 2 [4 punti]:} \texttt{maxLies}$= 0$, you are allowed at most $n$ calls to \texttt{int pesa}.
+    \item \textbf{Subtask 3 [8 punti]:} \texttt{maxLies}$= 0$, at most $n-1$ calls to \texttt{int pesa}.
+    \item \textbf{Subtask 4 [16 punti]:} at most one single lie (\texttt{maxLies}$\leq 1$).
+    \item \textbf{Subtask 5 [5 punti]:} \texttt{maxLies}$\leq 1$), at most $3n-3$ calls to \texttt{int pesa}.
+    \item \textbf{Subtask 6 [32 punti]:} \texttt{maxLies}$\leq 1$, at most $2n$ calls to \texttt{int pesa}.
+    \item \textbf{Subtask 7 [16 punti]:} \texttt{maxLies}$\leq 1$, at most $2n-1$ calls to \texttt{int pesa}.
+    \item \textbf{Subtask 8 [16 punti]:} \texttt{maxLies}$\leq k$, at most $(k+1)(n-1) +k = n(k+1)-1$ calls to \texttt{int pesa}.
+  \end{itemize}
+  
+  % Assunzioni
+  \section*{Assumptions}
+  \begin{itemize}[nolistsep, noitemsep]
+    \item The program stops after the first call to function \texttt{pensoCheMaxSia} or when the time limit has been exceeded.
+    \item $1 \le n \le 1\,000\,000$.
+  \end{itemize}
+
+
+  % Cosa sottomettere
+  \section*{Content of the file you are expected to submit, how it is managed by the serverCosa}
+
+  The extension of the submitted file, *.c, *.cpp oppure *.pas,
+  tells whether it will get compiled by the C compiler (gcc),
+  the c++ compiler (g++) or the PASCAL compiler (fpc).
+  The precise compiler options are reported on the www problem page tagged "Descrizione".
+  In this way you can experiment in local precisely what is happening on the server. 
+  The compiler command line reported at the page "Descrizione" assumes the name of the file (without extension) equals the problem name.
+
+  When the problem is designed to be interactive as in this case, your code will interact with others we have prepared (the grader and the header), the command line reported compile and link the various pieces (your program, the grader, the header, ...)
+  If you want to experiment and test your solution in local,
+  then you must download the grader and the header made available at the page of the problem.
+
+  Among the complimentary material we can provide an example of a code you could submit which compiles and links correctly but does not make that many scores, it's only meant to exemplify what you can do.
+
+  In this case the example solution code is:
+\begin{verbatim}
+// problem: max_x, example of a solution file, Romeo Rizzi Jan 2015
+#include "ourLibToPlay.h"
+void individua(long int n, long int maxLies) {
+  if( pesa(0,n-1) > 0)  pensoCheMaxSia(0); 
+  else pensoCheMaxSia(n-1); 
+}
+\end{verbatim}
+
+This will not score many points but should give an idea and can also be compiled and tested in local if in the same directory you also place the grader and the header.
+
+  
+\end{document}

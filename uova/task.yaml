@@ -2,6 +2,9 @@ title: Uova di Pasqua
 name: uova
 time_limit: 2.0
 memory_limit: 256
-token_mode: infinite
 infile: ""
 outfile: ""
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

@@ -4,4 +4,5 @@ time_limit: 1.0
 title: Gestire input ed output da file
 token_mode: disabled
 public_testcases: all
+feedback_level: full
 

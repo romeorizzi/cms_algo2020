@@ -1,10 +1,8 @@
 /**
  *  Soluzione void, non fà assolutamente nulla, utile per testing
  *
- *  Autore: Romeo Rizzi
+ *  Romeo Rizzi, last: 2020-03-24
  */
-#include <iostream>
-using namespace std;
 int main() {
   return 0;
 }
