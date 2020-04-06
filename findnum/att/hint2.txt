@@ -1,0 +1,28 @@
+# Un possibile approccio, e relativo controesempio
+
+Uno potrebbe sperare che prima per quell's ma d =1 ottieni già un lower bound bello alto e di fatto preciso.
+Poi conviene provare per primo il più piccolo multiplo di d che non sia inferiore a questo lower bound, andando poi a considerare i multipli di d successivi.
+Ogni 10 di questi multipli hai di certo alzato il valore della somma sulle cifre significative oltre quelle di D, e quindi il numero di candidati da considerarsi sarà al più 10*999 proprio ad essere larghi.
+
+## Controesempio
+
+Si consideri d=61 ed s=2.
+Se consideriamo d=1 allora il numero più piccolo è 2. Ma prima di arrivare al risultato con i multipli di 61 il numero di passi è altino, non sembra esserci un buon upper bound in generale.
+
+Ecco quindi un modo per ottenere istanze difficili/controesempi per l'algoritmo proposto sopra:
+
+factor 100000000000001
+100000000000001: 29 101 281 121499449
+
+Ed ecco il più piccolo numero multiplo di 61 con somma a 2:
+factor 1000000000000000000000000000001
+1000000000000000000000000000001: 61 101 3541 9901 27961 4188901 39526741
+
+Sembra pertanto che come prima cosa bisogni necessariamente caratterizzare quali siano quelle sequenze di cifre decimali che codificano un multiplo di d.
+Questo è spesso un passaggio obbligato che occorre affrontare nel risolvere dei problemi.
+
+Nei primi subtask questa caratterizzazione è già nota ai più dalla scuola primaria (ad esempio un numero è divisibile per $3$ se e solo sè la somma delle sue cifre e un numero divisibile per $3$), e uno si può chiedere se e come questa conoscenza possa aiutare.
+Questa buona caratterizzazione è un passo importante, ma come sfruttarla?
+
+ 
+

@@ -1,0 +1,3 @@
+Resta ancora il problema di rimanere entro i tempi?
+In effetti occorre dare impiego ad una tecnica che ricorre spesso quando il gioco si fà duro:
+la programmazione dinamica.
