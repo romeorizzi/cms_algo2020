@@ -1,0 +1,34 @@
+# File usato per descrivere gli input. Le parti della riga dopo un # vengono
+# ignorate. Le righe non banali (ovvero contenenti qualcosa oltre a whitespace
+# prima del primo #) vengono passate al generatore e generano un input ciascuna.
+# Se una riga inizia con "#ST:" (senza le virgolette) viene usata per delimitare
+# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask. Se
+# sono presenti i subtask, è necessario che la somma dei punti di ogni subtask
+# sia 100.
+
+# subtask 1
+#ST: 0
+#COPY: att/input0.txt
+#COPY: att/input1.txt
+#COPY: att/input2.txt
+
+# subtask 2
+#ST: 25
+10 10 AB 777
+10 10 CGAT 777
+
+# subtask 3
+#ST: 25
+10 1000 AB 777
+10 1000 CGAT 777
+
+# subtask 4
+#ST: 25
+100 100 AB 777
+100 100 CGAT 777
+
+# subtask 5
+#ST: 25
+1000 1000 AB 777
+1000 1000 CGAT 777
+
