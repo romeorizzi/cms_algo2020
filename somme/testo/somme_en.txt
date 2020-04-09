@@ -1,0 +1,30 @@
+Sums within a sequence 
+
+Description of the problem
+Given a sequence S of N integers (like e.g. 11 -4 52 -7 -2 -20),
+we want to compute the sum of all the numbers in S making use of a robot of limited capacity. The only operation this robot can do is to consider two numbers A and B which occurr consecutively and replace them with one single number equal to their sum A+B. This operation shortens the sequence by one element but does not change the total sum of the integers within the sequence.
+However, in order to perform this operation, the energy power absorbed by the robot is given by the absolute value of the intermidiate sum A+B, that is, a non-negative value equal to the natural obtained by dropping the sign from the integer newly introduced within the sequence.
+To calculate the sum of the N numbers in S are therefore necessary N-1 intermediate sums. While providing enough energy to perform the N-1 intermediate sums in this calculation, the robot has
+problems with energy peaks. In other words, we want the maximum energy consumption for an intermediate sum (the peak power) to be minimized.
+In the above case an optimal solution is given by:
+11 -4 52 -7 -2 -20
+11 -4 52 -7 -22
+11 -4 52 -29
+11 -4 23
+7 23
+30
+Here, the obtained intermediate values ​​are -22, -29, 23, 7, 30 and the energy peak is 30, being the
+maximum among |-22|, |-29|, |23|, |7| and |30|.
+This is best possibile since the total sum value is 30 and it is by necessity the last intermidiate sum to be computed.
+Write a program that computes the minimum energy peak for a given sequence of integers. Study the examples given more below.
+
+
+Input file
+The program must read a file called input.txt.
+The file has two lines. The first line comprises a whole number N,
+the length of the input sequence. The second line contains the integer numbers comprising the sequence, in their order of occurrence within the sequence.
+
+Output file
+The program must write a file named output.txt.
+The file has just one line comprising one single natural number:
+the energetic peak of the robot according to a policy minimizing the value of this peack.

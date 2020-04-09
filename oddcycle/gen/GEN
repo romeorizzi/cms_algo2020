@@ -1,0 +1,37 @@
+# File usato per descrivere gli input. Le parti della riga dopo un # vengono
+# ignorate. Le righe non banali (ovvero contenenti qualcosa oltre a whitespace
+# prima del primo #) vengono passate al generatore e generano un input ciascuna.
+# Se una riga inizia con "#ST:" (senza le virgolette) viene usata per delimitare
+# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask. Se
+# sono presenti i subtask, è necessario che la somma dei punti di ogni subtask
+# sia 100.
+
+# N     S    tasktype
+
+# Subtask 1: Esempi
+#ST: 0
+#COPY: testo/oddcycle.input0.txt
+#COPY: testo/oddcycle.input1.txt
+
+# Subtask 2: clique
+#ST: 10
+10 7771 2
+20 7771 2
+30 7771 2
+
+# Subtask 3: star
+#ST: 20
+10 7771 3
+30 7772 3
+
+# Subtask 4: cycles
+#ST: 20
+20 77714 4
+30 77715 4
+
+# Subtask 5: generic, N <= 30
+#ST: 50
+10 77716 5
+20 77717 5
+30 77718 5
+

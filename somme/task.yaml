@@ -1,0 +1,8 @@
+name: somme
+title: Somme di sequenze
+time_limit: 1.0
+memory_limit: 256
+public_testcases: all
+token_mode: disabled
+feedback_level: full
+

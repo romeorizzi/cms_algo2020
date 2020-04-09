@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1/strict"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Somme di sequenze</title></head><body><h4>Selezioni nazionali 2007</h4><h1>Somme di sequenze
+	(<samp>somme</samp>)</h1><h2>
+  Difficoltà D = 3
+     (tempo limite 3 secondi).
+     </h2><h3>Descrizione del problema</h3><p>
+Data una sequenza S di N numeri interi, tipo 
+<samp>11 -4 52 -7 -2 -20</samp>, 
+vogliamo computare la somma di tutti i numeri in S avvalendoci di un
+robot con capacità limitate. Infatti, tale robot può
+soltanto effettuare la somma intermedia Y di due numeri A e B
+consecutivi nella sequenza, rimpiazzando A e B con Y e ottenendo
+così una sequenza più corta (con un intero in meno).
+</p><p>
+Per effettuare tale somma intermedia Y e produrre la sequenza
+più corta, il robot consuma esattamente |Y| unità di
+energia (dove |Y| indica il valore assoluto di un numero intero Y).
+</p><p>
+Per calcolare la somma degli N numeri in S sono quindi necessarie N-1
+somme intermedie. Pur disponendo di energia sufficiente per eseguire
+le N-1 somme intermedie in tale calcolo, il robot ha problemi con i
+picchi di energia. In altre parole, vogliamo che il massimo consumo
+energetico per una somma intermedia (il picco energetico) sia
+minimizzato. 
+</p><p>
+Nel caso di cui sopra una soluzione ottima è data da
+</p><p><samp>11   -4  52   -7   <U>-2   -20</U></samp></p><p><samp>11   -4  52   <U>-7  -22</U></samp></p><p><samp>11   -4  <U>52  -29</U></samp></p><p><samp><U>11   -4</U>  23</samp></p><p><samp><U>7   23</U></samp></p><p><samp>30</samp></p><p>
+In questo caso i valori intermedi ottenuti sono -22, -29, 23, 7, 30 e
+il picco energetico è 30, essendo il massimo tra |-22|, |-29|,
+|23|, |7| e |30|. Meglio di così non si può fare in
+quanto il valore della somma è 30.
+</p><p>
+Un altro esempio è dato dalla sequenza
+</p><p><samp><U> 7 -1</U>  -8  </samp></p><p><samp><U>6 -8</U></samp></p><p><samp>-2</samp></p><p>
+in cui le somme intermedie hanno generato 6 e -2 e quindi il picco
+energetico è pari a 6. Tale picco è minimo poiché
+l'altra possibilità consiste nel sommare prima <samp>-1</samp>
+con <samp>-8</samp> e poi <samp>7</samp> con <samp>-9</samp>, dando luogo
+a un picco pari a 9.
+</p><p>
+Scrivete un programma che calcoli il minimo picco energetico per una
+sequenza di interi.
+</p><h3>Dati di input</h3><p>
+Il file <samp>input.txt</samp> è composto da due righe.
+</p><p>
+La prima riga contiene un intero positivo che rappresenta il numero N
+di interi nella sequenza d'ingresso.
+</p><p>
+La successiva riga contiene N interi, separati da uno spazio, che
+rappresentano la sequenza su cui computare la somma.
+</p><h3>Dati di output</h3><p>Il file <samp>output.txt</samp> è composto da una sola riga
+che contiene l'intero non negativo E, il quale rappresenta il picco
+energetico minimo del robot per calcolare la somma degli interi nella
+sequenza d'ingresso.
+</p><h3>Assunzioni</h3><ul><li> 2 ≤ N ≤ 500 </li></ul><h3>Esempi di input/output</h3><p></p><table border="1"><tr><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>input.txt</samp></td><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>output.txt</samp></td></tr><tr><td style="padding: 1em" valign="top"><pre>
+6
+11 -4 52 -7 -2 -20
+</pre></td><td style="padding: 1em" valign="top"><pre>
+30
+</pre></td></tr></table><br></br><table border="1"><tr><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>input.txt</samp></td><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>output.txt</samp></td></tr><tr><td style="padding: 1em" valign="top"><pre>
+5
+4 7 -9 8 -10
+</pre></td><td style="padding: 1em" valign="top"><pre>
+2
+</pre></td></tr></table><br></br><table border="1"><tr><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>input.txt</samp></td><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>output.txt</samp></td></tr><tr><td style="padding: 1em" valign="top"><pre>
+3
+7 -1 -8
+</pre></td><td style="padding: 1em" valign="top"><pre>
+6
+</pre></td></tr></table><br></br><table border="1"><tr><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>input.txt</samp></td><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>output.txt</samp></td></tr><tr><td style="padding: 1em" valign="top"><pre>
+5
+0 0 0 0 0
+</pre></td><td style="padding: 1em" valign="top"><pre>
+0
+</pre></td></tr></table><br></br><h3>Note</h3><ul><li>
+Se usate la piattaforma di sviluppo software basata sul compilatore
+Turbo Pascal e sul sistema operativo Windows, fare attenzione: i
+vostri programmi potrebbero essere valutati in una piattaforma diversa
+dalla vostra, e la garanzia di uniformità di comportamenti si
+ha soltanto se utilizzate <em>sempre</em> il tipo <samp>LongInt</samp>
+al posto del tipo <samp>Integer</samp> (quest'ultimo permette di
+rappresentare gli interi nell'intervallo [-32768...32767] mentre
+<samp>LongInt</samp> ne permette la rappresentazione in
+[-2147483648...2147483647]).
+</li></ul></body></html>

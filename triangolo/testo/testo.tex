@@ -1,0 +1,104 @@
+% Template per generare 
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempio}[2]{
+\noindent\begin{minipage}{\textwidth}
+\begin{tabular}{|p{11cm}|p{5cm}|}
+	\hline
+	\textbf{File \file{input.txt}} & \textbf{File \file{output.txt}}\\
+	\hline
+	\tt \small #1 &
+	\tt \small #2 \\
+	\hline
+\end{tabular}
+\end{minipage}
+}
+
+% Dati del task
+\newcommand{\gara}{IOI 1994}
+\newcommand{\nome}{Il triangolo}
+\newcommand{\nomebreve}{triangolo}
+
+\begin{document}
+% Intestazione
+\noindent{\Large \gara}
+\vspace{0.5cm}
+
+\noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
+
+% Descrizione del task
+\section*{Descrizione del problema}
+\begin{tabular}{ccccccccc}
+&&&&7&&&&\\
+&&&3&&8&&&\\
+&&8&&1&&0&&\\
+&2&&7&&4&&4&\\
+4&&5&&2&&6&&5\\
+\end{tabular}\\
+
+Questo è un triangolo! 
+
+Scrivete un programma che calcoli la più grande somma di numeri ottenibile seguendo un percorso che parta dalla cima del triangolo e termini da qualche parte sulla sua base. Ad ogni passo si può procedere diagonalmente in basso o a destra o a sinistra.
+
+% Input
+\section*{File di input}
+Il programma deve leggere da un file di nome \file{input.txt}. La prima riga del file contiene un unico intero N, il numero di righe del triangolo. Le successive N righe contengono un numero crescente di interi $i$, la $n$-esima riga contiene $n$ interi separati da uno spazio.
+
+% Output
+\section*{File di output}
+Il programma deve scrivere in un file di nome \file{output.txt} la somma massima ottenibile dal triangolo.
+
+% Assunzioni
+\section*{Assunzioni}
+
+\begin{itemize}
+\item $1 < N \le 100$
+\item $0 \le i < 100$
+\end{itemize}
+
+% Subtasks
+\section*{Subtask}
+\begin{itemize}
+\item \textbf{Subtask 1 [\phantom{1}5 punti]:} caso di esempio.
+\item \textbf{Subtask 2 [10 punti]:} $N \le 5$.
+\item \textbf{Subtask 3 [15 punti]:} $N \le 10$.
+\item \textbf{Subtask 4 [30 punti]:} $N \le 50$.
+\item \textbf{Subtask 5 [15 punti]:} nessuna limitazione specifica.
+\end{itemize}
+
+% Esempi
+\section*{Esempio di input/output}
+\esempio{
+5
+
+7
+
+3 8
+
+8 1 0
+
+2 7 4 4
+
+4 5 2 6 5
+}{30}
+
+\end{document}

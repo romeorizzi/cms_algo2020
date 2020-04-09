@@ -1,0 +1,63 @@
+\renewcommand{\nomebreve}{oddcycle}
+\renewcommand{\titolo}{Odd Cycle Finding}
+
+\introduzione{}
+
+Ape Maya \`e rimasta intrappolata in un nodo della tela di Tecla.
+Tecla si affretta ad afferrarla ma, quando giunge su quel nodo,
+si accorge di non avere appetito, e dice ``BLEACH''. Va detto che l'appetito dei ragni e' molto particolare: ogni volta che percorrono un filamento della loro rete,
+essi invertono lo stato del loro stomaco tra ``SLURP'' e ``BLEACH''.
+Tecla deve quindi farsi un giretto nella rete sperando di tornare da Maya
+in stato ``SLURP''. 
+Aiuta Tecla ad individuare una passeggiata funzionale al buon appetito.
+
+
+
+\sezionetesto{Dati di input}
+  
+Il file \verb'input.txt' contiene nella prima riga gli interi
+$N$ ed $M$, il numero di nodi e di collegamenti della rete.
+Seguono $M$ righe, una per ogni collegamento.
+Ciascuna di queste righe contiene due interi separati da spazio: $u$, $v$, dove $u$ e $v$ sono i due nodi ai capi del collegamento (due interi diversi tra $1$ ed $N$).
+
+\sezionetesto{Dati di output}
+  
+Il file \verb'output.txt' deve contenere due linee.
+La prima linea contiene un intero $L$,
+il numero di spostamenti che Tecla compir\`a nella sua passeggiata.
+Inizialmente Tecla \`e posta sul nodo $1$.
+La seconda riga contiene $L+1$ numeri separati da spazio.
+Il primo e l'ultimo di questi numeri sono necessariamente $1$ (nodo di partenza e di arrivo), gli altri sono i nodi come visitati da Tecla nell'ordine,
+e possono aversi ripetizioni.
+
+
+  \section*{Assunzioni}
+  \begin{itemize}  
+    \item $ 1 \leq M, N \leq 30$
+    \item si garantisce l'esistenza di una soluzione:
+          Ape Maya \`e spacciata!
+  \end{itemize}
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+
+\begin{example}
+  \exmpfile{oddcycle.input0.txt}{oddcycle.output0.txt}%
+  \exmpfile{oddcycle.input1.txt}{oddcycle.output1.txt}%
+\end{example}
+
+
+
+  \section*{Subtask}
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} i due esempi del testo.
+    \item \textbf{Subtask 2 [10 punti]:} esiste il collegamento tra ogni coppia di nodi.
+    \item \textbf{Subtask 3 [20 punti]:} il nodo 1 \`e adiacente ad ogni altro nodo. Ed almeno un ulteriore collegamento \`e presente.
+    \item \textbf{Subtask 4 [20 punti]:} ogni nodo ha grado 2.
+    \item \textbf{Subtask 5 [50 punti]:} nessuna restrizione, $M,N \leq 30$.
+  \end{itemize}
+  
+
+
+\end{document}

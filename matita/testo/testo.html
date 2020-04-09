@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/TR/xhtml1/strict"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Disegna senza sollevare la matita</title></head><body><h4>Olimpiadi di Informatica: selezioni nazionali 2012</h4><h1>Disegna senza sollevare la matita
+	(<samp>matita</samp>)</h1><h2> Tempo limite 4 sec.</h2><h3>Descrizione del problema</h3><p> 
+Consideriamo il classico problema di disegnare una casetta (con una X
+nel suo riquadro centrale) senza sollevare mai la punta della
+matita. 
+</p><img src="casetta.png" width="8%"></img><p>
+In generale, sono dati <var>N</var> vertici, numerati da 1 a
+<var>N</var>, e <var>M</var> lati che li collegano. Dati due vertici
+<var>A</var> e <var>B</var>, dovete indicare la sequenza di lati
+(vanno presi tutti!) da attraversare in modo da collegare <var>A</var>
+a <var>B</var> passando attraverso tutti i lati nell'ordine indicato
+dalla sequenza (senza alzare quindi la matita). Ciascun lato deve
+essere percorso una sola volta, in una delle due direzioni a scelta.
+</p><h3>Dati di input</h3><p>
+Il file <samp>input.txt</samp> è composto da <var>M+1</var>
+righe. La prima riga contiene quattro interi <var>N</var>,
+<var>M</var>, <var>A</var> e <var>B</var> separati da uno spazio: il
+numero di vertici, il numero di lati che li collegano, il vertice di
+partenza e quello di arrivo. Le successive <var>M</var> righe
+contengono i lati, un lato per riga che viene rappresentato da una
+coppia di interi separati da uno spazio (dove i due interi sono i numeri dei vertici collegati da tale lato).
+</p><h3>Dati di output</h3><p>
+Il file <samp>output.txt</samp> è composto da <var>M</var>
+righe, 
+che riportano la sequenza ordinata dei lati da disegnare per andare
+da <var>A</var> a <var>B</var>, passando come già detto attraverso tutti i lati una e una sola volta.
+Se un lato collega due vertici <var>X</var> e <var>Y</var>, deve
+essere stampato (indipendentemente da come e' letto nell'input) come
+la coppia di interi <var>X</var> e <var>Y</var> separati da uno spazio
+se il lato viene viene percorso da <var>X</var> a <var>Y</var>, e come
+la coppia di interi <var>Y</var> e <var>X</var> separati da uno spazio
+se il lato viene viene percorso da <var>Y</var> a <var>X</var> (vedi esempio).
+</p><h3>Assunzioni</h3><ul><li><var>1 ≤ N ≤ 100000</var></li><li><var>1 ≤ M ≤ 1000000</var></li><li><var>1 ≤ A, B ≤ N</var> e <var>A ≠ B</var>.</li></ul><h3>Esempi di input/output</h3><p></p><table border="1"><tr><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>input.txt</samp></td><td style="padding-left: 1em; padding-right: 1em; text-align: center">File <samp>output.txt</samp></td></tr><tr><td style="padding: 1em" valign="top"><pre>
+5 8 1 5
+1 4
+2 3
+5 4
+2 1
+2 4
+3 4
+1 5
+5 2
+</pre></td><td style="padding: 1em" valign="top"><pre>
+1 2
+2 3
+3 4
+4 5
+5 2
+2 4
+4 1
+1 5
+</pre></td></tr></table><br></br><h3>Nota/e</h3><ul><li>
+Viene garantito che sia sempre possibile disegnare senza alzare la matita. Nel caso vi siano piu' soluzioni valide, e' sufficiente restituirne una.
+</li><li>
+Non esistono lati multipli che collegano la stessa coppia di vertici. Tutti i vertici e tutti i lati devono essere attraversati dalla matita.
+</li><li>
+Per chi non lo avesse riconosciuto, questo e' il noto problema del matematico Eulero.
+</li></ul></body></html>

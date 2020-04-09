@@ -1,0 +1,87 @@
+\makeatletter
+\renewcommand{\this@inputfilename}{\texttt{stdin}}
+\renewcommand{\this@outputfilename}{\texttt{stdout}}
+\makeatother
+
+Una stringa è una sequenza finita di caratteri presi da un qualche alfabeto di riferimento. 
+Ad esempio, $s=GATTA$ è una stringa sull'alfabeto $\{A,C,G,T\}$, come anche sull'alfabeto $\{A,G,T\}$.
+Indichiamo con $len(s)$ il numero di caratteri della stringa~$s$, in questo caso $5$.
+Si noti che la stringa $s$ appare come sottosequenza dentro la stringa $t=TGGTTCAAGTCGTCACA$, 
+cosa che quì preferiamo mettere in evidenza tramite opportuna sottolineatura:\\
+
+\renewcommand{\arraystretch}{0.2}
+\begin{tabular}{l||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+  indice di posizione       &  & & & & & & & & & & 1&1&1&1&1&1&1 \\
+                            & 0&1&2&3&4&5&6&7&8&9& 0&1&2&3&4&5&6 \\
+  \hline
+                            &  & & & & & & & & & &  & & & & & &  \\
+                            &  & & & & & & & & & &  & & & & & &  \\  
+  stringa testo $t$         & T&$\underline{G}$&G&T&T&C&$\underline{A}$&A&G&$\underline{T}$&C&G&$\underline{T}$&C&$\underline{A}$&C&A \\
+                            &  & & & & & & & & & &  & & & & & &  \\
+                            &  & & & & & & & & & &  & & & & & &  \\
+                            &  & & & & & & & & & &  & & & & & &  \\  
+  prima occorrenza di $s$ in $t$  &-&G&-&-&-&-&A&-&-&T&-&-&T&-&A&-&- \\  
+\end{tabular}  
+\renewcommand{\arraystretch}{1.2}  
+\bigskip
+
+In realtà gli ultimi 2 caratteri del testo $t$ non sono nemmeno serviti, la stringa 
+$s$ appare già come sottosequenza del prefisso $t_{15}=TGGTTCAAGTCGTCA$ di $t$ di 
+lunghezza $15$ (la sequenza di caratteri dalla posizione $0$ alla posizione $14$).
+Data una stringa $s$ ed una stringa testo $t$, ti chiediamo di trovare il più breve 
+prefisso di $t$ che contenga $s$ come sottosequenza.
+Se $s$ non è una sottosequenza di $t$ si ritorni allora il numero $-1$.
+
+\bigskip
+\noindent
+Implementa il tuo metodo per fare questo entro la seguente funzione:
+
+\begin{verbatim}
+def find_subsequence(s, t):  # questa è la funzione che devi perfezionare
+    risp = -1   # risposta corretta quando la stringa s non è sottosequenza della stringa t
+    # inserisci quì la tua logica/metodo per risolvere il problema
+    return risp
+\end{verbatim}
+
+Trovi un template della soluzione nel file \textbf{find-subsequence\_template\_sol.py}, 
+dovrai solo risistemare l'implementazione della funzione richiesta che al momento soddisfa 
+alla consegna solo per quelle istanze in cui la prima sequenza passatale non è sottosequenza della seconda.
+
+\InputFile
+Il vostro programma riceve in input una stringa~$s$ sull'alfabeto $\{A,C,G,T\}$ e, 
+su riga successiva, una stringa~$t$ sempre sullo stesso alfabeto. 
+
+\OutputFile
+Restituisci il numero $-1$ se la data stringa $s$ non è sottosequenza della stringa 
+$t$ assegnata, altrimenti restituisci il più piccolo numero naturale $i$ tale che 
+che $s$ è sottosequenza del prefisso $t_i$ dei soli primi $i$ caratteri di $t$.
+
+\textbf{NOTA}: viene fornita una descrizione del formato di input/output soltanto 
+per facilitarvi il test sul vostro computer. Per sottomettere il problema è obbligatorio 
+utilizzare il template che potete scaricare fra gli allegati del problema, avendo 
+cura di modificare solamente l'implementazione delle funzioni richieste. Questo 
+è necessario per garantire la compatibilità del vostro programma con il sistema 
+di valutazione, che potrebbe utilizzare una versione di python diversa (quale python2).
+
+\Examples
+\begin{example}
+\exmpfile{find-subsequence.input0.txt}{find-subsequence.output0.txt}%
+\exmpfile{find-subsequence.input1.txt}{find-subsequence.output1.txt}%
+\exmpfile{find-subsequence.input2.txt}{find-subsequence.output2.txt}%
+\end{example}
+
+\Constraints
+\begin{itemize}[nolistsep, noitemsep]
+  \item $1\leq len(p) \leq len(t)$
+\end{itemize}
+
+\Scoring
+  \begin{itemize}
+    \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
+    \item \textbf{Subtask 2 [20 punti]:} $len(p) = len(t)$.
+    \item \textbf{Subtask 3 [20 punti]:} $len(p) = 1$.
+    \item \textbf{Subtask 4 [20 punti]:} $len(p) \le 2$.
+    \item \textbf{Subtask 5 [20 punti]:} $len(t) \le 10$.
+    \item \textbf{Subtask 6 [20 punti]:} $len(t) \le 1000$.
+    \item \textbf{Subtask 7 [0 punti]:} $len(t) \le 1\,000\,000$.
+  \end{itemize}

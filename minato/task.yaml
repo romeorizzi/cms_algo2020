@@ -1,0 +1,10 @@
+nome_breve: "minato"
+nome: "Campo minato"
+timeout: 1
+memlimit: 64
+infile: "input.txt"
+outfile: "output.txt"
+public_testcases: all
+token_mode: disabled
+feedback_level: full
+

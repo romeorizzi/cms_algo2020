@@ -1,0 +1,8 @@
+name: pirellone2015
+title: Luci al Pirellone
+time_limit: 1.0
+memory_limit: 4
+public_testcases: all
+token_mode: disabled
+feedback_level: full
+

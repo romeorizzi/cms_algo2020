@@ -1,4 +1,9 @@
-# Subtask 1 [10 punti]: $d = 2 and n <= 100$.
+# Subtask 1 [0 punti]: gli esempi del testo..
+#ST: 0
+13  50
+61  2
+15  50
+# Subtask 2 [10 punti]: $d = 2 and n <= 100$.
 #ST: 10
 2 1
 2 5
@@ -6,7 +11,7 @@
 2 77
 2 100
 
-# Subtask 2 [10 punti]: $d = 3 and n <= 100$.
+# Subtask 3 [10 punti]: $d = 3 and n <= 100$.
 #ST: 10
 3 3
 3 9
@@ -16,7 +21,7 @@
 3 99
 3 100
 
-# Subtask 3 [10 punti]: $d = 7 and n <= 100$.
+# Subtask 4 [10 punti]: $d = 7 and n <= 100$.
 #ST: 10
 7 100
 7 97
@@ -30,7 +35,7 @@
 7 5
 7 60
 
-# Subtask 4 [10 punti]: $d = 13 and n <= 100$.
+# Subtask 5 [10 punti]: $d = 13 and n <= 100$.
 #ST: 10
 13 100
 13 99
@@ -41,7 +46,7 @@
 13 41
 13 23
 
-# Subtask 5 [10 punti]: $d = 17 and n <= 100$.
+# Subtask 6 [10 punti]: $d = 17 and n <= 100$.
 #ST: 10
 17 45
 17 47
@@ -49,7 +54,7 @@
 17 99
 17 100
 
-# Subtask 6 [10 punti]: $d <= 10 and n <= 10$.
+# Subtask 7 [10 punti]: $d <= 10 and n <= 10$.
 #ST: 10
 3 6
 7 49
@@ -57,7 +62,7 @@
 2 8
 4 9
 
-# Subtask 7 [10 punti]: $d <= 100 and n <= 100$.
+# Subtask 8 [10 punti]: $d <= 100 and n <= 100$.
 #ST: 10
 63 45
 74 21
@@ -65,7 +70,7 @@
 7 100
 78 54
 
-# Subtask 8 [10 punti]: $d <= 200 and n <= 1000$.
+# Subtask 9 [10 punti]: $d <= 200 and n <= 1000$.
 #ST: 10
 77 100
 99 123
@@ -83,7 +88,7 @@
 13 60
 200 1000
 
-# Subtask 9 [10 punti]: $d <= 400 and n <= 3000$.
+# Subtask 10 [10 punti]: $d <= 400 and n <= 3000$.
 #ST: 10
 7 2800
 52 2999
@@ -95,10 +100,11 @@
 7 1857
 400 3000
 
-# Subtask 10 [10 punti]: $d <= 500 and n <= 5000$.
+# Subtask 11 [10 punti]: $d <= 500 and n <= 5000$.
 #ST: 10
 21 5000
 32 5000
 77 5000
 100 5000
 500 5000
+

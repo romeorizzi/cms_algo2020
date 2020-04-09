@@ -1,0 +1,12 @@
+nome_breve: "matita"
+nome: "Scrivere senza staccare la matita dal foglio"
+timeout: 5
+memlimit: 256
+diff: 1
+correttore: "cor/correttore.cpp"
+risultati: ""
+auxiliary: {}
+public_testcases: all
+token_mode: disabled
+feedback_level: full
+

@@ -1,0 +1,10 @@
+name: find_subsequence
+title: Ricerca se una data stringa appare come sottosequenza di una stringa testo
+time_limit: 1.0
+memory_limit: 256
+infile: ""
+outfile: ""
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

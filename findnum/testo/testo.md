@@ -28,16 +28,17 @@ Il numero richiesto o `-1` se non esiste
 
 |input from stdin | output to stdout |
 |------|---------------------------------|
-|15  50| 1000000000000000000000000000001 |
+|15  50| -1 |
 
 ## Subtask
-- **Subtask 1 [10 punti]:** `d = 2`, `n <= 100`.
-- **Subtask 2 [10 punti]:** `d = 3`, `n <= 100`.
-- **Subtask 3 [10 punti]:** `d = 7`, `n <= 100`.
-- **Subtask 4 [10 punti]:** `d = 13`, `n <= 100`.
-- **Subtask 5 [10 punti]:** `d = 17`, `n <= 100`.
-- **Subtask 6 [10 punti]:** `d <= 10`, `n <= 10`.
-- **Subtask 7 [10 punti]:** `d <= 100`, `n <= 100`.
-- **Subtask 8 [10 punti]:** `d <= 200`, `n <= 1000`.
-- **Subtask 9 [10 punti]:** `d <= 400`, `n <= 3000`.
-- **Subtask 10 [10 punti]:** `d <= 500`, `n <= 5000`.
+- **Subtask 1 [0 punti]:** i tre esempi quì sopra.
+- **Subtask 2 [10 punti]:** `d = 2`, `n <= 100`.
+- **Subtask 3 [10 punti]:** `d = 3`, `n <= 100`.
+- **Subtask 4 [10 punti]:** `d = 7`, `n <= 100`.
+- **Subtask 5 [10 punti]:** `d = 13`, `n <= 100`.
+- **Subtask 6 [10 punti]:** `d = 17`, `n <= 100`.
+- **Subtask 7 [10 punti]:** `d <= 10`, `n <= 10`.
+- **Subtask 8 [10 punti]:** `d <= 100`, `n <= 100`.
+- **Subtask 9 [10 punti]:** `d <= 200`, `n <= 1000`.
+- **Subtask 10 [10 punti]:** `d <= 400`, `n <= 3000`.
+- **Subtask 11 [10 punti]:** `d <= 500`, `n <= 5000`.

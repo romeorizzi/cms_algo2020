@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE EXAMPLE [
+	  <!ENTITY agrave "à">
+	  <!ENTITY eacute "é">
+	  <!ENTITY egrave "è">
+	  <!ENTITY igrave "ì">
+	  <!ENTITY ograve "ò">
+	  <!ENTITY ugrave "ù">
+          <!ENTITY le "≤">
+          <!ENTITY ge "≥">
+          <!ENTITY le "<">
+          <!ENTITY ge ">">
+          <!ENTITY ne "≠">
+          <!ENTITY hellip "…">
+          ]>
+<!-- Scrivere le entity come &hellip; non è necessario, se scrivete in
+     UTF8 qualsiasi cosa va bene. Tranne ogni tanto &lt; e &gt;
+
+     Racchiudete ogni espressione matematica nel tag var, non solo le
+     variabili. In particolare, anche le relazioni binarie, le virgole
+     e i puntini tra estremo inferiore e superiore, etc.
+
+     Non usate apici e pedici. Se proprio dovete, tenete conto che c'è
+     un bug per cui il contenuto dopo la fine del tag sub (o sup) e
+     prima del prossimo (o della chiusura del var) scompare in
+     LaTeX. La soluzione quindi è quella di chiudere subito il tag var
+     e riaprirlo subito dopo.
+  -->
+
+
+<layout>
+<gara>Olimpiadi di Informatica: selezioni nazionali 2012</gara>
+<titolo>Disegna senza sollevare la matita</titolo>
+<short>matita</short>
+<!--<diff>2</diff>-->
+<tempo>4</tempo>
+<autore>Luigi Laura</autore>
+
+<problema>
+<p> 
+Consideriamo il classico problema di disegnare una casetta (con una X
+nel suo riquadro centrale) senza sollevare mai la punta della
+matita. 
+</p>
+
+<img src="casetta.png" width="8%"></img>
+
+<p>
+In generale, sono dati <var>N</var> vertici, numerati da 1 a
+<var>N</var>, e <var>M</var> lati che li collegano. Dati due vertici
+<var>A</var> e <var>B</var>, dovete indicare la sequenza di lati
+(vanno presi tutti!) da attraversare in modo da collegare <var>A</var>
+a <var>B</var> passando attraverso tutti i lati nell'ordine indicato
+dalla sequenza (senza alzare quindi la matita). Ciascun lato deve
+essere percorso una sola volta, in una delle due direzioni a scelta.
+</p>
+</problema>
+
+<!-- FORMATO DI INPUT/OUTPUT -->
+<input>
+<p>
+Il file <samp>input.txt</samp> &egrave; composto da <var>M+1</var>
+righe. La prima riga contiene quattro interi <var>N</var>,
+<var>M</var>, <var>A</var> e <var>B</var> separati da uno spazio: il
+numero di vertici, il numero di lati che li collegano, il vertice di
+partenza e quello di arrivo. Le successive <var>M</var> righe
+contengono i lati, un lato per riga che viene rappresentato da una
+coppia di interi separati da uno spazio (dove i due interi sono i numeri dei vertici collegati da tale lato).
+</p>
+</input>
+
+<output>
+<p>
+Il file <samp>output.txt</samp> &egrave; composto da <var>M</var>
+righe, 
+che riportano la sequenza ordinata dei lati da disegnare per andare
+da <var>A</var> a <var>B</var>, passando come già detto attraverso tutti i lati una e una sola volta.
+Se un lato collega due vertici <var>X</var> e <var>Y</var>, deve
+essere stampato (indipendentemente da come e' letto nell'input) come
+la coppia di interi <var>X</var> e <var>Y</var> separati da uno spazio
+se il lato viene viene percorso da <var>X</var> a <var>Y</var>, e come
+la coppia di interi <var>Y</var> e <var>X</var> separati da uno spazio
+se il lato viene viene percorso da <var>Y</var> a <var>X</var> (vedi esempio).
+</p>
+</output>
+
+<assunzioni>
+<li><var>1 &le; N &le; 100000</var></li>
+<li><var>1 &le; M &le; 1000000</var></li>
+<li><var>1 &le; A, B &le; N</var> e <var>A ≠ B</var>.</li>
+</assunzioni>
+
+<esempio>
+<li>
+<input>
+5 8 1 5
+1 4
+2 3
+5 4
+2 1
+2 4
+3 4
+1 5
+5 2
+</input>
+<output>
+1 2
+2 3
+3 4
+4 5
+5 2
+2 4
+4 1
+1 5
+</output>
+</li>
+</esempio>
+
+<nota>
+<li>
+Viene garantito che sia sempre possibile disegnare senza alzare la matita. Nel caso vi siano piu' soluzioni valide, e' sufficiente restituirne una.
+</li>
+<li>
+Non esistono lati multipli che collegano la stessa coppia di vertici. Tutti i vertici e tutti i lati devono essere attraversati dalla matita.
+</li>
+<li>
+Per chi non lo avesse riconosciuto, questo e' il noto problema del matematico Eulero.
+</li>
+</nota>
+</layout>
+
+
