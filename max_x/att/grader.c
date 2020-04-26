@@ -15,9 +15,13 @@ static long int nPesate = 0;
 static long int maxLies = 0;
 static long int maxPesate;
 static int subtask;
-static int seed;
 static long int perm[MAX_N_BALLS];
 
+#define CRAND_MAX 0x7fffffff
+static int rseed;
+int rand_cp() {
+	return rseed = (rseed * 1103515245 + 12345) & CRAND_MAX;
+}
 
 static long int min(long int a, long int b) { return a < b ? a : b; }
 static long int max(long int a, long int b) { return a > b ? a : b; }
@@ -58,17 +62,16 @@ int main() {
   file = stdin;
 #endif
 
-  fscanf(file, "%ld %ld %d %d", &goodBall, &nBalls, &subtask, &seed);
+  fscanf(file, "%ld %ld %d %d", &goodBall, &nBalls, &subtask, &rseed);
   fclose(file);
 
-  srand(seed);
   generaPerm_random_uniform(perm, nBalls -1); //genera permutazione di tutte eccetto la piu' pesante
   perm[nBalls -1] = perm[goodBall]; //sposto in fondo quella che occupa la posizione predestinata
   perm[goodBall] = nBalls -1; //colloco la piu' pesante al suo posto
 
 #ifdef EVAL
   file = fopen("output.txt", "w");
-#else 
+#else
   file = stdout;
 #endif
 
@@ -78,10 +81,10 @@ int main() {
   if(subtask == 2) { maxPesate = nBalls; }
   if(subtask == 3) { maxPesate = nBalls-1; }
   if(subtask == 4) { maxLies = 1; }
-  if(subtask == 5) { maxLies = 1; maxPesate = 3*nBalls -3; } 
-  if(subtask == 6) { maxLies = 1; maxPesate = 2*nBalls; } 
-  if(subtask == 7) { maxLies = 1; maxPesate = 2*nBalls -1; } 
-  if(subtask == 8) { maxLies = 2+(rand() % 7) ; maxPesate = (maxLies+1)*(nBalls -1) +maxLies; } 
+  if(subtask == 5) { maxLies = 1; maxPesate = 3*nBalls -3; }
+  if(subtask == 6) { maxLies = 1; maxPesate = 2*nBalls; }
+  if(subtask == 7) { maxLies = 1; maxPesate = 2*nBalls -1; }
+  if(subtask == 8) { maxLies = 2+(rand() % 7) ; maxPesate = (maxLies+1)*(nBalls -1) +maxLies; }
 
   individua(nBalls, maxLies);
   fclose(file);
