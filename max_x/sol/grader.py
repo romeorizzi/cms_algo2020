@@ -55,7 +55,7 @@ def ottieni_valori():
     global maxLies, maxPesate, subtask, rseed
 
     infile = open("input.txt", "r")
-    # file = stdin;
+    # infile = sys.stdin;
 
     (goodBall, nBalls, subtask, seed) = [int(x.strip()) for x in infile.read().split()]
     infile.close()
@@ -68,7 +68,7 @@ def ottieni_valori():
     perm[goodBall] = nBalls - 1  # colloco la piu' pesante al suo posto
 
     outfile = open("output.txt", "w")
-    # file = stdout;
+    # outfile = sys.stdout;
 
     maxPesate = 10 * nBalls
     if subtask == 0:
