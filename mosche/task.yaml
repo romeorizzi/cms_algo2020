@@ -1,0 +1,10 @@
+name: mosche
+title: Mosche (da coci 2015-16, round 7, task 2)
+memory_limit: 256
+time_limit: 1.0
+infile: ""
+outfile: ""
+public_testcases: all
+token_mode: disabled
+feedback_level: full
+

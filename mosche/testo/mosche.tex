@@ -1,0 +1,144 @@
+\renewcommand{\nomebreve}{mosche}
+\renewcommand{\titolo}{Mosche (da coci 2015-16, round 7, task 2)}
+
+\introduzione{}
+
+Gli $R\times S$ pixel di un monitor sono organizzati su $R$ righe ed $S$ colonne.
+Abbiamo lasciata aperta la finestra, e sono entrate delle mosche che sono andate a posizionarsi ipnotizzate su alcuni di questi pixel.
+Una mosca per pixel, ma alcuni pixel sono rimasti scoperti.
+Abbiamo una racchetta di forma quadrata, tipo $K\times K$.
+Vogliamo uccidere il maggior numero di mosche con un solo colpo di racchetta,
+dove piazzare il colpo?
+Nota che la racchetta $K\times K$ deve ricadere interamente entro il monitor $R\times S$,
+poich\`e il bordo del monitor sporge rialzato.
+Inoltre, le mosche posizionate in corrispondenza del bordo della racchetta
+fanno in tempo a sfuggire al colpo. 
+
+
+\sezionetesto{Dati di input}
+La prima riga in input contiene, nell'ordine,
+i tre numeri interi $R$, $S$ e $K$.
+Le successive $R$ righe offrono una descrizione
+della disposizione delle mosche sul monitor.
+Denotiamo col carattere '\,.\,' un pixel libero, mentre la presenza di una mosca
+\`e denunciata dal carattere '*' nella sua posizione sul monitor.
+
+\sezionetesto{Dati di output}
+La prima riga in output deve contenere un intero
+che rappresenta il massimo numero di mosche abbattibili in un sol colpo.
+Se questa riga \`e corretta l'istanza viene considerata risolta almeno per met\`a.
+Per completare la soluzione,
+si rappresenti nelle successive $R$ righe il collocamento della racchetta
+sul monitor, come mostrato negli esempi. 
+
+
+% Esempi
+\sezionetesto{Esempio di input/output}
+\esempio{
+3 5 3
+
+.....
+
+.*.*.
+
+.....
+}{
+1
+
++-+..
+
+|*|*.
+
++-+..
+}
+
+\esempio{
+7 6 4
+
+......
+
+.*.*.*
+
+......
+
+.*.*..
+
+..*...
+
+..*...
+
+*....*
+}{
+2
+
+......
+
+.*.*.*
+
++{-}-+..
+
+|*.|..
+
+|.*|..
+
++{-}-+..
+
+*....*
+}
+
+\esempio{
+9 9 6
+
+***......
+
+......*.*
+
+.*....*..
+
+..*...*..
+
+..*.*....
+
+..*....*.
+
+.....*...
+
+.*...***.
+
+.........
+}{
+6
+
+***......
+
+......*.*
+
+.*....*..
+
+..*+{-}{-}{-}{-}+
+
+..*|*...|
+
+..*|...*|
+
+...|.*..|
+
+.*.|.***|
+
+...+{-}{-}{-}{-}+
+}
+
+% Assunzioni
+\sezionetesto{Assunzioni e note}
+\begin{itemize}[nolistsep, noitemsep]
+  \item $3 \le R,S,K \le 2\,000$.
+\end{itemize}
+
+  \section*{Subtasks}
+  \begin{itemize}
+    \item \textbf{Subtask 0 [1 punto]:} i tre esempi del testo.
+    \item \textbf{Subtask 1 [29 punti]:} gli altri 20 esempi alle COCI.
+    \item \textbf{Subtask 2 [30 punti]:} $K \le 100$, $R,S  \le 2\,000$.
+    \item \textbf{Subtask 3 [40 punti]:} $3 \le K \le R,S  \le 2\,000$.
+  \end{itemize}
+  

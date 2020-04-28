@@ -1,0 +1,60 @@
+# File usato per descrivere gli input. Le parti della riga dopo un # vengono
+# ignorate. Le righe non banali (ovvero contenenti qualcosa oltre a whitespace
+# prima del primo #) vengono passate al generatore e generano un input ciascuna.
+# Se una riga inizia con "#ST:" (senza le virgolette) viene usata per delimitare
+# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask. Se
+# sono presenti i subtask, è necessario che la somma dei punti di ogni subtask
+# sia 100.
+
+# Parametri:
+#  - R (numero righe della finestra)
+#  - S (numero colonne della finestra)
+#  - K (lato della racchetta)
+#  - SEED (seed)
+# Oppure:
+#  - NOMEFILE contenente l'istanza
+
+# R  S  K  SEED 
+#ST: 1
+#0    0   0 -0
+io/prozor.dummy.in.1
+0    0   0 -1
+0    0   0 -2
+#come a dire:
+# io/prozor.dummy.in.1
+# io/prozor.dummy.in.2
+# io/prozor.dummy.in.3
+
+#ST: 29
+io/prozor.in.1
+io/prozor.in.2
+io/prozor.in.3
+io/prozor.in.4
+io/prozor.in.5
+io/prozor.in.6
+io/prozor.in.7
+io/prozor.in.8
+io/prozor.in.9
+io/prozor.in.10
+io/prozor.in.11
+io/prozor.in.12
+io/prozor.in.13
+io/prozor.in.14
+io/prozor.in.15
+io/prozor.in.16
+io/prozor.in.17
+io/prozor.in.18
+io/prozor.in.19
+io/prozor.in.20
+
+#ST: 30
+900    900    98   6663
+998    998    90   7773
+1000  1000    80   2342
+
+#ST: 40
+600 600 50 214234
+1000   1000   500   1777
+2000   2000  1000   2352
+
+
