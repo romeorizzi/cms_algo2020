@@ -3,9 +3,10 @@
 
 \introduzione{}
 
-Scusate i due titoli (breve e lungo)
-entrambi in inglese, ma non sapevo come rendere il concetto di \emph{shuffle} in italiano e l'indicizzabilità trasparente dei problemi che stiamo accumulando resta un valore, inclusa l'immediatezza del titolo.
-In inglese credo che basti una parola per rendere l'idea mentre in italiano vediamo se mi riesce di spiegarmi (dove resta oscuro voi all'esame chiedete, ok? Non è sui linguaggi e formalismi che intendiamo misurarci all'esame di algo):\\
+Date due liste totalmente ordinate $L_1$ ed $L_2$, rispettivamente di $|L_1|$ ed $|L_2|$ elementi, un loro \emph{shuffle} è una qualsiasi lista $S$ di $|L_1|+|L_2|$ elementi dove ogni elemento di $L_1$ o $L_2$ ha trovato il suo posto. Deve però essere rispettato l'ordine entro le due liste di provenienza:
+per $i=1,2$, se da $S$ tolgo gli $|L_i|$ elementi provenuti da $L_i$, allora ritrovo la lista $L_{3-i}$.
+Le due concatenazioni $L_1+L_2$ e $L_2+L_1$ sono pertanto due casi molto particolari di shuffle ma, a differenza dell'operatore di concatenazione, quello di shuffle è non-deterministico e simmetrico.  
+Ma cerchiamo ora di chiarire il concetto attraverso un esempio:\\
 
 \noindent
   \begin{minipage}[c]{.48\textwidth}
@@ -18,7 +19,7 @@ In inglese credo che basti una parola per rendere l'idea mentre in italiano vedi
 
 \medskip
 
-  \begin{minipage}[c]{.40\textwidth}
+  \begin{minipage}[t]{.40\textwidth}
     Ad esempio, partendo dai due mazzi:
     \begin{description}
       \item[{\sc Mazzo~$x$:}] 7, 2, K
@@ -26,9 +27,9 @@ In inglese credo che basti una parola per rendere l'idea mentre in italiano vedi
       \item[{\sc Mazzo~$y$:}] K, 7, 2, 7
     \end{description}
   \end{minipage}%
-\hspace{8.0mm}%
-  \begin{minipage}[c]{.50\textwidth} 
-    Alcuni possibili shuffle di $x$ ed $x$ sono:\\
+\hspace{16.0mm}%
+  \begin{minipage}[t]{.45\textwidth} 
+    Alcuni possibili shuffle di $x$ ed $y$ sono:\\
     \indent 7, 2, K, K, 7, 2, 7 (semplice concatenazione)\\
     \indent 7, 2, K, 7, K, 2, 7 (unico shuffle palindromo?)\\
     \indent 7, 2, K, 7, 2, K, 7 (anche il 2 scavalca il K)\\
@@ -69,9 +70,9 @@ Definito cosa sia lo shuffle in italiano, eccovi il problema:
 \end{quote}
 
 \sezionetesto{Dati di input}
-La prima riga del file \verb'input.txt' contiene i numeri interi e positivi $m$, $n$ e $t$, nell'ordine, dove $t\in \{0,1\}$ specifica meglio il tipo di output desiderato.
-La seconda (o terza, o quarta) riga contiene $m$ (o $n$, o $m+n$; rispettivamente) numeri naturali l'$i$-esimo dei quali è $x[i]$ (o $y[i]$, o $w[i]$; rispettivamente).
-Ovviamente, quando su una stessa riga, tutti i numeri di cui parliamo sono separati da spazi.
+La prima riga del file \verb'input.txt' contiene tre numeri interi e positivi: $m$, $n$, e $t$, come nell’ordine, dove $t\in \{0,1\}$ precisa il tipo di output desiderato.
+La seconda (terza, quarta; rispettivamente) riga contiene $m$ ($n$, $m+n$; rispettivamente) numeri naturali l'$i$-esimo dei quali è $x[i]$ ($y[i]$, $w[i]$; rispettivamente).
+Ovviamente, tutti i numeri sulla riga sono separati da spazi.
 
 \sezionetesto{Dati di output}
 Nella prima riga del file \verb'output.txt' si scriva un unico numero:
