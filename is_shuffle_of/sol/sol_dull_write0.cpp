@@ -6,6 +6,9 @@
 #include <cstdio>
 
 int main() {
+#ifdef EVAL
+    assert( freopen("output.txt", "w", stdout) );
+#endif
     printf("0\n");
     return 0;
 }
