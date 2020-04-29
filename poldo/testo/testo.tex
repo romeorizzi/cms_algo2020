@@ -1,0 +1,125 @@
+% Template per generare 
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempio}[2]{
+\noindent\begin{minipage}{\textwidth}
+\begin{tabular}{|p{11cm}|p{5cm}|}
+	\hline
+	\textbf{File \file{input.txt}} & \textbf{File \file{output.txt}}\\
+	\hline
+	\tt \small #1 &
+	\tt \small #2 \\
+	\hline
+\end{tabular}
+\end{minipage}
+}
+
+% Dati del task
+\newcommand{\gara}{Selezione territoriale 2004}
+\newcommand{\nome}{La dieta di Poldo}
+\newcommand{\nomebreve}{poldo}
+
+\begin{document}
+% Intestazione
+\noindent{\Large \gara}
+\vspace{0.5cm}
+
+\noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
+
+% Descrizione del task
+\section*{Descrizione del problema}
+Il dottore ordina a Poldo di seguire una dieta. Ad ogni pasto non può mai mangiare un panino che abbia un peso maggiore o uguale a quello appena mangiato. Quando Poldo passeggia per la via del suo paese, da ogni ristorante esce un cameriere proponendo il menù del giorno. Ciascun menù è composto da una serie di panini, che verranno serviti in un ordine ben definito, e dal peso di ciascun panino. Poldo, per non violare la regola della sua dieta, una volta scelto un menù, può decidere di mangiare o rifiutare un panino; se lo rifiuta il cameriere gli servirà il successivo e quello rifiutato non gli sarà più servito.
+
+Si deve scrivere un programma che permetta a Poldo, leggendo un menù, di capire qual è il numero massimo di panini che può mangiare per quel menù senza violare la regola della sua dieta.
+
+Riassumendo, Poldo può mangiare un panino se e solo se soddisfa una delle due condizioni:
+\begin{itemize}
+\item Il panino è il primo che mangia in un determinato pasto;
+\item Il panino non ha un peso maggiore o uguale all'ultimo panino che ha mangiato in un determinato pasto.
+\end{itemize}
+
+% Input
+\section*{File di input}
+Il programma deve leggere da un file di nome \file{input.txt}. Nella prima è presente un intero N, il numero di panini nel menu. Le successive N righe contengono il peso in grammi $p$ del panino che verrà servito. I panini vengono serviti nell'ordine presentato.
+
+% Output
+\section*{File di output}
+Il programma deve scrivere in un file di nome \file{output.txt}. Deve venire stampato un unico intero, il numero massimo di panini che Poldo può mangiare.
+
+% Assunzioni
+\section*{Assunzioni}
+
+\begin{itemize}
+\item $1 \le N \le 10\,000$
+\item $0 \le p < 10\,000$
+\end{itemize}
+
+% Subtasks
+\section*{Subtask}
+\begin{itemize}
+\item \textbf{Subtask 1 [\phantom{1}5 punti]:} casi di esempio.
+\item \textbf{Subtask 2 [30 punti]:} $N \le 100$.
+\item \textbf{Subtask 3 [25 punti]:} $N \le 1000$.
+\item \textbf{Subtask 4 [25 punti]:} $N \le 3000$.
+\item \textbf{Subtask 5 [15 punti]:} nessuna limitazione specifica.
+\end{itemize}
+
+% Esempi
+\section*{Esempio di input/output}
+\esempio{
+5
+
+3
+
+6
+
+7
+
+5
+
+3
+}{3}
+
+\esempio{
+8
+
+0
+
+9
+
+8
+
+5
+
+1
+
+8
+
+4
+
+7
+}{4}
+
+\section*{Note}
+Nel primo esempio, Poldo può mangiare i panini 6, 5, 3. Nel secondo esempio Poldo può mangiare i panini 9, 8, 5, 4 rispettando la sua dieta.
+
+\end{document}

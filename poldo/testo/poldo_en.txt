@@ -1,0 +1,17 @@
+Poldo's diet
+
+Desciption of the problem
+The doctor orders Poldo to follow a diet. At each meal he cannot eat a sandwich that has weight greater than or equal to the one he has just eaten. When Poldo walkes along the street of his village, from every restaurant comes a waiter that offers the daily menu. Every manu has a number of sandwiches, that are served in a pre-defined order, and the weights of the sandwiches. So that he does not violate his diet, when he chooses a menu Poldo must either eat or refuse a sandwich; if he turns it down the waiter will give him the next one and won't serve him the one he refused again.
+You have to write a program that allows Poldo to understand the maximum number of sandwiches that he can eat from a menu that he sees without violating the rule of his diet.
+To sum up, poldo can eat a sandwich if and only if it satsfies one of the two conditions:
+The sandwich is the first that he eats in a certain meal;
+The sandwich doesn't hae a weight greater than or equal to the last one he has eaten in a certain meal.
+
+Input file
+The program must read a file called input.txt. In the first line there is a whole number N, the number of sandwiches in the menu. The following N lines contain the weight p in gramms of each sandwich that will be served. The sandwiches will be served in the presented order.
+
+Output file
+The program must write a file named output.txt. It must print a single whole number that is the maximum number of sandwiches Poldo can eat.
+
+Note
+In the first example, Poldo can eat the sandwiches 6, 5, 3 (thus three sanwiches). In teh second example Poldo can eat the sandwiches 9, 8, 5, 4 (frout sandwiches) so that he maintains his diet.

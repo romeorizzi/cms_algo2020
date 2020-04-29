@@ -1,0 +1,9 @@
+nome_breve: "poldo"
+nome: "La dieta di Poldo"
+timeout: 1
+memlimit: 64
+token_mode: infinite
+infile: ""
+outfile: ""
+n_input: 20
+total_value: 20.0
