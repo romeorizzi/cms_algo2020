@@ -52,9 +52,9 @@
 \section*{Descrizione del problema}
 
 Per gli scopi di questo esercizio, un albero è un albero binario con radice in cui tutti i nodi che non sono foglie hanno esattamente due figli e in cui tutti i nodi (comprese le foglie) sono etichettati con numeri interi non negativi.
-Più precisamente, un albero con$N$ nodi av\`a i nodi etichettati con i numeri da $1$ a $N$, e nodi diversi hanno etichette diverse.
+Più precisamente, un albero con $N$ nodi avr\`a i nodi etichettati con i numeri da $1$ a $N$, dove nodi diversi hanno etichette diverse.
 
-Esistono tre modi standard per enumerare le etichette dei nodi di un albero, chiamati visita anticipata, simmetrica e posticipata.
+Esistono tre modi standard per enumerare le etichette dei nodi di un albero, chiamati \emph{visita anticipata}, \emph{simmetrica} e \emph{posticipata}.
 
 La versione ricorsiva (in pseudocodice) delle tre visite è la seguente:
 
@@ -85,13 +85,15 @@ end;
 \end{verbatim}
 
 
-Il problema che dovete risolvere è il seguente: date l eenumerazioni prodotte dalla visite anticipata e posticipata, trovare quella prodotta dalla visita simmetrica.
+Il problema che dovete risolvere è il seguente:
+date le enumerazioni di uno stesso albero prodotte dalla visite anticipata e posticipata, trovare quella prodotta dalla visita simmetrica.
 
 
 % Implementazione
 \section*{Dettagli di implementazione}
 Dovrai sottoporre un file con estensione \texttt{.c} o
-\texttt{.cpp}. Questo file deve implementare (in C o c++, rispettivamente)
+\texttt{.cpp}.
+Questo file deve implementare (in C o c++, rispettivamente)
 la funzione \texttt{visita} come da seguente prototipo.
 
 \begin{verbatim}
@@ -115,15 +117,15 @@ Nel caso vogliate generare un input, il file \file{input.txt} deve
 avere questo formato:
 \begin{itemize}[noitemsep]
 \item Prima riga: il numero di nodi $N$.
-\item Seconda riga: $N$ interi rappresentanti la visita in preordine dell'albero .
-\item Terza riga: $N$ interi rappresentanti la visita in postordine dell'albero .
+\item Seconda riga: $N$ interi rappresentanti la visita in preordine dell'albero.
+\item Terza riga: $N$ interi rappresentanti la visita in postordine dell'albero.
 \end{itemize}
 
 
 % Assunzioni
 \section*{Assunzioni}
 \begin{itemize}[nolistsep, noitemsep]
-\item $1 \le N \le 1\,000\,000 $.
+\item $1 \le N \le 1\,000\,000$.
 \end{itemize}
 
 % Subtasks
