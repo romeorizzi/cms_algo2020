@@ -82,10 +82,11 @@ file deve contenere un unico intero, il numero minimo di pulsanti che Mario dovr
 
 ## Esempio di input/output
 
-| File input.txt                            | &nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp; | File output.txt |
+| File input.txt                            | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | File output.txt |
 | :---------------------------------------- | :----------------------------------------: | :-------------- |
-| 5<br>3<br>6<br>7<br>5<br>3                |                   &nsbp;                   | 16              |
-| 8<br>0<br>9<br>8<br>5<br>1<br>8<br>4<br>7 |                   &nsbp;                   | 24              |
+| 5<br>3<br>6<br>7<br>5<br>3                |                   &nbsp;                   | 16              |
+| &nbsp;                                    |                   &nbsp;                   | &nbsp;          |
+| 8<br>0<br>9<br>8<br>5<br>1<br>8<br>4<br>7 |                   &nbsp;                   | 24              |
 
 ## Note
 Indicando con C il pulsante del cioccolato, M quello della marmellata, P quello della panna e infine con L il pulsante di conferma,
