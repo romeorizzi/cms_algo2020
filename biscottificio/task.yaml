@@ -1,0 +1,10 @@
+nome_breve: "biscottificio"
+nome: "Biscottificio Biscogusto"
+timeout: 1
+memlimit: 128
+token_mode: disabled
+infile: "input.txt"
+outfile: "output.txt"
+feedback_level: full
+public_testcases: all
+

@@ -1,0 +1,2 @@
+Abbiamo visto varie strutture dati a lezione.
+Una in particolare era molto adatta per gli intervalli: segment tree (nelle slides era chiamato range tree)

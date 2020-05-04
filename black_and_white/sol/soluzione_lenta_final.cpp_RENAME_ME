@@ -1,0 +1,196 @@
+#include<iostream>
+#include<string>
+#include<vector>
+
+//10^5 ~~ 2^17, quindi 2^17/64 = 2048
+#define POWDUE 262144u
+#define STARTINDEX 131072u
+
+#define BITMASK ~0ul
+
+using namespace std;
+
+typedef struct {
+    uint32_t somma = 0;
+    bool full = false;
+    bool changed = true;
+    uint32_t sommaL = 0;
+    uint32_t sommaR = 0;
+} NODO;
+
+NODO generaNodo(uint32_t n) {
+    NODO toRet;
+    if(n) {
+        toRet.somma = n;
+        toRet.sommaL = n;
+        toRet.sommaR = n;
+        toRet.full = n;
+    }
+    return toRet;
+}
+NODO EMPTY = generaNodo(0);
+NODO FULL = generaNodo(1);
+
+
+NODO& calc(NODO& left, NODO& right, NODO& target) {
+    target.full = left.full && right.full;
+    target.sommaL = left.sommaL;
+    target.sommaR = right.sommaR;
+    target.somma = max(left.somma, right.somma);
+    if(left.sommaR && right.sommaL) {
+        target.somma = max(left.sommaR + right.sommaL, target.somma);
+        if(left.full) {
+            target.sommaL = left.sommaR + right.sommaL;
+        }
+        if(right.full) {
+            target.sommaR = right.sommaR + left.sommaR;
+        }
+    }
+    return target;
+}
+
+auto tree = vector<NODO>(POWDUE);
+auto opposite = vector<NODO>(STARTINDEX);
+auto tempVec = vector<NODO>(STARTINDEX);
+
+void update(uint32_t start, uint32_t end) {
+    /* VERSIONE EZ MA LENTA
+    for(start/=2, end/=2; start != 0; start/=2, end/=2) {
+        for(uint32_t inner = start; inner <= end; inner++) {
+            calc(tree[inner * 2], tree[inner * 2 + 1], tree[inner]);
+        }
+    }
+    */
+    end /= 2;
+    start /= 2;
+    for(uint32_t lineStart = start; lineStart != 0; lineStart/=2, end/=2) {
+        for(uint32_t inner = lineStart; inner <= end; inner++) {
+            if(tree[inner * 2].changed || tree[inner * 2 + 1].changed) {
+                calc(tree[inner * 2], tree[inner * 2 + 1], tree[inner]);
+                tree[inner * 2].changed = false;
+                tree[inner * 2 + 1].changed = false;
+                tree[inner].changed = true;
+            }
+        }
+    }
+}
+
+void range_eval(uint32_t i, uint32_t j) {
+    update(i + STARTINDEX - 1,STARTINDEX + j);
+}
+
+void range_update(uint32_t i, uint32_t j) {
+    
+    i--;
+    for(uint32_t tmp = i + STARTINDEX; tmp < j + STARTINDEX; tmp++) {
+        tree[tmp].changed = true;
+    }
+    copy(&tree[i + STARTINDEX], &tree[j + STARTINDEX], &tempVec[i]);
+    copy(&opposite[i], &opposite[j], &tree[i + STARTINDEX]);
+    copy(&tempVec[i], &tempVec[j], &opposite[i]);
+    
+    
+    
+    /*
+    j = STARTINDEX + j;
+    for(i = i + STARTINDEX - 1; i < j; i++) {
+        tree[i] = tree[i].somma == 0?FULL:EMPTY;
+    }
+    */
+    
+    
+}
+
+NODO& get_max(uint32_t index, uint32_t l, uint32_t r, const uint32_t& i, const uint32_t& j) {
+    if (r < i || l > j) // Completamente fuori
+        return EMPTY;
+
+    if (l >= i && r <= j) // Completamente dentro
+        return tree[index];
+
+    //else
+    uint32_t mid = (l + r) / 2;
+    NODO tmpL = get_max(2 * index, l, mid, i, j);
+    NODO tmpR = get_max(2 * index + 1, mid + 1, r, i, j);
+    NODO ret;
+    return calc(tmpL, tmpR, ret);
+}
+
+uint32_t query(const uint32_t i, const uint32_t j) {
+    NODO& ret = get_max(1u, STARTINDEX, POWDUE - 1, i, j);
+    return ret.somma;
+}
+
+
+int main(int argc, char** argv) {
+    uint32_t n, m, action, i, j, tmp;
+    bool needsEvaluation = false;
+    uint32_t evalRangeL, evalRangeR;
+    while(true) {
+        cin >> n;
+        if(cin.fail()) {
+            return 0;
+        }
+        //INIZIO
+        needsEvaluation = false;
+        evalRangeL = ~0u;
+        evalRangeR = 0;
+        for(uint32_t index = 0; index  < n; ++index) {
+            cin >> tmp;
+            tree[STARTINDEX + index] = tmp==0?EMPTY:FULL;
+            opposite[index] = tmp==1?EMPTY:FULL;
+        }
+        //finisco l'albero
+        for(uint32_t index = STARTINDEX / 2; index > 0; index /= 2 ) {
+            tmp = index * 2;
+            for(uint32_t inner = index; inner < tmp; inner++) {
+                calc(tree[inner * 2],tree[inner * 2 + 1],tree[inner]);
+                tree[inner * 2].changed = false;
+                tree[inner * 2 + 1].changed = false;
+            }
+        }
+
+        cin >> m;
+        for(uint32_t index = 0; index  < m; ++index) {
+
+            
+            /*for(uint32_t boh = 1; boh < POWDUE; boh*=2) {
+                for(uint32_t nigger = boh, stop = 0; stop <= 16 && nigger <= boh * 2 - 1; stop++, nigger++)
+                    cout << tree[nigger].somma << " ";
+                cout << endl;
+            }*/
+            
+            
+            
+            
+
+
+            cin >> action >> i >> j;
+            if(action == 0) {
+                if(needsEvaluation) {
+                    range_eval(evalRangeL,evalRangeR);
+                    needsEvaluation = false;
+                    evalRangeL = ~0u;
+                    evalRangeR = 0;
+                }
+                cout << query(i + STARTINDEX - 1,j + STARTINDEX - 1) << endl;
+            } else {
+                range_update(i,j);
+                needsEvaluation = true;
+                if(evalRangeL > i) evalRangeL = i;
+                if(evalRangeR < j) evalRangeR = j;
+            }
+
+
+
+
+
+            //cout << endl;
+        }
+
+        //FINE
+        tree = vector<NODO>(POWDUE);
+    }
+
+    return 0;
+}

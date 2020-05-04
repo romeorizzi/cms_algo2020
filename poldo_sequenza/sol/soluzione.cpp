@@ -58,7 +58,6 @@ void solve(uint32_t& newNumber, vector<pila>& vec) {
 
 int main(int argc, char** argv)
 {
-  #ifdef EVAL
   //====================================================
   //PARTE OBBLIGATORIA REINDIRIZZAMENTO STDIN/OUT
   //====================================================
@@ -71,13 +70,13 @@ int main(int argc, char** argv)
 
   cin.rdbuf(fileIn.rdbuf());
   cout.rdbuf(fileOut.rdbuf());
-  #endif
 
   uint32_t n;
   cin >> n;
 
   //La lunghezza di questo vettore sara' il numero massimo di panini che Poldo potra' mangiare.
   auto sVect = vector<pila>();
+  sVect.reserve(n); //NECESSARIO PERCHE' HO AVUTO LA MALSANA IDEA DI SALVARE GLI INDIRIZZI, E QUINDI NON POSSO PERMETTERMI UN REALLOC DINAMICO.
 
   uint32_t temp;
   for(uint32_t i = 0; i < n; i++) {
