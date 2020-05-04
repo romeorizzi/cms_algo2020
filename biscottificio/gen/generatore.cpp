@@ -1,11 +1,8 @@
 /*
- * GENERATORE task poldo
- * Usage: ./generatore N maxW seed
- *  N >= 1, il numero di panini
- *  maxW >= 0, i valori degli N panini saranno tutti compresi tra 0 e maxW
- *  Casi Particolari:
- *      se N==-2 allora si genera la sequenza 1 2 ... 1000
- *      se N==-1 allora si genera la sequenza 1000 999 ... 1
+ * GENERATORE task biscottificio
+ * Usage: ./generatore N seed
+ *  N >= 1, il numero di lotti da pianificare
+ *
  */ 
 
 #include <iostream>

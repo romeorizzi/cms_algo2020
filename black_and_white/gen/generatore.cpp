@@ -1,5 +1,5 @@
 /*
-
+GENERATORE task black_and_white
 
 arg1 --> N
 arg2 --> MAX_M
