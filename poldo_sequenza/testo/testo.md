@@ -44,11 +44,11 @@ La seconda ed ultima riga deve contenere una possibile sequenza di $M$ panini ch
 
 ## Esempio di input/output
 
-| File input.txt                            | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | File output.txt |
-| :---------------------------------------- | :----------------------------------------: | :-------------- |
-| 5<br>3<br>6<br>7<br>5<br>3                |                   &nbsp;                   | 3<br>6 5  3     |
-| &nbsp;                                    |                   &nbsp;                   |
-| 8<br>0<br>9<br>8<br>5<br>1<br>8<br>4<br>7 |                   &nbsp;                   | 4<br>9 8 5 4    |
+| File `input.txt`                          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | File `output.txt` |
+| :---------------------------------------- | :----------------------------------------: | :---------------- |
+| 5<br>3<br>6<br>7<br>5<br>3                |                   &nbsp;                   | 3<br>6 5  3       |
+| &nbsp;                                    |                   &nbsp;                   | &nbsp;            |
+| 8<br>0<br>9<br>8<br>5<br>1<br>8<br>4<br>7 |                   &nbsp;                   | 4<br>9 8 5 4      |
 
 
 ## Note

@@ -47,13 +47,13 @@ Per ogni operazione di tipo $0$, scrivere una riga contenente il risultato dell'
 
 ## Esempio di input/output
 
-| File `input.txt`                                                                  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | File `output.txt`  |
-| :------------------------------------------------------------------------------ | :----------------------------------------: | :--------------- |
-| 4<br>1 0 1 0<br>5<br>0 1 4<br>1 2 3<br>0 1 4<br>1 3 3<br>0 4 4                  |                   &nbsp;                   | 1<br>2<br>0      |
-| &nbsp;                                                                          |                   &nbsp;                   | &nbsp;           |
-| 5<br>0 0 0 1 0<br>3<br>0 2 3<br>0 2 5<br>0 1 5                                  |                   &nbsp;                   | 0<br>1<br>1      |
-| &nbsp;                                                                          |                   &nbsp;                   | &nbsp;           |
-| 8<br>0 1 0 0 1 0 1 0<br>6<br>0 4 8<br>1 6 8<br>0 2 5<br>0 8 8<br>1 5 8<br>0 8 8 |                   &nbsp;                   | 1<br>1<br>1<br>0 |
+| File `input.txt`                                                                | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | File `output.txt` |
+| :------------------------------------------------------------------------------ | :----------------------------------------: | :---------------- |
+| 4<br>1 0 1 0<br>5<br>0 1 4<br>1 2 3<br>0 1 4<br>1 3 3<br>0 4 4                  |                   &nbsp;                   | 1<br>2<br>0       |
+| &nbsp;                                                                          |                   &nbsp;                   | &nbsp;            |
+| 5<br>0 0 0 1 0<br>3<br>0 2 3<br>0 2 5<br>0 1 5                                  |                   &nbsp;                   | 0<br>1<br>1       |
+| &nbsp;                                                                          |                   &nbsp;                   | &nbsp;            |
+| 8<br>0 1 0 0 1 0 1 0<br>6<br>0 4 8<br>1 6 8<br>0 2 5<br>0 8 8<br>1 5 8<br>0 8 8 |                   &nbsp;                   | 1<br>1<br>1<br>0  |
 
 ## Note
 Sono disponibili dei suggerimenti.
