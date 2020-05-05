@@ -1,7 +1,7 @@
 # Biscottificio Biscogusto (biscottificio)
 
 ## Descrizione del problema
-Il biscottificio Biscogusto produce biscotti ripieni di 10 diverse varietà di creme.
+Il biscottificio Biscogusto produce biscotti ripieni di $10$ diverse varietà di creme.
 I vari gusti dei riempimenti dei biscotti si ottengono mescolando in quantità diverse Cioccolato, Panna e Marmellata secondo questa tabella
 
 |  Riempimento   | Codice | #Cioccolato | #Panna | #Marmellata |
@@ -17,7 +17,8 @@ I vari gusti dei riempimenti dei biscotti si ottengono mescolando in quantità d
 | MarmellataSoft |   8    |      0      |   1    |      2      |
 | GustoMiscuglio |   9    |      1      |   1    |      1      |
 
-L'ordine degli ingredienti non è importante: ciò che conta sono solo le loro quantità.
+L'ordine degli ingredienti non è importante:
+ciò che conta sono solo le loro quantità.
 
 Il contenitore dell'impastatrice viene riempito tramite 3 tubi i quali vengono via via collegati ai serbatoi di Cioccolato, Panna o Marmellata in base alla necessità.
 Se per esempio si vuole produrre il gusto MarmellataSoft si dovrà collegare un tubo al serbatoio della Panna e 2 a quello della Marmellata (perchè MarmellataSoft è 2 parti marmellata 1 parte panna).
@@ -54,49 +55,49 @@ Ovviamente Mario vorrebbe finire il prima possibile quindi si chiede quale sia i
 
 ## File di input
 
-Il programma deve leggere da un file di nome _input.txt_.  
-Nella prima riga è presente un intero _N_ , il numero di lotti di riempimento da produrre.  
-Le successive N righe contengono il codice _C_ del riempimento da produrre.  
+Il programma deve leggere da un file di nome `input.txt`.  
+Nella prima riga è presente un intero $N$, il numero di lotti di riempimento da produrre.  
+Le successive $N$ righe contengono il codice $C$ del riempimento da produrre.  
 L'ordine di produzione va rispettato.
 
 ## File di output
 
-Il programma deve scrivere in un file di nome _output.txt_.  
+Il programma deve scrivere in un file di nome `output.txt`.  
 file deve contenere un unico intero, il numero minimo di pulsanti che Mario dovrà premere per completare l'intera pianificazione.
 
 
 ## Assunzioni
 
-* 1 ≤ N ≤ 1000 000
-* 0 ≤ C ≤ 9
+* $1 \leq N \leq 1000\, 000$
+* $0 \leq C \leq 9$
 * Il "buffer" del computer dell'azienda è inizialmente vuoto
 
 ## Subtask
 
 - **Subtask 1 [ 5 punti]:** casi di esempio.
-- **Subtask 2 [30 punti]:** _N_ ≤ 100.
-- **Subtask 3 [25 punti]:** _N_ ≤ 1000.
-- **Subtask 4 [25 punti]:** _N_ ≤ 100000.
+- **Subtask 2 [30 punti]:** $N \leq 100$.
+- **Subtask 3 [25 punti]:** $N \leq 1000$.
+- **Subtask 4 [25 punti]:** $N \leq 100\,000$.
 - **Subtask 5 [15 punti]:** nessuna limitazione specifica.
 
 
 ## Esempio di input/output
 
-| File input.txt                            | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | File output.txt |
+| File `input.txt`                            | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | File `output.txt` |
 | :---------------------------------------- | :----------------------------------------: | :-------------- |
 | 5<br>3<br>6<br>7<br>5<br>3                |                   &nbsp;                   | 16              |
 | &nbsp;                                    |                   &nbsp;                   | &nbsp;          |
 | 8<br>0<br>9<br>8<br>5<br>1<br>8<br>4<br>7 |                   &nbsp;                   | 24              |
 
 ## Note
-Indicando con C il pulsante del cioccolato, M quello della marmellata, P quello della panna e infine con L il pulsante di conferma,
-nel primo esempio il risultato 16 si potrebbe ottenere così:
+Indicando con $C$ il pulsante del cioccolato, $M$ quello della marmellata, $P$ quello della panna e infine con $L$ il pulsante di conferma,
+nel primo esempio il risultato $16$ si potrebbe ottenere così:
 
 ```
 PPPL MMML CL MPPL PL
 ```
 
-Nel secondo esempio il risultato 24 si potrebbe ottenere così:
+Nel secondo esempio il risultato $24$ si potrebbe ottenere così:
 
 ```
 CCCL MPL ML PL CCL MMPL PCL MML
