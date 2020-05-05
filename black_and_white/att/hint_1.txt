@@ -1,0 +1,2 @@
+Se il vostro codice risulta lento, cercate di diminuire il numero di nodi da dover aggiornare ad ogni operazione di tipo "flip".
+Dobbiamo sempre tenere l'albero completamente aggiornato?
