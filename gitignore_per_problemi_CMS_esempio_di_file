@@ -1,0 +1,24 @@
+.vscode/
+# CMS
+.inode
+.itime
+*_EVAL
+**/input
+**/output
+
+# backups
+*~
+*.bak
+
+# LaTex
+*.pdf
+*.aux
+*.log
+
+# Byte-compiled / optimized / DLL files
+a.out
+__pycache__/
+*.py[cod]
+*$py.class
+
+
