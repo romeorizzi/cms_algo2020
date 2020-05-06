@@ -16,6 +16,11 @@ static long int maxPesate;
 static int subtask;
 static int seed;
 
+#define CRAND_MAX 0x7fffffff
+static int rseed;
+int rand_cp() {
+	return rseed = (rseed * 1103515245 + 12345) & CRAND_MAX;
+}
 
 inline void swap38454(long int *a, long int *b) { long int tmp = *a; *a = *b; *b = tmp; }
 
@@ -23,7 +28,7 @@ static void generaPerm_random_uniform(long int *perm, long int n) {
    long int i;
    for(i = 0; i < n; i++)  perm[i] = i;
    for(i=n-1; i > 0; i--)
-     swap38454( &perm[i], &perm[ (rand() % i) ] );
+     swap38454( &perm[i], &perm[ (rand_cp() % i) ] );
 }
 
 
@@ -71,7 +76,7 @@ int main() {
   long int guy = 2;
   while( guy < nBalls ) { LOG_UP++; guy *= 2; }
 
-  srand(seed);
+  rseed = seed;
   generaPerm_random_uniform(order, nBalls); //genera permutazione
 
 #ifdef EVAL
