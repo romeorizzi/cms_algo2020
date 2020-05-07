@@ -87,10 +87,12 @@ int main(int argc, char *argv[])
     /* Qui devo leggere il "log" presente nel file output.txt dell'utente
      e decidere se l'output e' valido */
 
-  int wellOrdered;
-  long int nPesate, maxPesate;
+  int wellOrdered = -1;
+  long int nPesate = -1, maxPesate = -1;
   *fout >> wellOrdered >> nPesate >> maxPesate;
-  if(nPesate > maxPesate)
+  if (wellOrdered < 0 || nPesate < 0 || maxPesate < 0)
+    ex("Output malformato (hai chiamato consegnaBiglieInOrdine?).", 0.0);  
+  else if(nPesate > maxPesate)
     ex("Troppe chiamate alla funzione pesa.", 0.0);
   else
     if ( wellOrdered )

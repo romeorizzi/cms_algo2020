@@ -1,5 +1,5 @@
-#because this GEN file goes through generatore.sh, each instance line will essentially be copied into a separate input file
-#here, the fields of instance line are:
+# because this GEN file goes through generatore.sh, each instance line will essentially be copied into a separate input file
+# here, the fields of instance line are:
 # nBalls  subtask  seed
 #ST: 0
   10       1       32151
@@ -41,5 +41,3 @@
  10000    7       85894
  50000    7       32855
 100000    7       54858
-
-
