@@ -11,6 +11,10 @@ VALORI ACCETTABILI PER MODALITA':
 - 1 chi2
 - 2 completamente random
 - 3 con tanti numeri ripetuti
+
+
+USI SPECIALI:
+arg1 < 0: i casi di esempio
 */
 #include<iostream>
 #include<cassert>
