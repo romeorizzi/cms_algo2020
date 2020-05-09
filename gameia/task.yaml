@@ -1,0 +1,10 @@
+name: "gameia"
+title: "Hey Bob, giochiamo a Gameia"
+time_limit: 1.0
+memory_limit: 64
+infile: "input.txt"
+outfile: "output.txt"
+token_mode: disabled
+feedback_level: full
+public_testcases: all
+

@@ -1,0 +1,47 @@
+Può essere d'aiuto pensare a quali sono i casi in cui conviene a Bob usare la sua mossa extra.
+
+Prendiamo in esame questo caso: la partita sta per finire, tutti i nodi della foresta sono già stati colorati (di nero), tranne questo piccolo alberello che ha due vertici bianchi.
+
+            (   )
+            /
+          (   )
+          /
+         (   )
+         /   \
+       (W)   (W)
+
+Tocca a Bob. Bob se vuole vincere dovrà necessariamente sbarazzarsi di quei due fastidiosi vertici di Whitney.
+Bob è costretto a colorare il terzo nodo dall'alto. Ma così facendo otterrebbe questa situazione:
+
+            (   )
+            /
+          ( B )
+          /
+         ( B )
+         /   \
+       (B)   (B)
+
+Ovviamente Whitney vincerebbe colorando l'ultimo nodo rimasto.
+
+Quindi Bob, se ha ancora a disposizione una mossa extra, prima di colorare quel nodo dovrà spezzettare l'albero in due.
+
+                                        (   )
+                                        /
+                                    (   )
+
+         (   )
+         /   \
+       (W)   (W)
+
+E poi procedere con la colorazione:
+
+                                        (   )
+                                        /
+                                    (   )
+
+         ( B )
+         /   \
+       (B)   (B)
+
+A questo punto è triviale capire che Whitney non può più vincere.
+
