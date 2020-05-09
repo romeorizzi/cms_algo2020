@@ -25,7 +25,7 @@ arg1 -100: un albero in cui bob vince
 
 using namespace std;
 
-#define MAX_LEN 10000
+#define MAX_LEN 100000
 #define N_MOD 5
 #define LOG2(X) ((unsigned) (8*sizeof (unsigned long long) - __builtin_clzll((X)) - 1))
 
