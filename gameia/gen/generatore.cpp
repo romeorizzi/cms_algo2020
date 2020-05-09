@@ -110,7 +110,6 @@ void visitPrint(NODO& node, bool ignoreMe = false) {
 void treeMode(int& len){
     
     NODO radice(1);
-
     if(len > 1)
         recursiveCall(radice, len - 1);
 
@@ -123,6 +122,7 @@ void bobWin(int&len) {
         --len;
     }
     NODO radice(1);
+
     recursiveCall(radice, len - 1, true);
     visitPrint(radice, true);
 }
@@ -140,7 +140,7 @@ int main(int argc, char** argv) {
                 cout << "2 1" << endl << "1" << endl;
                 break;
             case -2:
-                cout << "3 1" << endl << "2 1" << endl;
+                cout << "3 1" << endl << "1 2" << endl;
                 break;
             case -3:
                 cout << "4 1" << endl << "1 2 3" << endl;
@@ -164,6 +164,9 @@ int main(int argc, char** argv) {
 
     int seed = atoi(argv[3]);
     srand(seed);
+
+    if(mod == 4 && (len % 2))
+        --len;
 
     cout << len << " ";
     switch(mod) {

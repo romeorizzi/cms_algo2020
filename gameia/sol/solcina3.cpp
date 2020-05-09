@@ -31,6 +31,10 @@ int main()
     cout.rdbuf(out.rdbuf());
 
     cin >> n >> k;
+    if(n == 2) {
+        cout << "1" << endl;
+        return 0;
+    }
     for (int i = 1; i <= n; i++) G[i].clear();
     for (int i = 2; i <= n; i++)
     {

@@ -1,5 +1,6 @@
 /* SOURCE: https://www.shuzhiduo.com/A/obzbRR7MzE/
 Rivisitato per funzionare su input singolo invece dell'intero batch.
+Nella versione originale la numerazione dei vertici era in ordine DFS. Potrebbe non funzionare
 */
 #include <bits/stdc++.h>
 #include<fstream>
@@ -46,6 +47,10 @@ int main()
     int n,k;
 
     cin >> n >> k;
+    if(n == 2) {
+        cout << "1" << endl;
+        return 0;
+    }
     flag=0;
     init();
     for(int i=2; i<=n; i++){

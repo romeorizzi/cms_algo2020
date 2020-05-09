@@ -21,7 +21,7 @@ _Sia Bob che Whitney giocheranno ottimamente._
 
 Il programma deve leggere da un file di nome `input.txt`.  
 Nella prima riga sono presenti due interi: $N$ (il numero di vertici dell'albero) e $K$ (il numero di mosse speciali di Bob).  
-La successiva riga contiene $N - 1$ interi separati da spazio: l'$i$-esimo numero contiene il padre del nodo $i+1$
+La successiva riga contiene $N - 1$ interi separati da spazio: l'$i$-esimo numero contiene il padre $F_{i+1}$ del nodo $i+1$
 
 I vertici sono numerati a partire da $1$, che rappresenta sempre la radice dell'albero.
 
@@ -35,7 +35,7 @@ file deve contenere un unico intero: $0$ se vince Whitney, $1$ se vince Bob
 
 * $1 \leq N \leq 1000\, 000$
 * $0 \leq K \leq N$
-* L'albero fornito in input è un ben formattato (è connesso ed aciclico)
+* L'albero fornito in input è un ben formattato (è connesso ed aciclico) ma non è garantito che $F_i \leq F_{i+1}$
 
 ## Subtask
 
@@ -62,23 +62,21 @@ file deve contenere un unico intero: $0$ se vince Whitney, $1$ se vince Bob
 Come leggere l'albero dell'input
 
 ```
-5 1
-4 2 1 2
+6 1
+3 1 5 1 3
 ```
 
-Il nodo 2 è figlio del nodo 4; 
-Il nodo 3 è figlio del nodo 2;  
-Il nodo 4 è figlio del nodo 1 (ovvero della radice); 
-Il nodo 5 è figlio del nodo 2;
-
+Il nodo 2 è figlio del nodo 3;
+Il nodo 3 è figlio del nodo 1;  
+Il nodo 4 è figlio del nodo 5; 
+Il nodo 5 è figlio del nodo 1;
+Il nodo 6 è figlio del nodo 3;
 ```
             1
-           /
-          4
-        /
-       2
-     /   \
-    3     5
+           / \
+          5   3
+        /    / \
+       4    2   6
 
 ```
 

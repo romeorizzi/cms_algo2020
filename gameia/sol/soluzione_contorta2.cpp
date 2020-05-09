@@ -138,7 +138,7 @@ int main() {
     cin >> treeSize >> bobActions;
 
     /* UNICO CAMBIAMENTO E' QUESTA RIGA */
-    if((treeSize % 2) || ((treeSize / 2 - 1) > bobActions)) return WHITNEY;
+    if((treeSize % 2) || ((treeSize / 2 - 1) > bobActions)) cout << "0" << endl;
 
     //L'albero e' fatto da $treeSize nodi.
     auto tree = vector<shared_ptr<NODE>>();
