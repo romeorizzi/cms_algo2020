@@ -1,0 +1,62 @@
+Un'altra cosa molto importante da capire è: giocando ottimamente, avrei mai potuto ottenere la situazione dell'hint1?
+In generale esistono situazioni in cui a Bob effettivamente converrebbe usare la mossa extra, ma che effettivamente non si presenteranno mai?
+
+Rispondere a queste due domande non è per niente scontato. Conviene forse iniziare da partite "più semplici".
+
+Nel testo c'erano questi vari esempi:
+
+esempio1)
+            (   )
+           /
+      (   )
+
+Che si risolveva con una scontatissima vittoria di Bob
+
+esempio2)
+            (   )
+           /
+      (   )
+     /
+(   )
+Che si risolveva con la vittoria di Whitney (colorando  il nodo centrale)
+
+Aggiungiamo adesso un altro, banalissimo, esempio.
+esempio0)
+            (   )
+Chiaramente essendoci un solo nodo vince chi gioca per primo, quindi Whitney
+
+Tutti questi esempi hanno una cosa in comune: Bob non ha potuto sfruttare la sua mossa extra per ribaltare la situazione.
+
+Guardiamo adesso un ulteriore esempio
+
+esempio3)
+                  (   )
+                 /
+            (   )
+           /
+      (   )
+     /
+(   )
+
+Adesso se Bob non avesse mosse extra vincerebbe sicuramente Whitney colorando per primo uno dei due vertici più esterni.
+
+                  (   )                            ( W )                            ( B )                            ( B )
+                 /                                /                                /                                /
+            (   )           ==>              (   )           ==>              ( B )           ==>              ( B ) 
+           /                                /                                /                                /
+      (   )                            (   )                            ( B )                            ( B )
+     /                                /                                /                                /
+(   )                            (   )                            (   )                            ( W )
+
+Usando una singola mossa extra la situazione può essere ribaltata così:
+
+                  (   )                            ( W )                            ( B )                            ( B )                            ( B )
+                 /                                /                                /                                /                                /
+            (   )           ==>              (   )           ==>              ( B )           ==>              ( B )           ==>              ( B )
+           /                                /                                                                  
+      (   )                            (   )                            (   )                            (   )                            ( B )
+     /                                /                                /                                /                                /
+(   )                            (   )                            (   )                            ( W )                            ( B )
+
+Certo non abbiamo risposto a nessuna delle due domande iniziali, ma è già un inizio: adesso sappiamo che possono effettivamente presentarsi delle situazioni in cui usare la mossa extra cambia le sorti della partita.
+
