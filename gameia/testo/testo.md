@@ -4,18 +4,18 @@
 Whitney e Bob si stanno annoiando.  
 Allora Whitney propone di giocare a Gameia, un gioco che si è appena inventata.  
 Dopo aver ascoltato le regole Bob, che conosce bene la scorrettezza di Whitney, accetta di giocare ma con delle ""piccole"" modifiche in suo favore.  
-Whitney accetta.  
+Whitney ci riflette per qualche secondo, ma poi accetta le modifiche di Bob ben volentieri.  
 
 ### Gameia
 - Il tabellone di gioco di Gameia è inizialmente un albero con $N$ nodi.
 - A turno i giocatori colorano un nodo nell'albero: **Bob** li colorerà di **nero**, **Whitney** di **bianco**.
-- Quando tutti gli $N$ nodi sono stati colorati, se c'è almeno un nodo colorato di bianco, Whitney vince. Altrimenti la vittoria sarà di Bob
+- Quando tutti gli $N$ nodi sono stati colorati, se c'è almeno un vertice colorato di bianco, Whitney vince. Altrimenti la vittoria sarà di Bob
 - Quando Bob colora un nodo, egli colora anche tutti i nodi collegati in automatico.
-- Bob ha a disposizione $K$ mosse speciali che gli permettono in qualunque momento di eliminare un qualsivoglia arco all'interno del grafo (eventualmente trasformando l'albero in foresta).
+- Bob ha inoltre a disposizione $K$ mosse speciali che gli permettono in qualunque momento di eliminare un qualsivoglia arco all'interno del grafo (eventualmente trasformando l'albero in foresta).
 - Usare la mossa speciale non fa saltare il turno a Bob. Potrebbe anche usarla nel turno di Whitney volendo.
 - Whitney inizia SEMPRE per prima
 
-_Sia Bob che Whitney giocheranno ottimamente._
+_Sia Bob che Whitney sono dei giocatori eccezionali: giocheranno entrambi ottimamente,_ ma alla fine **chi dei due vincerà?**
 
 ## File di input
 
@@ -23,7 +23,7 @@ Il programma deve leggere da un file di nome `input.txt`.
 Nella prima riga sono presenti due interi: $N$ (il numero di vertici dell'albero) e $K$ (il numero di mosse speciali di Bob).  
 La successiva riga contiene $N - 1$ interi separati da spazio: l'$i$-esimo numero contiene il padre $F_{i+1}$ del nodo $i+1$
 
-I vertici sono numerati a partire da $1$, che rappresenta sempre la radice dell'albero.
+I vertici sono numerati a partire da $1$ fino a $N$. Il nodo $1$ rappresenta sempre la radice dell'albero.
 
 ## File di output
 
@@ -35,7 +35,7 @@ file deve contenere un unico intero: $0$ se vince Whitney, $1$ se vince Bob
 
 * $1 \leq N \leq 1000\, 000$
 * $0 \leq K \leq N$
-* L'albero fornito in input è un ben formattato (è connesso ed aciclico) ma non è garantito che $F_i \leq F_{i+1}$
+* L'albero fornito in input è un ben formato (è connesso ed aciclico) ma non è garantito che $F_i \leq F_{i+1}$
 
 ## Subtask
 
@@ -59,18 +59,20 @@ file deve contenere un unico intero: $0$ se vince Whitney, $1$ se vince Bob
 | &nbsp;           |                   &nbsp;                   | &nbsp;            |
 | 4 0<br>1 2 3     |                   &nbsp;                   | 0                 |
 ## Note
-Come leggere l'albero dell'input
+Come leggere l'input
 
 ```
 6 1
 3 1 5 1 3
 ```
+L'albero ha 6 nodi. Bob ha a disposizione 1 sola mossa speciale.
 
-Il nodo 2 è figlio del nodo 3;
+Il nodo 2 è figlio del nodo 3;  
 Il nodo 3 è figlio del nodo 1;  
-Il nodo 4 è figlio del nodo 5; 
-Il nodo 5 è figlio del nodo 1;
+Il nodo 4 è figlio del nodo 5;  
+Il nodo 5 è figlio del nodo 1;  
 Il nodo 6 è figlio del nodo 3;
+
 ```
             1
            / \
@@ -81,4 +83,3 @@ Il nodo 6 è figlio del nodo 3;
 ```
 
 Sono disponibili dei suggerimenti.
-

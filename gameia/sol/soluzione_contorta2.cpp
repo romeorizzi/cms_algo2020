@@ -1,7 +1,7 @@
 /*
 La solita soluzione contorta,
 adesso con le migliorie rubate alle altre soluzioni.
-(UNA SOLA RIGA, NEL MAIN)
+(UN SOLO IF, NEL MAIN)
 */
 
 #include<memory>
@@ -137,8 +137,11 @@ int main() {
 
     cin >> treeSize >> bobActions;
 
-    /* UNICO CAMBIAMENTO E' QUESTA RIGA */
-    if((treeSize % 2) || ((treeSize / 2 - 1) > bobActions)) cout << "0" << endl;
+    /* UNICO CAMBIAMENTO E' QUESTO IF */
+    if((treeSize % 2) || ((treeSize / 2 - 1) > bobActions)) {
+        cout << "0" << endl;
+        return 0;
+    }
 
     //L'albero e' fatto da $treeSize nodi.
     auto tree = vector<shared_ptr<NODE>>();

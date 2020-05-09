@@ -3,6 +3,7 @@
 /*
 SOURCE: https://www.bbsmax.com/A/QW5Y821KJm/
 Rivisitato per funzionare su input singolo invece dell'intero batch.
+Nella versione originale la numerazione dei vertici era in ordine DFS. Potrebbe non funzionare
 */
 #include<bits/stdc++.h>
 #include<fstream>
@@ -42,7 +43,7 @@ int main()
         cin >> x;
         G[x].push_back(i);
     }
-    if (n&1) puts("0");
+    if (n&1) cout << "0" << endl;
     else
     {
         ans = 1;
