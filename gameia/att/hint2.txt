@@ -5,12 +5,12 @@ Rispondere a queste due domande non è per niente scontato.
 Richiede una vostra esplorazione del gioco basata sull'analisi
 di partite "più semplici". Poi via via più complesse fino a quando il quadro non sia emerso chiaramente.
 
-Nel testo erano proposti vari esempi. Partiamo da quelli dato che sono anche taggati con la risposta attesa (potremo quindi assicurarci di non fraintendere la consegna).
+Nel testo erano proposti vari esempi. Partiamo da quelli dato che conosciamo la risposta attesa (potremo quindi assicurarci di non fraintendere la consegna).
 
 esemipo1) è quello banale, sarei partito comunque da quello:
 un grafo di un solo nodo e senza archi.
             (   )
-Quì vince Whitney che gioca per primo chiudendo la partita con la sua prima mossa (l'unica possibile). La taggatura corrisponde all'idea che ci siamo fatti.
+Quì vince Whitney che gioca per prima chiudendo la partita con la sua prima mossa (l'unica possibile). La risposta nel testo corrisponde all'idea che ci siamo fatti.
 Possiamo procedere.
 
 
@@ -19,9 +19,9 @@ esempio2)
            /
       (   )
 
-Whitney gioca per primo e, apparentemente, affronta una scelta binaria.
+Whitney gioca per prima e, apparentemente, affronta una scelta binaria.
 Ma in realtà no, non ha una vera scelta data la simmetria (automorfismo del grafo che scambia i due vertici).
-Bob questa volta riesce a muovere e, alla sua prima mossa (di nuovo obbligata), chiude la partita con una vittoria.
+Bob questa volta riesce a muovere e, alla sua prima mossa (di nuovo obbligata), chiude la partita con una vittoria (ricordate che Bob colora anche i nodi adiacenti).
 
 esempio3)
             (   )
@@ -29,13 +29,13 @@ esempio3)
       (   )
      /
 (   )
-Vince Whitney. E' importante che come sua prima mossa colori il nodo centrale.
+Vince Whitney. È importante che come sua prima mossa colori il nodo centrale.
 
 In tutti gli esempi fin quì incontrati,
 Bob non ha mai potuto sfruttare la sua mossa extra per ribaltare la situazione.
 (E, nell'unico caso in cui vince, potrà permettersi di bruciare archi solo a partita già conclusa.)
 
-Sorge naturale la domanda se a Bob possa mai convenire eliminare archi quando essi di fatto promuovono la diffusione del suo colore preferito.
+Sorge naturale chiedersi se a Bob possa mai convenire eliminare archi quando essi di fatto promuovono la diffusione del suo colore preferito.
 
 esempio3)
                   (   )
