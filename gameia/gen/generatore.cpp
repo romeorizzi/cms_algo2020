@@ -94,15 +94,37 @@ void recursiveCall(NODO& node, int len, bool bobWins = false) {
 }
 
 /*
-Solo il primo nodo verra' ignorato.
-*/
-void visitPrint(NODO& node, bool ignoreMe = false) {
+void visitBKP(NODO& node, bool ignoreMe = false) {
     if(!ignoreMe) {
         cout << node.fatherId << " ";
     }
     if(!node.figli.empty()) {
         for(size_t i = 0; i < node.figli.size(); i++) {
             visitPrint(node.figli[i]);
+        }
+    }
+}
+*/
+void visit(vector<int>& vec, NODO& node) {
+    vec[node.uniqueId] = node.fatherId;
+    if(!node.figli.empty()) {
+        for(size_t i = 0; i < node.figli.size(); i++) {
+            visit(vec, node.figli[i]);
+        }
+    }
+}
+
+/*
+Solo il primo nodo verra' ignorato.
+*/
+void visitPrint(NODO& root) {
+    auto toBeFilled = vector<int>(uniqueIDCounter, 0);
+    if(!root.figli.empty()) {
+        for(size_t i = 0; i < root.figli.size(); i++) {
+            visit(toBeFilled, root.figli[i]);
+        }
+        for(size_t i = 2; i < toBeFilled.size(); i++) {
+            cout << toBeFilled[i] << " ";
         }
     }
 }
@@ -113,7 +135,8 @@ void treeMode(int& len){
     if(len > 1)
         recursiveCall(radice, len - 1);
 
-    visitPrint(radice, true);
+    //visitPrint(radice, true);
+    visitPrint(radice);
 }
 
 void bobWin(int&len) {
@@ -124,7 +147,8 @@ void bobWin(int&len) {
     NODO radice(1);
 
     recursiveCall(radice, len - 1, true);
-    visitPrint(radice, true);
+    //visitPrint(radice, true);
+    visitPrint(radice);
 }
 
 int main(int argc, char** argv) {
