@@ -1,33 +1,41 @@
 Un'altra cosa molto importante da capire è: giocando ottimamente, avrei mai potuto ottenere la situazione dell'hint1?
 In generale esistono situazioni in cui a Bob effettivamente converrebbe usare la mossa extra, ma che effettivamente non si presenteranno mai?
 
-Rispondere a queste due domande non è per niente scontato. Conviene forse iniziare da partite "più semplici".
+Rispondere a queste due domande non è per niente scontato.
+Richiede una vostra esplorazione del gioco basata sull'analisi
+di partite "più semplici". Poi via via più complesse fino a quando il quadro non sia emerso chiaramente.
 
-Nel testo c'erano questi vari esempi:
+Nel testo erano proposti vari esempi. Partiamo da quelli dato che sono anche taggati con la risposta attesa (potremo quindi assicurarci di non fraintendere la consegna).
 
-esempio1)
+esemipo1) è quello banale, sarei partito comunque da quello:
+un grafo di un solo nodo e senza archi.
             (   )
-           /
-      (   )
+Quì vince Whitney che gioca per primo chiudendo la partita con la sua prima mossa (l'unica possibile). La taggatura corrisponde all'idea che ci siamo fatti.
+Possiamo procedere.
 
-Che si risolveva con una scontatissima vittoria di Bob
 
 esempio2)
             (   )
            /
       (   )
+
+Whitney gioca per primo e, apparentemente, affronta una scelta binaria.
+Ma in realtà no, non ha una vera scelta data la simmetria (automorfismo del grafo che scambia i due vertici).
+Bob questa volta riesce a muovere e, alla sua prima mossa (di nuovo obbligata), chiude la partita con una vittoria.
+
+esempio3)
+            (   )
+           /
+      (   )
      /
 (   )
-Che si risolveva con la vittoria di Whitney (colorando  il nodo centrale)
+Vince Whitney. E' importante che come sua prima mossa colori il nodo centrale.
 
-Aggiungiamo adesso un altro, banalissimo, esempio.
-esempio0)
-            (   )
-Chiaramente essendoci un solo nodo vince chi gioca per primo, quindi Whitney
+In tutti gli esempi fin quì incontrati,
+Bob non ha mai potuto sfruttare la sua mossa extra per ribaltare la situazione.
+(E, nell'unico caso in cui vince, potrà permettersi di bruciare archi solo a partita già conclusa.)
 
-Tutti questi esempi hanno una cosa in comune: Bob non ha potuto sfruttare la sua mossa extra per ribaltare la situazione.
-
-Guardiamo adesso un ulteriore esempio
+Sorge naturale la domanda se a Bob possa mai convenire eliminare archi quando essi di fatto promuovono la diffusione del suo colore preferito.
 
 esempio3)
                   (   )
@@ -38,7 +46,7 @@ esempio3)
      /
 (   )
 
-Adesso se Bob non avesse mosse extra vincerebbe sicuramente Whitney colorando per primo uno dei due vertici più esterni.
+Se Bob non avesse mosse extra vincerebbe sicuramente Whitney (deve colorare per primo uno dei due estremi del cammino).
 
                   (   )                            ( W )                            ( B )                            ( B )
                  /                                /                                /                                /
@@ -48,7 +56,7 @@ Adesso se Bob non avesse mosse extra vincerebbe sicuramente Whitney colorando pe
      /                                /                                /                                /
 (   )                            (   )                            (   )                            ( W )
 
-Usando una singola mossa extra la situazione può essere ribaltata così:
+Ma Bob può ribaltare la situazione avvalendosi di un singolo intervento speciale:
 
                   (   )                            ( W )                            ( B )                            ( B )                            ( B )
                  /                                /                                /                                /                                /
@@ -58,5 +66,5 @@ Usando una singola mossa extra la situazione può essere ribaltata così:
      /                                /                                /                                /                                /
 (   )                            (   )                            (   )                            ( W )                            ( B )
 
-Certo non abbiamo risposto a nessuna delle due domande iniziali, ma è già un inizio: adesso sappiamo che possono effettivamente presentarsi delle situazioni in cui usare la mossa extra cambia le sorti della partita.
-
+Certo non abbiamo ancora compreso la struttura del problema, ma è già un inizio: adesso sappiamo che possono effettivamente presentarsi delle situazioni in cui utilizzare i gettoni di intervento straordinario cambia le sorti della partita.
+Stiamo entrando nel problema. Un passetto alla volta. Questo è il metodo, e non c'è altra via.
