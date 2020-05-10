@@ -3,39 +3,41 @@
 ## Descrizione del problema
 Whitney e Bob si stanno annoiando.  
 Allora Whitney propone di giocare a Gameia, un gioco che si è appena inventata.  
-Dopo aver ascoltato le regole Bob, che conosce bene la scorrettezza di Whitney, accetta di giocare ma con delle ""piccole"" modifiche in suo favore.  
+Dopo aver ascoltato le regole, Bob, che conosce bene la scorrettezza di Whitney, accetta di giocare ma con delle ""piccole"" modifiche in suo favore.  
 Whitney ci riflette per qualche secondo, ma poi accetta le modifiche di Bob ben volentieri.  
 
 ### Gameia
-- Il tabellone di gioco di Gameia è inizialmente un albero con $N$ nodi.
-- A turno i giocatori colorano un nodo nell'albero: **Bob** li colorerà di **nero**, **Whitney** di **bianco**.
-- Quando tutti gli $N$ nodi sono stati colorati, se c'è almeno un vertice colorato di bianco, Whitney vince. Altrimenti la vittoria sarà di Bob
-- Quando Bob colora un nodo, egli colora anche tutti i nodi collegati in automatico.
-- Bob ha inoltre a disposizione $K$ mosse speciali che gli permettono in qualunque momento di eliminare un qualsivoglia arco all'interno del grafo (eventualmente trasformando l'albero in foresta).
-- Usare la mossa speciale non fa saltare il turno a Bob. Potrebbe anche usarla nel turno di Whitney volendo.
-- Whitney inizia SEMPRE per prima
+- Il tabellone di gioco di Gameia è inizialmente un albero di $N$ nodi labellati coi numeri da $1$ a $N$.
+- A turno i giocatori scelgono un nodo del tabellone:
+  - se il turno è di **Whitney** il nodo viene colorato di **bianco**,
+  - se il turno è di **Bob** quel nodo e tutti i nodi ad esso adiacenti vengono colorati di **nero**.
+- La partita finisce non appena ciascun nodo possegga un qualche colore: vince Whitney se a quel punto almeno un nodo è bianco, altrimenti vince Bob.
+- In qualunque momento del gioco, Bob, senza per questo dover rinunciare al proprio turno,
+  può impiegare uno dei suoi $K$ gettoni di intervento straordinario accordatigli ad inizio partita
+  per eliminare un arco a sua scelta (il primo intervento trasforma l'albero in foresta).
+- Whitney inizia SEMPRE per prima.
 
-_Sia Bob che Whitney sono dei giocatori eccezionali: giocheranno entrambi ottimamente,_ ma alla fine **chi dei due vincerà?**
+Assunto che _Bob e Whitney giocheranno entrambi ottimamente,_ chi dei due vincerà la partita?
 
 ## File di input
 
 Il programma deve leggere da un file di nome `input.txt`.  
-Nella prima riga sono presenti due interi: $N$ (il numero di vertici dell'albero) e $K$ (il numero di mosse speciali di Bob).  
-La successiva riga contiene $N - 1$ interi separati da spazio: l'$i$-esimo numero contiene il padre $F_{i+1}$ del nodo $i+1$
+Nella prima riga sono presenti due interi: $N$ (il numero di nodi dell'albero) e $K$ (il numero massimo di interventi straordinari consentiti a Bob).  
+La successiva riga contiene $N - 1$ interi separati da spazio: l'$i$-esimo numero contiene il padre $F_{i+1}$ del nodo $i+1$.
 
-I vertici sono numerati a partire da $1$ fino a $N$. Il nodo $1$ rappresenta sempre la radice dell'albero.
+I nodi sono labellati coi numeri da $1$ a $N$. Il nodo $1$ rappresenta sempre la radice dell'albero che è stato radicato al solo scopo di consentire questa rappresentazione compatta.
 
 ## File di output
 
-Il programma deve scrivere in un file di nome `output.txt`.  
-file deve contenere un unico intero: $0$ se vince Whitney, $1$ se vince Bob
+Il programma deve scrivere in un file di nome `output.txt`
+e contenente solamente una cifra binaria: $0$ se vince Whitney, $1$ se vince Bob.
 
 
 ## Assunzioni
 
 * $1 \leq N \leq 1000\, 000$
 * $0 \leq K \leq N$
-* L'albero fornito in input è un ben formato (è connesso ed aciclico) ma non è garantito che $F_i \leq F_{i+1}$
+* L'albero fornito in input è un ben formato (è un grafo connesso ed aciclico) ma non è garantito che $F_i \leq F_{i+1}$
 
 ## Subtask
 
@@ -65,13 +67,13 @@ Come leggere l'input
 6 1
 3 1 5 1 3
 ```
-L'albero ha 6 nodi. Bob ha a disposizione 1 sola mossa speciale.
+L'albero ha $6$ nodi. Bob ha a disposizione $1$ sola mossa speciale.
 
-Il nodo 2 è figlio del nodo 3;  
-Il nodo 3 è figlio del nodo 1;  
-Il nodo 4 è figlio del nodo 5;  
-Il nodo 5 è figlio del nodo 1;  
-Il nodo 6 è figlio del nodo 3;
+Il nodo $2$ è figlio del nodo $3$;  
+Il nodo $3$ è figlio del nodo $1$;  
+Il nodo $4$ è figlio del nodo $5$;  
+Il nodo $5$ è figlio del nodo $1$;  
+Il nodo $6$ è figlio del nodo $3$;
 
 ```
             1
