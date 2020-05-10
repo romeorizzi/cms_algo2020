@@ -10,9 +10,9 @@ Whitney ci riflette per qualche secondo, ma poi accetta le modifiche di Bob ben 
 - Il tabellone di gioco di Gameia è inizialmente un albero di $N$ nodi labellati coi numeri da $1$ a $N$.
 - A turno i giocatori scelgono un nodo del tabellone:
   - se il turno è di **Whitney** il nodo viene colorato di **bianco**,
-  - se il turno è di **Bob** quel nodo e tutti i nodi ad esso adiacenti vengono colorati di **nero**.
+  - se il turno è di **Bob** quel nodo e tutti i nodi ad esso adiacenti vengono colorati di **nero** (compresi quelli già precedentemente colorati di bianco).
 - Un giocatore non può mai scegliere un nodo che sia già stato scelto dall'avversario.
-- La partita finisce non appena ciascun nodo possegga un qualche colore: vince Whitney se a quel punto almeno un nodo è bianco, altrimenti vince Bob.
+- La partita finisce non appena ciascun nodo possiede un qualche colore: vince Whitney se a quel punto almeno un nodo è bianco, altrimenti vince Bob.
 - In qualunque momento del gioco, Bob, senza per questo dover rinunciare al proprio turno,
   può impiegare uno dei suoi $K$ gettoni di intervento straordinario accordatigli ad inizio partita
   per eliminare un arco a sua scelta (il primo intervento trasforma l'albero in foresta).
@@ -61,6 +61,7 @@ e contenente solamente una cifra binaria: $0$ se vince Whitney, $1$ se vince Bob
 | 4 1<br>1 2 3     |                   &nbsp;                   | 1                 |
 | &nbsp;           |                   &nbsp;                   | &nbsp;            |
 | 4 0<br>1 2 3     |                   &nbsp;                   | 0                 |
+
 ## Note
 Come leggere l'input
 
@@ -68,7 +69,7 @@ Come leggere l'input
 6 1
 3 1 5 1 3
 ```
-L'albero ha $6$ nodi. Bob ha a disposizione $1$ sola mossa speciale.
+L'albero ha $6$ nodi. Bob ha a disposizione $1$ solo gettone "intervento straordinario".
 
 Il nodo $2$ è figlio del nodo $3$;  
 Il nodo $3$ è figlio del nodo $1$;  

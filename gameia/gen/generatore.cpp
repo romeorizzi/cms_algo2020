@@ -11,6 +11,7 @@ VALORI ACCETTABILI PER MODALITA':
 - 2 tanti aiuti
 - 3 random aiuti
 - 4 un albero in cui Bob vince pelo pelo
+- 5 un albero in cui Bob perde, ma avrebbe potuto vincere avendo avuto a disposizione piu' gettoni
 
 USI SPECIALI:
 arg1 < 0: i casi di esempio
@@ -26,7 +27,7 @@ arg1 -100: un albero in cui bob vince
 using namespace std;
 
 #define MAX_LEN 100000
-#define N_MOD 5
+#define N_MOD 6
 #define LOG2(X) ((unsigned) (8*sizeof (unsigned long long) - __builtin_clzll((X)) - 1))
 
 
@@ -94,15 +95,37 @@ void recursiveCall(NODO& node, int len, bool bobWins = false) {
 }
 
 /*
-Solo il primo nodo verra' ignorato.
-*/
-void visitPrint(NODO& node, bool ignoreMe = false) {
+void visitBKP(NODO& node, bool ignoreMe = false) {
     if(!ignoreMe) {
         cout << node.fatherId << " ";
     }
     if(!node.figli.empty()) {
         for(size_t i = 0; i < node.figli.size(); i++) {
             visitPrint(node.figli[i]);
+        }
+    }
+}
+*/
+void visit(vector<int>& vec, NODO& node) {
+    vec[node.uniqueId] = node.fatherId;
+    if(!node.figli.empty()) {
+        for(size_t i = 0; i < node.figli.size(); i++) {
+            visit(vec, node.figli[i]);
+        }
+    }
+}
+
+/*
+Solo il primo nodo verra' ignorato.
+*/
+void visitPrint(NODO& root) {
+    auto toBeFilled = vector<int>(uniqueIDCounter, 0);
+    if(!root.figli.empty()) {
+        for(size_t i = 0; i < root.figli.size(); i++) {
+            visit(toBeFilled, root.figli[i]);
+        }
+        for(size_t i = 2; i < toBeFilled.size(); i++) {
+            cout << toBeFilled[i] << " ";
         }
     }
 }
@@ -113,7 +136,8 @@ void treeMode(int& len){
     if(len > 1)
         recursiveCall(radice, len - 1);
 
-    visitPrint(radice, true);
+    //visitPrint(radice, true);
+    visitPrint(radice);
 }
 
 void bobWin(int&len) {
@@ -124,7 +148,8 @@ void bobWin(int&len) {
     NODO radice(1);
 
     recursiveCall(radice, len - 1, true);
-    visitPrint(radice, true);
+    //visitPrint(radice, true);
+    visitPrint(radice);
 }
 
 int main(int argc, char** argv) {
@@ -165,7 +190,7 @@ int main(int argc, char** argv) {
     int seed = atoi(argv[3]);
     srand(seed);
 
-    if(mod == 4 && (len % 2))
+    if(mod >= 4 && (len % 2))
         --len;
 
     cout << len << " ";
@@ -175,7 +200,7 @@ int main(int argc, char** argv) {
             break;
         case 1:
         case 4:
-            cout << len/2 - 1 << endl;
+            cout << max(0, len/2 - 1) << endl;
             break;
         case 2:
             cout << len << endl;
@@ -183,10 +208,13 @@ int main(int argc, char** argv) {
         case 3:
             cout << rand() % len << endl;
             break;
+        case 5:
+            cout << max(0, len/2 - 2) << endl;
+            break;
         default:
             return -1;
     }
-    if(mod == 4) {
+    if(mod >= 4) {
         bobWin(len);
     } else {
         treeMode(len);

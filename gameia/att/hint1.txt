@@ -11,7 +11,7 @@ Prendiamo in esame questo caso: la partita sta per finire, tutti i nodi della fo
        (W)   (W)
 
 Tocca a Bob.
-Bob sà che se non sceglie il nodo adiacente ai due nodi colorati W
+Bob sa che se non sceglie il nodo adiacente ai due nodi colorati W
 allora sarà Whitney a farlo alla sua prossima mossa, assicurandosi la presenza di almeno un nodo bianco non più ricolorabile.
 Bob è pertanto costretto a scegliere questo nodo (il terzo nodo dall'alto). Ma così facendo otterrebbe questa situazione:
 
@@ -23,7 +23,7 @@ Bob è pertanto costretto a scegliere questo nodo (il terzo nodo dall'alto). Ma 
          /   \
        (B)   (B)
 
-Ma quì Whitney chiude la partita in vittoria colorando l'ultimo nodo rimasto.
+Ma qui Whitney chiude la partita in vittoria colorando l'ultimo nodo rimasto.
 Mh ..., una brutta fazzenda per Bob.
 
 Tuttavia,

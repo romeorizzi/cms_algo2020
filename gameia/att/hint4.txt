@@ -1,8 +1,0 @@
-E' molto più semplice di quel che sembri.
-
-Se ancora siete in difficoltà:
-
-1) C'è sempre un'unica mossa logica da fare
-2) Alla fine scomporrai l'albero iniziale in alberelli piccolissimi. Ci sono degli alberelli la cui presenza fa vincere in automatico Whitney.
-La risposta ai quesiti dell'hint 2 è quindi: "NO, quella situazione non si presenterà mai. Quindi sì certo ci sono tante combinazioni che non si vedranno mai."
-
