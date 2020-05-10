@@ -11,6 +11,7 @@ Whitney ci riflette per qualche secondo, ma poi accetta le modifiche di Bob ben 
 - A turno i giocatori scelgono un nodo del tabellone:
   - se il turno è di **Whitney** il nodo viene colorato di **bianco**,
   - se il turno è di **Bob** quel nodo e tutti i nodi ad esso adiacenti vengono colorati di **nero**.
+- Un giocatore non può mai scegliere un nodo che sia già stato scelto dall'avversario.
 - La partita finisce non appena ciascun nodo possegga un qualche colore: vince Whitney se a quel punto almeno un nodo è bianco, altrimenti vince Bob.
 - In qualunque momento del gioco, Bob, senza per questo dover rinunciare al proprio turno,
   può impiegare uno dei suoi $K$ gettoni di intervento straordinario accordatigli ad inizio partita
@@ -55,7 +56,7 @@ e contenente solamente una cifra binaria: $0$ se vince Whitney, $1$ se vince Bob
 | &nbsp;           |                   &nbsp;                   | &nbsp;            |
 | 2 1<br>1         |                   &nbsp;                   | 1                 |
 | &nbsp;           |                   &nbsp;                   | &nbsp;            |
-| 3 1<br>2 1       |                   &nbsp;                   | 0                 |
+| 3 1<br>1 2       |                   &nbsp;                   | 0                 |
 | &nbsp;           |                   &nbsp;                   | &nbsp;            |
 | 4 1<br>1 2 3     |                   &nbsp;                   | 1                 |
 | &nbsp;           |                   &nbsp;                   | &nbsp;            |

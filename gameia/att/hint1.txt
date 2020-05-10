@@ -10,8 +10,10 @@ Prendiamo in esame questo caso: la partita sta per finire, tutti i nodi della fo
          /   \
        (W)   (W)
 
-Tocca a Bob. Bob se vuole vincere dovrà necessariamente sbarazzarsi di quei due fastidiosi vertici di Whitney.
-Bob è costretto a colorare il terzo nodo dall'alto. Ma così facendo otterrebbe questa situazione:
+Tocca a Bob.
+Bob sà che se non sceglie il nodo adiacente ai due nodi colorati W
+allora sarà Whitney a farlo alla sua prossima mossa, assicurandosi la presenza di almeno un nodo bianco non più ricolorabile.
+Bob è pertanto costretto a scegliere questo nodo (il terzo nodo dall'alto). Ma così facendo otterrebbe questa situazione:
 
             (   )
             /
@@ -21,9 +23,12 @@ Bob è costretto a colorare il terzo nodo dall'alto. Ma così facendo otterrebbe
          /   \
        (B)   (B)
 
-Ovviamente Whitney vincerebbe colorando l'ultimo nodo rimasto.
+Ma quì Whitney chiude la partita in vittoria colorando l'ultimo nodo rimasto.
+Mh ..., una brutta fazzenda per Bob.
 
-Quindi Bob, se ha ancora a disposizione una mossa extra, prima di colorare quel nodo dovrà spezzettare l'albero in due.
+Tuttavia,
+se Bob ha ancora a disposizione un gettone di intervento straordinario,
+può spezzare l'albero in due prima di colorare quel nodo obbligato.
 
                                         (   )
                                         /
@@ -33,7 +38,7 @@ Quindi Bob, se ha ancora a disposizione una mossa extra, prima di colorare quel 
          /   \
        (W)   (W)
 
-E poi procedere con la colorazione:
+E poi procedere con la colorazione obbligata, che lo lascia con un pezzo già chiuso in suo favore e con un altro che compare negli esempi del testo come di sua vittoria:
 
                                         (   )
                                         /
@@ -43,5 +48,11 @@ E poi procedere con la colorazione:
          /   \
        (B)   (B)
 
-A questo punto è triviale capire che Whitney non può più vincere.
+In questo caso il gettone ha quindi fatto la differenza.
+
+Ok, esempio interessante, però a dire il vero non ha senso che una tale situazione mai si presenti dato che quando Whitney ha scelto il secondo di quei due nodi bianchi avrebbe invece potuto vincere scegliendo il nodo ad esso vicino, garantendosi un nodo bianco non più ricolorabile.
+
+Resta il fatto che questa questione è di certo interessante e non scontata.
+
+Con questo primo hint siamo riusciti nel difficile compito di darvi degli spunti metodologici senza spoilerarvi nemmeno un bit del problema.
 
