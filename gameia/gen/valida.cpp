@@ -25,7 +25,7 @@ bool dfs(unordered_set<shared_ptr<NODE>>& visited, shared_ptr<NODE>& node) {
 
 /*
 Ritorna FALSE se non è aciclico o se non è connesso.
-TRUE se aciclico
+TRUE se e' un albero
 */
 bool deepCheck(shared_ptr<NODE>& root, size_t treeSize) {
 
