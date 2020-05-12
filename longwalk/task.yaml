@@ -1,0 +1,5 @@
+title: Riconoscimento di DAGs e DP su DAGs
+name: longwalk
+time_limit: 1.0
+memory_limit: 256
+token_mode: infinite
