@@ -6,8 +6,7 @@ from sys import argv, exit, stderr
 import os
 
 def usage():
-    print >> stderr, "Usage: %s file_input.txt" % \
-        os.path.basename(argv[0])
+    print("Usage: %s file_input.txt" % os.path.basename(argv[0]), file=stderr)
     exit(1)
 
 def run(f):
@@ -19,13 +18,13 @@ def run(f):
     assert(2 <= M <= MAXM)
     assert(len(f) == M+1)
 
-    for i in xrange(1, M+1):
-	token = [int(x) for x in f[i].split()]
-	assert(len(token) == 2)
-	u, v = token
-	assert(1 <= u <= N)
-	assert(1 <= v <= N)
-	assert(u != v)
+    for i in range(1, M+1):
+        token = [int(x) for x in f[i].split()]
+        assert(len(token) == 2)
+        u, v = token
+        assert(1 <= u <= N)
+        assert(1 <= v <= N)
+        assert(u != v)
 
     return 0 # Input corretto
 
@@ -35,5 +34,3 @@ if __name__ == "__main__":
 
     f = open(argv[1]).readlines()
     exit(run(f))
-
-
