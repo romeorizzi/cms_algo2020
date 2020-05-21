@@ -1,0 +1,58 @@
+Può essere d'aiuto pensare a quali sono i casi in cui conviene a Bob usare la sua mossa extra.
+
+Prendiamo in esame questo caso: la partita sta per finire, tutti i nodi della foresta sono già stati colorati (di nero), tranne questo piccolo alberello che ha due vertici bianchi.
+
+            (   )
+            /
+          (   )
+          /
+         (   )
+         /   \
+       (W)   (W)
+
+Tocca a Bob.
+Bob sa che se non sceglie il nodo adiacente ai due nodi colorati W
+allora sarà Whitney a farlo alla sua prossima mossa, assicurandosi la presenza di almeno un nodo bianco non più ricolorabile.
+Bob è pertanto costretto a scegliere questo nodo (il terzo nodo dall'alto). Ma così facendo otterrebbe questa situazione:
+
+            (   )
+            /
+          ( B )
+          /
+         ( B )
+         /   \
+       (B)   (B)
+
+Ma qui Whitney chiude la partita in vittoria colorando l'ultimo nodo rimasto.
+Mh ..., una brutta fazzenda per Bob.
+
+Tuttavia,
+se Bob ha ancora a disposizione un gettone di intervento straordinario,
+può spezzare l'albero in due prima di colorare quel nodo obbligato.
+
+                                        (   )
+                                        /
+                                    (   )
+
+         (   )
+         /   \
+       (W)   (W)
+
+E poi procedere con la colorazione obbligata, che lo lascia con un pezzo già chiuso in suo favore e con un altro che compare negli esempi del testo come di sua vittoria:
+
+                                        (   )
+                                        /
+                                    (   )
+
+         ( B )
+         /   \
+       (B)   (B)
+
+In questo caso il gettone ha quindi fatto la differenza.
+
+Ok, esempio interessante, però a dire il vero non ha senso che una tale situazione mai si presenti dato che quando Whitney ha scelto il secondo di quei due nodi bianchi avrebbe invece potuto vincere scegliendo il nodo ad esso vicino, garantendosi un nodo bianco non più ricolorabile.
+
+Resta il fatto che questa questione è di certo interessante e non scontata.
+
+Con questo primo hint siamo riusciti nel difficile compito di darvi degli spunti metodologici senza spoilerarvi nemmeno un bit del problema.
+

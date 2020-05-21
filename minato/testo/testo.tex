@@ -34,7 +34,7 @@
 }
 
 % Dati del task
-\newcommand{\gara}{phd2015}
+\newcommand{\gara}{esercizio di introduzione alla programmazione dinamica}
 \newcommand{\nome}{Campo minato}
 \newcommand{\nomebreve}{minato}
 
@@ -47,55 +47,40 @@
 
 % Descrizione del task
 \section*{Descrizione del problema}
-Topolino \`e in missione per accompagnare una spedizione archeologica che segue un'antica mappa
-acquisita di recente dal museo di Toponia. Raggiunta la localit\`a dove dovrebbe trovarsi un
-prezioso e raro reperto archeologico, Topolino si imbatte in un labirinto che ha la forma di una
-gigantesca scacchiera rettangolare composta di $N \times M$ lastroni di marmo di forma quadrata.
 
-Nella mappa, le righe sono numerate da $1$ a $N$ e le colonne da $1$ a $M$. Il lastrone che si
-trova nella posizione corrispondente alla riga $r$ e alla colonna $c$ viene identificato mediante la
-coppia di interi $(r, c)$. I lastroni segnalati da una crocetta '+' sulla mappa contengono un
-trabocchetto mortale e sono quindi da evitare, mentre i rimanenti sono innocui e segnalati da un
-asterisco '*'.
+Un robot deve portarsi dalla cella $(1,1)$
+alla cella $(M,N)$ di una scacchiera rettangolare
+composta da $M \times N$ celle di forma quadrata.
+Il robot non può mai fuoriuscire dalla griglia.
+Sono previsti due soli tipi di mosse:
+\begin{description}
+\item[scendi] il robot si muove dalla cella $(i,j)$ alla cella $(i+1,j)$. (Mossa disponibile solo quando $i<M$) 
+\item[procedi] il robot si muove dalla cella $(i,j)$ alla cella $(i,j+1)$. (Mossa disponibile solo quando $j<N$)   
+\end{description}  
 
-Topolino deve partire dal lastrone in posizione $(1, 1)$ e raggiungere il lastrone in posizione $(N, M)$,
-entrambi innocui. Può passare da un lastrone a un altro soltanto se questi condividono un lato, ossia muovendosi di un passo in direzione orizzontale oppure verticale, senza mai saltare. Ovviamente, tutti i lastroni visitati devono essere innocui.
+Il terreno è minato: alcune delle celle sono interdette e devono essere evitate, fortunatamente siamo provvisti di una mappa che precisa
+la situazione di ogni cella $(i,j)$ della griglia:
+sono da evitare le celle segnalate da una crocetta (\file{map}$[i,j]=$'+'),
+le altre celle sono tutte transitabili e riportano invece un asterisco (\file{map}$[i,j]=$'*').
+In particolare, \file{map}$[1,1]=$\file{map}$[M,N]=$'*'.
 
-Tuttavia, le insidie non sono finite qui: per poter attraversare incolume il labirinto, Topolino può
-procedere solo spostandosi verso destra o verso il basso. Aiutalo a trovare il numero di possibili 
-percorsi che può seguire.
 
 % Input
 \section*{File di input}
-Il programma deve leggere da un file di nome \file{input.txt}. La prima riga contiene due interi positivi $N$ e $M$, separati da spazio, i quali rappresentano le dimensioni della scacchiera.
-Le successive $N$ righe rappresentano il labirinto a scacchiera: la $r$-esima di tali righe contiene una
-sequenza di $M$ caratteri '+' oppure '*', dove '+' indica un lastrone con trabocchetto mentre '*' indica
-un lastrone sicuro. Tale riga rappresenta quindi i lastroni che si trovano sulla $r$-esima riga della
-scacchiera: di conseguenza, il $c$-esimo carattere corrisponde al lastrone in posizione $(r, c)$. I caratteri NON sono separati da degli spazi.
+Il programma deve leggere da un file di nome \file{input.txt}.
+La prima riga contiene due interi positivi $M$ e $N$, separati da spazio, i quali rappresentano le dimensioni della scacchiera.
+Le successive $M$ righe forniscono la mappa, ossia:
+l'$i$-esima di queste $M$ righe contiene una sequenza di $N$ caratteri
+ciascuno dei quali è un '+' (cella minata, ossia interdetta) oppure un '*' (cella transitabile).
+Il $j$-esimo di questi caratteri è \file{map}$[i,j]$.
+Nel file \file{input.txt}
+questi caratteri NON sono separati da degli spazi:
+le righe dalla~$2$ alla~$M+1$ constano di precisamente $N$ caratteri
+cui aggiungere il fine riga.
 
 % Output
 \section*{File di output}
-Il programma deve scrivere in un file di nome \file{output.txt}. Deve venire stampato un unico numero, il numero di percorsi che Topolino può seguire per arrivare dalla cella $(1,1)$ alla cella $(N,M)$.
-
-% Assunzioni
-\section*{Assunzioni}
-\begin{itemize}
-\item $0 < N,M \le 100$
-\item $0 < r,c \le N$
-\item È sempre possibile attraversare il labirinto dal lastrone in posizione $(1, 1)$ al lastrone in
-posizione $(N, M)$, inoltre, tali due lastroni sono innocui.
-\item Il risultato è interno all'intervallo rappresentato dagli int a $32$ bit.
-
-\end{itemize}
-
-% Subtasks
-\section*{Subtask}
-\begin{itemize}
-\item \textbf{Subtask 1 [\phantom{1}5 punti]:} caso di esempio.
-\item \textbf{Subtask 2 [30 punti]:} $N \le 20$.
-\item \textbf{Subtask 3 [30 punti]:} $N \le 50$.
-\item \textbf{Subtask 4 [35 punti]:} nessuna limitazione specifica.
-\end{itemize}
+Il programma deve scrivere in un file di nome \file{output.txt}. Deve venire stampato un unico numero, il numero di percorsi diversi che il robot può seguire per andare dalla cella $(1,1)$ alla cella $(M,N)$.
 
 
 % Esempi
@@ -113,5 +98,32 @@ posizione $(N, M)$, inoltre, tali due lastroni sono innocui.
 
 ++**
 }{9}
+
+
+% Assunzioni
+\section*{Assunzioni}
+\begin{itemize}
+\item $0 < M,N \leq 200$
+\item \file{map}$[1,1]=$\file{map}$[M,N]=$'*'..
+\item Il risultato è interno all'intervallo rappresentato dagli int a $32$ bit.
+
+\end{itemize}
+
+% Subtasks
+\section*{Subtask}
+\begin{itemize}
+\item \textbf{Subtask 1 [\phantom{1}0 punti]:} caso di esempio.
+\item \textbf{Subtask 2 [10 punti]:} $M = 2$, $N \leq 200$, nessuna mina.
+\item \textbf{Subtask 3 [10 punti]:} $M = 2$, $N \leq 200$.
+\item \textbf{Subtask 4 [10 punti]:} $M = 3$, $N \leq 200$, nessuna mina.
+\item \textbf{Subtask 5 [10 punti]:} $M = 3$, $N \leq 200$.
+\item \textbf{Subtask 6 [10 punti]:} nessuna mina, $M,N \leq 10$.
+\item \textbf{Subtask 7 [10 punti]:} nessuna mina, $M,N \leq 30$.
+\item \textbf{Subtask 8 [10 punti]:} $M,N \leq 10$.
+\item \textbf{Subtask 9 [10 punti]:} $M,N \leq 20$.
+\item \textbf{Subtask 10 [10 punti]:} $M,N \leq 50$.
+\item \textbf{Subtask 11 [10 punti]:} $M,N \leq 200$.  
+\end{itemize}
+
 
 \end{document}

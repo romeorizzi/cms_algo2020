@@ -1,0 +1,70 @@
+Un'altra cosa molto importante da capire è: giocando ottimamente, avrei mai potuto ottenere la situazione dell'hint1?
+In generale esistono situazioni in cui a Bob effettivamente converrebbe usare la mossa extra, ma che effettivamente non si presenteranno mai?
+
+Rispondere a queste due domande non è per niente scontato.
+Richiede una vostra esplorazione del gioco basata sull'analisi
+di partite "più semplici". Poi via via più complesse fino a quando il quadro non sia emerso chiaramente.
+
+Nel testo erano proposti vari esempi. Partiamo da quelli dato che conosciamo la risposta attesa (potremo quindi assicurarci di non fraintendere la consegna).
+
+esemipo1) è quello banale, sarei partito comunque da quello:
+un grafo di un solo nodo e senza archi.
+            (   )
+Quì vince Whitney che gioca per prima chiudendo la partita con la sua prima mossa (l'unica possibile). La risposta nel testo corrisponde all'idea che ci siamo fatti.
+Possiamo procedere.
+
+
+esempio2)
+            (   )
+           /
+      (   )
+
+Whitney gioca per prima e, apparentemente, affronta una scelta binaria.
+Ma in realtà no, non ha una vera scelta data la simmetria (automorfismo del grafo che scambia i due vertici).
+Bob questa volta riesce a muovere e, alla sua prima mossa (di nuovo obbligata), chiude la partita con una vittoria (ricordate che Bob colora anche i nodi adiacenti).
+
+esempio3)
+            (   )
+           /
+      (   )
+     /
+(   )
+Vince Whitney. È importante che come sua prima mossa colori il nodo centrale.
+
+In tutti gli esempi fin quì incontrati,
+Bob non ha mai potuto sfruttare la sua mossa extra per ribaltare la situazione.
+(E, nell'unico caso in cui vince, potrà permettersi di bruciare archi solo a partita già conclusa.)
+
+Sorge naturale chiedersi se a Bob possa mai convenire eliminare archi quando essi di fatto promuovono la diffusione del suo colore preferito.
+
+esempio3)
+                  (   )
+                 /
+            (   )
+           /
+      (   )
+     /
+(   )
+
+Se Bob non avesse mosse extra vincerebbe sicuramente Whitney (deve colorare per primo uno dei due estremi del cammino).
+
+                  (   )                            ( W )                            ( B )                            ( B )
+                 /                                /                                /                                /
+            (   )           ==>              (   )           ==>              ( B )           ==>              ( B ) 
+           /                                /                                /                                /
+      (   )                            (   )                            ( B )                            ( B )
+     /                                /                                /                                /
+(   )                            (   )                            (   )                            ( W )
+
+Ma Bob può ribaltare la situazione avvalendosi di un singolo intervento speciale:
+
+                  (   )                            ( W )                            ( B )                            ( B )                            ( B )
+                 /                                /                                /                                /                                /
+            (   )           ==>              (   )           ==>              ( B )           ==>              ( B )           ==>              ( B )
+           /                                /                                                                  
+      (   )                            (   )                            (   )                            (   )                            ( B )
+     /                                /                                /                                /                                /
+(   )                            (   )                            (   )                            ( W )                            ( B )
+
+Certo non abbiamo ancora compreso la struttura del problema, ma è già un inizio: adesso sappiamo che possono effettivamente presentarsi delle situazioni in cui utilizzare i gettoni di intervento straordinario cambia le sorti della partita.
+Stiamo entrando nel problema. Un passetto alla volta. Questo è il metodo, e non c'è altra via.

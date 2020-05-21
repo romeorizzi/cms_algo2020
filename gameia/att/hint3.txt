@@ -1,0 +1,18 @@
+Parliamo adesso di scelte obbligate.
+
+È semplice verificare che in una situazione del genere
+
+                  ( W )
+                 /
+            (   )
+           /
+      (   )
+    /      \
+  ...      ...
+
+Bob deve deve per forza rispondere colorando il nodo collegato a quello colorato di bianco di Whitney, perchè altrimenti quel nodo bianco non potrebbe mai più essere rimosso.
+
+Questo è analogamente vero sempre: Se Whitney riesce ad isolare un nodo del suo colore, ha vinto.
+
+Bob deve sempre ricolorare un nodo bianco.
+
