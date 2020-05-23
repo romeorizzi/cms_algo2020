@@ -1,0 +1,6 @@
+PWD /Users/ale/git/cms_algo2020/mst/testo
+INPUT /usr/local/texlive/2020/texmf.cnf
+INPUT /usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2020/texmf-var/web2c/pdftex/latex.fmt
+INPUT italian.tex
+OUTPUT italian.log
