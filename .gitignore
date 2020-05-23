@@ -5,6 +5,7 @@
 *_EVAL
 **/input
 **/output
+a.out
 
 # backups
 *~
@@ -14,6 +15,9 @@
 *.pdf
 *.aux
 *.log
+*.fls
+*.fdb_latexmk
+*.dvi
 
 # Byte-compiled / optimized / DLL files
 a.out
