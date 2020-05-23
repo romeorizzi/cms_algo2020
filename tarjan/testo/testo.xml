@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE EXAMPLE [
+	  <!ENTITY agrave "à">
+	  <!ENTITY eacute "é">
+	  <!ENTITY egrave "è">
+	  <!ENTITY igrave "ì">
+	  <!ENTITY ograve "ò">
+	  <!ENTITY ugrave "ù">
+          <!ENTITY le "≤">
+          <!ENTITY ge "≥">
+          <!ENTITY lt "<">
+          <!ENTITY gt ">">
+          <!ENTITY ne "≠">
+          <!ENTITY hellip "…">
+          ]>
+<!-- Scrivere le entity come &hellip; non è necessario, se scrivete in
+     UTF8 qualsiasi cosa va bene. Tranne ogni tanto &lt; e &gt;
+
+     Racchiudete ogni espressione matematica nel tag var, non solo le
+     variabili. In particolare, anche le relazioni binarie, le virgole
+     e i puntini tra estremo inferiore e superiore, etc.
+
+     Non usate apici e pedici. Se proprio dovete, tenete conto che c'è
+     un bug per cui il contenuto dopo la fine del tag sub (o sup) e
+     prima del prossimo (o della chiusura del var) scompare in
+     LaTeX. La soluzione quindi è quella di chiudere subito il tag var
+     e riaprirlo subito dopo.
+  -->
+
+
+<layout>
+  <gara>Primo stage (Volterra) - Allenamento primo stage</gara>
+  <titolo>Algoritmo di Tarjan</titolo>
+  <short>tarjan</short>
+  <diff>1</diff>
+  <tempo>1</tempo>
+  <autore>Luca Wehrstedt</autore>
+
+  <problema>
+    <p>
+      Si trovino le componenti fortemente connesse in un grafo orientato avente <var>N</var> nodi e <var>M</var> archi usando l'algoritmo di Tarjan.
+    </p>
+  </problema>
+
+  <input>
+    <p>
+      Il file input.txt contiene sulla prima riga <var>N</var> e <var>M</var>, separati da uno spazio. Le successive <var>M</var> righe contengono due numeri interi positivi, <var>u</var> e <var>v</var>, che rappresentano un arco che collega i nodi <var>u</var> e <var>v</var>.
+    </p>
+  </input>
+
+  <output>
+    <p>
+      Il file output.txt contiene sulla prima riga <var>R</var>, il numero di componenti fortemente connesse e sulle successive <var>2 * R</var> righe le descrizione di ciascuna di esse, cioe' <var>V_i</var>, il numero di nodi in quella componente, e (sulla riga successiva) i <var>V_i</var> nodi che costituiscono quella componente.
+    </p>
+  </output>
+
+  <assunzioni>
+    <li><var>1 &le; N &le; 10000</var></li>
+    <li><var>2 &le; M &le; 1000000</var></li>
+  </assunzioni>
+
+  <esempio>
+    <li>
+      <input>
+6 9
+2 1
+1 3
+3 2
+2 4
+3 4
+4 5
+4 6
+5 6
+6 5
+      </input>
+      <output>
+3
+1
+4 
+2
+6 5 
+3
+2 3 1 
+      </output>
+    </li>
+  </esempio>
+
+  <nota>
+    <li>
+      Tutti gli interi sono 1-based.
+    </li>
+  </nota>
+</layout>
+
+

@@ -1,0 +1,9 @@
+nome_breve: "flusso"
+nome: "Massimo Flusso"
+timeout: 3
+memlimit: 512
+diff: 1
+correttore: ""
+risultati: ""
+n_input: 20
+auxiliary: {}

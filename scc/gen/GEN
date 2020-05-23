@@ -1,0 +1,23 @@
+# File usato per descrivere gli input. Le parti della riga dopo un # vengono
+# ignorate. Le righe non banali (ovvero contenenti qualcosa oltre a whitespace
+# prima del primo #) vengono passate al generatore e generano un input ciascuna.
+# Se una riga inizia con "#ST:" (senza le virgolette) viene usata per delimitare
+# un subtask. "#ST:" va seguito con il punteggio assegnato a quel subtask. Se
+# sono presenti i subtask, è necessario che la somma dei punti di ogni subtask
+# sia 100.
+
+# N			M			S
+
+#COPY: testo/scc.input0.txt
+10			10			1
+100			1000		2
+1000		5000		3
+10000		40000		4
+10000		100000		5
+10000		99999		6
+9995		99999		7
+10000		80000		8
+10000		9000		9
+8000		100000		10
+10000		10000		11
+10000		100000		12
