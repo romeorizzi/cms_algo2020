@@ -34,9 +34,9 @@
 
 \section*{Dati di input}
   
-    Il file \texttt{input.txt} contiene sulla prima riga $N$
+    I dati di input andranno letti da \texttt{stdin}. Sulla prima riga troverete $N$
     e $M$, separati da uno spazio. Le successive $M$
-    righe contengono tre numeri interi
+    righe conterranno tre numeri interi
     positivi, $u$, $v$, $w$, che
     rappresentano un arco di peso $w$ che collega i
     nodi $u$ e $v$ (i nodi sono numerati da $0$ a $N-1$).
@@ -44,16 +44,16 @@
 
 \section*{Dati di output}
   
-    Il file \texttt{output.txt} contiene sulla prima riga il peso dell'albero e
-    sulle successive $N-1$ righe le coppie $u,v$
+    L'output andrà stampato su \texttt{stdout}. La prima riga dovrà contenere il peso dell'albero e
+    le successive $N-1$ righe le coppie $u,v$
     (separate da uno spazio) che rappresentano gli archi dell'albero.
   
   \section*{Assunzioni}
   \begin{itemize}
     \item i nodi sono numerati da $0$ a $N-1$
     \item il grafo assegnato in input è sempre connesso (per ogni copia di nodi esiste un cammino che li congiunge)
-    \item $1 ≤ N ≤ 10\,000$
-    \item $2 ≤ M ≤ 1\,000\,000$
+    \item $2 ≤ N ≤ 10\,000$
+    \item $1 ≤ M ≤ 1\,000\,000$
     \item il peso $w$ di ciascun arco rispetta $1 ≤ w ≤ 2^{42}$ 
     \item il peso dell'MST non eccede mai $2^{58}$
   \end{itemize}
@@ -81,8 +81,8 @@ Per ottenere il punteggio relativo a un subtask, è necessario risolvere corrett
     \noindent
     \begin{tabular}{p{11cm}|p{5cm}}
     \toprule
-    \textbf{File \texttt{input.txt}}
-    & \textbf{File \texttt{output.txt}}
+    \textbf{Stream \texttt{stdin}}
+    & \textbf{Stream \texttt{stdout}}
     \\
     \midrule
     \scriptsize
