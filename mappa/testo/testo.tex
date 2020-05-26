@@ -34,16 +34,14 @@
 }
 
 % Dati del task
-\newcommand{\gara}{Selezione territoriale 2008}
 \newcommand{\nome}{Mappa antica}
 \newcommand{\nomebreve}{mappa}
 
 \begin{document}
 % Intestazione
-\noindent{\Large \gara}
-\vspace{0.5cm}
+\noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}\\
+{\large \textbf (preso ed adattato dalla Selezione Territoriale 2008 delle OII)}
 
-\noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}
 
 % Descrizione del task
 \section*{Descrizione del problema}
@@ -84,17 +82,18 @@ lastroni (1, 1) e (N, N) vanno inclusi nel conteggio dei lastroni attraversati.
 % Assunzioni
 \section*{Assunzioni}
 \begin{itemize}
-\item $0 < N \le 100$
-\item $0 < r,c \le N$
+\item $1 \leq N \leq 100$
+\item $1 \leq r,c \leq N$
 \end{itemize}
 
 % Subtasks
 \section*{Subtask}
 \begin{itemize}
-\item \textbf{Subtask 1 [\phantom{1}5 punti]:} caso di esempio.
-\item \textbf{Subtask 2 [30 punti]:} $N \le 20$.
-\item \textbf{Subtask 3 [30 punti]:} $N \le 75$.
-\item \textbf{Subtask 4 [35 punti]:} nessuna limitazione specifica.
+\item \textbf{Subtask 1 [\phantom{1}0 punti]:} caso di esempio.
+\item \textbf{Subtask 2 [20 punti]:} $N \le 10$.
+\item \textbf{Subtask 3 [30 punti]:} $N \le 20$.
+\item \textbf{Subtask 4 [20 punti]:} $N \le 50$.
+\item \textbf{Subtask 5 [30 punti]:} $N \le 100$.
 \end{itemize}
 
 
