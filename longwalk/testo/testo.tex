@@ -16,17 +16,21 @@
 
 \noindent {\Huge longwalk (\texttt{longwalk})}
 
-
-\vspace{0.5cm}
-\noindent {\Large (tempo limite 1 sec)}
-
 \section*{Descrizione del problema}
 
-    Abbiamo un grafo con $N$ nodi, numerati da 1 a $N$, e $M$ archi diretti.\\
-    Vogliamo trovare una di queste due cose nel grafo:
+Gli $N$ nodi di un grafo $D=(V,A)$ sono numerati da~$1$ a~$N$.
+Gli $M$ archi sono tutti diretti, ossia ciascuno di essi è costituito da una copia ordinata di nodi (il nodo coda ed il nodo testa dell'arco).
+Una \emph{passeggiata} in $D$ è una sequenza di nodi $v_1, v_2, \ldots$
+con la proprietà che per ogni due nodi $v_{i-1}$ e $v_i$ che appaiono consecutivi e in questo ordine nella sequenza valga che $(v_{i-1},v_i)$ è un arco di $D$.
+    Ovviamente una passeggiata di lunghezza infinita (od anche solo di lunghezza $N+1$) esiste se e solo se
+    $D$ contiene un qualche ciclo diretto.
+    Ti chiediamo pertanto di fornire un algoritmo che,
+    dato in input $D$,
+    restituisca una delle due seguenti cose:
     \begin{itemize}
-        \item Un ciclo di qualsiasi dimensione
-        \item Se non esistono cicli, il cammino più lungo che è possibile fare nel grafo
+        \item Un qualche ciclo diretto di $D$, non importa a questo punto la sua lunghezza;
+        \item Un più lungo cammino possibile, di lunghezza finita,
+              che si trovi dentro $D$.
     \end{itemize}
 
 \section*{Dati di input}
@@ -37,7 +41,7 @@
       rispettivamente il numero di nodi ed il numero di archi
 
       Ciascuna delle $M$ righe successive contiene due numeri interi
-      $p$ e $q$ e rappresenta un arco diretto tra il nodo $p$ e il nodo $q$.
+      $u$ e $v$ e rappresenta un arco diretto dal nodo $u$ al nodo $v$.
 
 \section*{Dati di output}
 
