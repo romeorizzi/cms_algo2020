@@ -1,0 +1,12 @@
+nome_breve: "tarjan"
+nome: "Algoritmo di Tarjan"
+timeout: 1
+memlimit: 512
+diff: 1
+correttore: ""
+risultati: "0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"
+auxiliary: {}
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

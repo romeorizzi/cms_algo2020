@@ -1,0 +1,10 @@
+nome_breve: "mappa"
+nome: "Mappa antica"
+timeout: 1
+memlimit: 64
+infile: "input.txt"
+outfile: "output.txt"
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+

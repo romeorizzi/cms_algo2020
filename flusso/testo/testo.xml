@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE EXAMPLE [
+	  <!ENTITY agrave "à">
+	  <!ENTITY eacute "é">
+	  <!ENTITY egrave "è">
+	  <!ENTITY igrave "ì">
+	  <!ENTITY ograve "ò">
+	  <!ENTITY ugrave "ù">
+          <!ENTITY le "≤">
+          <!ENTITY ge "≥">
+          <!ENTITY lt "<">
+          <!ENTITY gt ">">
+          <!ENTITY ne "≠">
+          <!ENTITY hellip "…">
+          ]>
+<!-- Scrivere le entity come &hellip; non è necessario, se scrivete in
+     UTF8 qualsiasi cosa va bene. Tranne ogni tanto &lt; e &gt;
+
+     Racchiudete ogni espressione matematica nel tag var, non solo le
+     variabili. In particolare, anche le relazioni binarie, le virgole
+     e i puntini tra estremo inferiore e superiore, etc.
+
+     Non usate apici e pedici. Se proprio dovete, tenete conto che c'è
+     un bug per cui il contenuto dopo la fine del tag sub (o sup) e
+     prima del prossimo (o della chiusura del var) scompare in
+     LaTeX. La soluzione quindi è quella di chiudere subito il tag var
+     e riaprirlo subito dopo.
+  -->
+
+
+<layout>
+  <gara>Primo stage (Volterra) - Allenamento primo stage</gara>
+  <titolo>Algoritmo di massimo flusso</titolo>
+  <short>flusso</short>
+  <diff>1</diff>
+  <tempo>1</tempo>
+  <autore>Giovanni Campagna e Luca Wehrstedt</autore>
+
+  <problema>
+    <p>
+      Si calcoli il massimo flusso tra i nodi <var>S</var>
+      e <var>E</var> in un grafo pesato orientato avente <var>N</var>
+      nodi e <var>M</var> archi.
+    </p>
+  </problema>
+
+  <input>
+    <p>
+      Il file <samp>input.txt</samp> contiene sulla prima
+      riga <var>N</var> e <var>M</var>, separati da uno spazio, e
+      sulla seconda riga <var>S</var> e <var>E</var>, separati da uno
+      spazio. Le successive <var>M</var> righe contengono tre numeri
+      interi positivi, <var>u</var>, <var>v</var> e <var>w</var>, che
+      rappresentano un arco di peso <var>w</var> che collega i
+      nodi <var>u</var> e <var>v</var>.
+    </p>
+  </input>
+
+  <output>
+    <p>
+      Il file <samp>output.txt</samp> contiene un'unica riga. In
+      questa riga deve essere presente il flusso massimo ottenibile.
+    </p>
+  </output>
+
+  <assunzioni>
+    <li><var>1 &le; N &le; 10000</var></li>
+    <li><var>2 &le; M &le; 1000000</var></li>
+    <li><var>1 &le; W_i &lt; 2^{31}</var></li>
+    <li>Il flusso massimo è sicuramente <var>&lt; 2<sup>31</sup></var></li>
+  </assunzioni>
+
+  <esempio>
+    <li>
+      <input>
+6 8
+5 2
+1 2 734
+2 6 497
+3 5 926
+4 3 882
+5 4 9
+5 6 74
+5 1 257
+6 4 491
+      </input>
+      <output>
+257
+      </output>
+    </li>
+  </esempio>
+
+  <nota>
+    <li>
+      Tutti gli interi sono 1-based.
+    </li>
+  </nota>
+</layout>
+
+

@@ -1,0 +1,115 @@
+% Template per generare 
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% \usepackage[group-separator={\,}]{siunitx}
+\usepackage[left=2cm, right=2cm, bottom=3cm]{geometry}
+\frenchspacing
+
+\newcommand{\num}[1]{#1}
+
+% Macro varie...
+\newcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\esempio}[2]{
+\noindent\begin{minipage}{\textwidth}
+\begin{tabular}{|p{11cm}|p{5cm}|}
+	\hline
+	\textbf{File \file{input.txt}} & \textbf{File \file{output.txt}}\\
+	\hline
+	\tt \small #1 &
+	\tt \small #2 \\
+	\hline
+\end{tabular}
+\end{minipage}
+}
+
+% Dati del task
+\newcommand{\nome}{Mappa antica}
+\newcommand{\nomebreve}{mappa}
+
+\begin{document}
+% Intestazione
+\noindent{\Huge \textbf \nome~(\texttt{\nomebreve})}\\
+{\large \textbf (preso ed adattato dalla Selezione Territoriale 2008 delle OII)}
+
+
+% Descrizione del task
+\section*{Descrizione del problema}
+Topolino è in missione per accompagnare una spedizione archeologica che segue un'antica mappa
+acquisita di recente dal museo di Topoinia. Raggiunta la località dove dovrebbe trovarsi un
+prezioso e raro reperto archeologico, Topolino si imbatte in un labirinto che ha la forma di una
+gigantesca scacchiera quadrata di NxN lastroni di marmo.
+
+Nella mappa, sia le righe che le colonne del labirinto sono numerate da 1 a N. Il lastrone che si
+trova nella posizione corrispondente alla riga r e alla colonna c viene identificato mediante la
+coppia di interi $(r, c)$. I lastroni segnalati da una crocetta '+' sulla mappa contengono un
+trabocchetto mortale e sono quindi da evitare, mentre i rimanenti sono innocui e segnalati da un
+asterisco '*'.
+
+Topolino deve partire dal lastrone in posizione (1, 1) e raggiungere il lastrone in posizione (N, N),
+entrambi innocui. Può passare da un lastrone a un altro soltanto se questi condividono un lato o
+uno spigolo (quindi può procedere in direzione orizzontale, verticale o diagonale ma non saltare) e,
+ovviamente, questi lastroni devono essere innocui.
+
+Tuttavia, le insidie non sono finite qui: per poter attraversare incolume il labirinto, Topolino deve
+calpestare il minor numero possibile di lastroni innocui (e ovviamente nessun lastrone con
+trabocchetto). Aiutate Topolino a calcolare tale numero minimo.
+
+% Input
+\section*{File di input}
+Il programma deve leggere da un file di nome \file{input.txt}. La prima riga contiene un intero positivo che rappresenta la dimensione N di un lato del labirinto a scacchiera. 
+Le successive N righe rappresentano il labirinto a scacchiera: la $r$-esima di tali righe contiene una
+sequenza di N caratteri '+' oppure '*', dove '+' indica un lastrone con trabocchetto mentre '*' indica
+un lastrone sicuro. Tale riga rappresenta quindi i lastroni che si trovano sulla $r$-esima riga della
+scacchiera: di conseguenza, il $c$-esimo carattere corrisponde al lastrone in posizione $(r, c)$. I caratteri NON sono separati da degli spazi.
+
+% Output
+\section*{File di output}
+Il programma deve scrivere in un file di nome \file{output.txt}. Deve venire stampato il minimo numero di lastroni innocui (ossia indicati con '*') che Topolino deve attraversare a partire dal
+lastrone in posizione (1, 1) per arrivare incolume al lastrone in posizione (N, N). Notare che i
+lastroni (1, 1) e (N, N) vanno inclusi nel conteggio dei lastroni attraversati.
+
+% Assunzioni
+\section*{Assunzioni}
+\begin{itemize}
+\item $1 \leq N \leq 100$
+\item $1 \leq r,c \leq N$
+\end{itemize}
+
+% Subtasks
+\section*{Subtask}
+\begin{itemize}
+\item \textbf{Subtask 1 [\phantom{1}0 punti]:} caso di esempio.
+\item \textbf{Subtask 2 [20 punti]:} $N \le 10$.
+\item \textbf{Subtask 3 [30 punti]:} $N \le 20$.
+\item \textbf{Subtask 4 [20 punti]:} $N \le 50$.
+\item \textbf{Subtask 5 [30 punti]:} $N \le 100$.
+\end{itemize}
+
+
+% Esempi
+\section*{Esempio di input/output}
+\esempio{
+5
+
+***+*
+
++**++
+
+*+*+*
+
++++*+
+
++**+*
+}{5}
+\end{document}

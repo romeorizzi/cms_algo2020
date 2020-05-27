@@ -1,0 +1,12 @@
+nome_breve: "maree"
+nome: "Maree a Venezia"
+timeout: 1
+memlimit: 256
+diff: 1
+correttore: ""
+risultati: ""
+auxiliary: {}
+token_mode: disabled
+public_testcases: all
+feedback_level: full
+everything_public: true
