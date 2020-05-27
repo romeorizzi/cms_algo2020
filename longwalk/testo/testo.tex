@@ -21,57 +21,48 @@
 \noindent {\Large (tempo limite 1 sec)}
 
 \section*{Descrizione del problema}
-  
-      In un torneo a $N$ giocatori si disputano $M$ partite.
-      Ciascuna partita si svolge tra due giocatori $p$ e $q$,
-      con $1 ≤ p,q ≤ N $, e non si verifica alcun pareggio tra i
-      giocatori. Tuttavia, possono esserci più partite tra gli stessi giocatori,
-      con esiti indipendenti dalle partite precedenti.
-    
-      Siamo interessati a scoprire se esista una sequenza di giocatori $p_{0}, \ldots, p_{k-1}$ tale che il giocatore $p_i$ abbia vinto in almeno una partita contro il giocatore $p_{i+1 .mod. k}$ per ogni $i=0,\ldots, k-1$.
-      Qualora questa non esista,
-      si richiede di determinare la pi\`u lunga sequenza $p_{1}, \ldots, p_{\overline{k}}$
-      di giocatori tale che ogni giocatore della sequenza
-      tranne l'ultimo abbia vinto in almeno una partita contro il giocatore
-      successivo. 
-    
+
+    Abbiamo un grafo con $N$ nodi, numerati da 1 a $N$, e $M$ archi diretti.\\
+    Vogliamo trovare una di queste due cose nel grafo:
+    \begin{itemize}
+        \item Un ciclo di qualsiasi dimensione
+        \item Se non esistono cicli, il cammino più lungo che è possibile fare nel grafo
+    \end{itemize}
 
 \section*{Dati di input}
-  
+
       Il file di input è composto da $M+1$ righe.
-    
+
       La prima riga contiene due numeri interi $N$ e $M$,
-      rispettivamente il numero di giocatori e il numero di partite.
-    
+      rispettivamente il numero di nodi ed il numero di archi
+
       Ciascuna delle $M$ righe successive contiene due numeri interi
-      $p$ e $q$ e rappresenta una singola partita tra 
-      $p$ e $q$ in cui $p$ è il vincitore.
-    
+      $p$ e $q$ e rappresenta un arco diretto tra il nodo $p$ e il nodo $q$.
 
 \section*{Dati di output}
-  
+
       Il file di output è composto da 2 righe.
-    
-      Qualora esista una sequenza $p_{0}, \ldots, p_{k-1}$ tale che 
-      ciascun giocatore a parte l'ultimo ha vinto in almeno una partita contro il giocatore successivo, e l'ultimo giocatore ha vinto contro il primo, la prima riga deve contenere l'intero $-1$ e l'intero $k$.
-      La seconda riga deve contenere $k$ numeri interi $p_{0}, \ldots, p_{k-1}$
-      che rappresentano una sequenza di giocatori con queste caratteristiche.
-    
+
+      Qualora esista una ciclo di $k$ nodi $n_{1}, \ldots, n_{k}$,
+      la prima riga deve contenere gli interi $-1$ e $k$
+      mentre la seconda riga $k$ numeri interi $n_{1}, \ldots, n_{k}$
+      che rappresentano gli indici dei nodi nell'ordine di percorrenza del ciclo.
+
       Altrimenti, la prima riga deve contenere
-      la massima lunghezza $\overline{k}$ di una sequenza in cui ogni giocatore tranne l'ultimo abbia vinto una qualche partita contro il successivo;
-      la seconda riga deve contenere $\overline{k}$ numeri interi $p_{1}, \ldots, p_{\overline{k}}$
+      la lunghezza $\overline{k}$ del cammino massimo che è possibile fare nel grafo e
+      la seconda riga $\overline{k}$ numeri interi $n_{1}, \ldots, n_{\overline{k}}$
       che rappresentino una tale sequenza.
-    
+
   \section*{Assunzioni}
   \begin{itemize}
-  
+
     \item $2 ≤ N ≤  100000$
     \item $2 ≤ M ≤ 1000000$
   \end{itemize}
 
 \section*{Esempi di input/output}
 
-  
+
     \noindent
     \begin{tabular}{p{11cm}|p{5cm}}
     \toprule
@@ -101,7 +92,7 @@
     \\
     \bottomrule
     \end{tabular}
-  
+
     \noindent
     \begin{tabular}{p{11cm}|p{5cm}}
     \toprule
@@ -133,7 +124,7 @@
     \\
     \bottomrule
     \end{tabular}
-  
+
 
 
 \end{document}
