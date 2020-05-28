@@ -3,7 +3,7 @@ Generatore di input per il problema Collage.
 
 arg1 --> lunghezza della sequenza numerica da generare
 arg2 --> lunghezza della sequenza numerica compressa
-arg3 --> numero di colori disponibili (3 - 256), non il valore massimo (2 - 255)
+arg3 --> numero di colori disponibili (1 - 256), non il valore massimo (0 - 255)
 arg4 --> modalita'
 arg5 --> seed
 
@@ -273,7 +273,7 @@ int main(int argc, char** argv) {
     assert(compressedLen <= len && compressedLen > 0);
 
     int numColors = atoi(argv[3]);
-    assert(numColors <= MAX_COLOR_PALETTE && numColors > 2);
+    assert(numColors <= MAX_COLOR_PALETTE && numColors >= 1);
 
     int mod = atoi(argv[4]);
     assert(mod < N_MOD && mod >= 0);
