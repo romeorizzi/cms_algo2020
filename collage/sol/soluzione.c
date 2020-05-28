@@ -46,8 +46,7 @@ colore_nodo *colore_find( cache_lista lista, int segcol );
 void cache_add( cache_nodo *cache_curr, int start, int end,
 		int segcol, int val );
 
-int main()
-{
+int main() {
 #ifdef EVAL
   freopen(stdin, "input.txt", "r");
   freopen(stdout, "output.txt", "w");
@@ -57,8 +56,7 @@ int main()
   return 0;
 }
 
-void leggi( void )
-{
+void leggi( void ) {
   int last = 0, prev = -1;
   int i;
   
@@ -83,17 +81,15 @@ void leggi( void )
   N = last;
 }
 
-void risolvi( void )
-{
+void risolvi( void ) {
 #ifndef NDEBUG
   //fprintf( stderr, "Risoluzione...\n" );
 #endif
   printf( "%d\n", ottimizza( 0, N, -1 ) );
 }
 
-int ottimizza( int start, int end, int segcol )
-{
-  int col1, col2;
+int ottimizza( int start, int end, int segcol ) {
+  int col1;
   int ott, res;
   cache_nodo *cache_curr;
   colore_nodo *colore_curr;
@@ -113,7 +109,6 @@ int ottimizza( int start, int end, int segcol )
     return 0;
 
   col1 = strisce[start];
-  col2 = strisce[end];
 
   if( start == ( end-1 ) ) {
     if( col1 != segcol )
@@ -156,8 +151,7 @@ int ottimizza( int start, int end, int segcol )
   return ott;
 }
 
-cache_nodo *cache_find( int start, int end  )
-{
+cache_nodo *cache_find( int start, int end  ) {
   cache_nodo *curr = cache[start][cache_hash(end)];
 #ifndef NDEBUG
   //fprintf( stderr, "cache_find( %d, %d )\n", start, end );
@@ -171,8 +165,7 @@ cache_nodo *cache_find( int start, int end  )
   return curr;
 }
 
-colore_nodo *colore_find( cache_lista lista, int segcol )
-{
+colore_nodo *colore_find( cache_lista lista, int segcol ) {
   colore_nodo *curr;
 #ifndef NDEBUG
   //fprintf( stderr, "colore_find( %p, %d )\n", lista, segcol );
@@ -192,8 +185,7 @@ colore_nodo *colore_find( cache_lista lista, int segcol )
 }
 
 void cache_add( cache_nodo *cache_curr, int start, int end,
-		int segcol, int val )
-{
+		int segcol, int val ) {
   colore_nodo *colore_new;
   int hash_val;
 #ifndef NDEBUG
