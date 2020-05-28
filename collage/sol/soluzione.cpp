@@ -4,9 +4,9 @@ memory: O(opt^2)
 time: O(opt^3) 
 */
 
-#include<iostream>
 #include<cassert>
-#include<cstdio>
+#include<iostream>
+#include<fstream>
 
 using namespace std;
 
@@ -29,7 +29,7 @@ int memo[MAXn][MAXn];
 int Min(int i, int j) {
   /* ritorna il minimo numero di fogli per comporre l'arcobaleno seq[i...j] (estremi inclusi)
    */
-  //cout << "i=" << i << "j=" j << endl;
+  //out << "i=" << i << "j=" j << endl;
   //printf("i=%d\tj=%d", i,j);
   assert(i >= 0);
   assert(j >= i-1);
@@ -71,20 +71,20 @@ int PD() {
 
 int main() {
   //leggo lunghezza della sequenza
-  cin >> N;
+  in >> N;
   assert((N > 0) && (N <= MAXN));
   //memorizzo in un array la sequenza eliminando i colori uguali consecutivi
   int tmp, prev = -1;
   n = 0;
   for(int i = 0; i < N; ++i) {
-    cin >> tmp;
+    in >> tmp;
     if (tmp != prev) {
       seq[n++] = tmp;
       prev = tmp;
     }
   }
   int risp = Min(0,n-1);
-  cout << risp << endl;
+  out << risp << endl;
   assert(risp == PD());
   return 0;
 }
