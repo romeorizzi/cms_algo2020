@@ -102,19 +102,19 @@ def run(N, realM, L, C, S):
             q.put(0)
             visited = [False] * N
             visited[0] = True
-            visitedN = 0
+            visitedN = 1
             minArcs = [{} for i in range(N)]
             while(not q.empty()):
                 popped = q.get()
-                visitedN += 1
-                if(visitedN == N):
-                    break
                 for u1 in mappa_archi[popped]:
                     if(not visited[u1]):
                         q.put(u1)
                         visited[u1] = True
                         minArcs[popped][u1] = True
                         minArcs[u1][popped] = True
+                        visitedN += 1
+                        if(visitedN == N):
+                            break
             M = N - 1
             for u1 in range(N):
                 for u2 in list(mappa_archi[u1]):
