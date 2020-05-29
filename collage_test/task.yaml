@@ -1,0 +1,10 @@
+name: collage_test
+title: "Arcobaleno e Collage"
+time_limit: 4.0
+memory_limit: 256
+infile: "input.txt"
+outfile: "output.txt"
+token_mode: disabled
+feedback_level: full
+public_testcases: all
+
