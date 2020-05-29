@@ -15,12 +15,13 @@ istream &in(cin);
 ostream &out(cout);
 #endif
 
-const int MAXN = 1000;
+const int MAXN = 1000000;
+const int MAXF = 1000;
 const int MAXC = 256;
 
-int strisce[MAXN];
+int strisce[MAXF];
 int N;
-map< int, map<int, int> > cache[MAXN];
+map< int, map<int, int> > cache[MAXF];
 list<int> pos[MAXC];
 
 void leggi();

@@ -8,12 +8,13 @@
 // Maurizio
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <cassert>
 
 using namespace std;
 
-const int MAXN = 1000;
+const int MAXN = 1000000;
 const int MAXC = 256;
 
 int strisce[MAXN];
@@ -25,6 +26,12 @@ int colora( int a, int b, int col );
 
 int main()
 {
+ #ifdef EVAL
+  ifstream in("input.txt");
+  ofstream out("output.txt");
+  cin.rdbuf(in.rdbuf());
+  cout.rdbuf(out.rdbuf());
+#endif  
   cin >> N;
   int prev, last;
   last = 0;

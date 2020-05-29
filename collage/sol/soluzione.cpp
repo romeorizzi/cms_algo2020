@@ -19,7 +19,7 @@ ostream &out(cout);
 #endif
 
 const int MAXN = 1000000;
-const int MAXopt = 50;
+const int MAXopt = 150;
 const int MAXn = min(MAXN, 2*MAXopt +1); // massima lunghezza della sequenza compressa.
 
 int N, n, seq[MAXn];

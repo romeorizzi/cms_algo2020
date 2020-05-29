@@ -1,3 +1,4 @@
+//MODIFICATA PER FUNZIONARE ANCHE CON N 1000000
 #include <iostream>
 #include <fstream>
 #include <climits>
@@ -16,14 +17,20 @@ int main()
   ofstream out("output.txt");
   cin.rdbuf(in.rdbuf());
   cout.rdbuf(out.rdbuf());
-#endif  
+#endif
   int i,j,k,min,a,n;
   cin>>n;
-  for(i=0;i<n;i++)
-    {
-      cin>>col[i];
-      m[0][i]=1;
-    }
+  int old = 256;
+  for(i=0,j=0;i<n;i++)
+  {
+      cin >> k;
+      if ( k != old ) {
+          col[j] = k;
+          m[0][j++]=1;
+          old = k;
+      }
+  }
+  n = j;
   for(i=1;i<n;i++)
       for(j=0;j<n-i;j++)
 	{

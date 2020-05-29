@@ -8,7 +8,8 @@
 #define NDEBUG
 #endif
 
-#define MAXN 1000
+#define MAXF 1000
+#define MAXN 1000000
 #define MAXC 256
 #define HASHSIZE 53
 #define CACHESIZE 503
@@ -30,9 +31,9 @@ typedef struct int_nodo_t {
   struct int_nodo_t *next;
 } int_nodo, *int_lista;
 
-int strisce[MAXN];
+int strisce[MAXF];
 int N;
-cache_lista cache[MAXN][CACHESIZE];
+cache_lista cache[MAXF][CACHESIZE];
 int_lista pos[MAXC];
 
 #define colore_hash(x) ( ( abs(x) ) % HASHSIZE )
@@ -48,8 +49,8 @@ void cache_add( cache_nodo *cache_curr, int start, int end,
 
 int main() {
 #ifdef EVAL
-  freopen(stdin, "input.txt", "r");
-  freopen(stdout, "output.txt", "w");
+  stdin = fopen("input.txt", "r");
+  stdout = fopen("output.txt", "w");
 #endif
   leggi();
   risolvi();

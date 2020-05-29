@@ -24,8 +24,9 @@ arg1 < 0: i casi di esempio
 #include<ext/pb_ds/assoc_container.hpp>
 #include<ext/pb_ds/tree_policy.hpp>
 
-#define MAX_LEN 1000
-#define OFFSET 2002
+#define MAX_LEN 1000000
+#define MAX_COMPRESSED_LEN 150
+#define OFFSET 2000002
 #define MAX_COLOR_PALETTE 256
 #define N_MOD 3
 #define LOG2(X) ((unsigned) (8*sizeof (unsigned long long) - __builtin_clzll((X)) - 1))
@@ -61,6 +62,53 @@ typedef tree<
             tree_order_statistics_node_update > STATISTIC_TREE;
 
 STATISTIC_TREE generatedTree;
+
+
+/* CODICE DI RIFERIMENTO ==> 1
+Generazione con distribuzione Chi2
+*/
+void chiMode(int& len, int& numColors, int& seed){
+    auto generator = default_random_engine(seed);
+    int logC = LOG2(numColors) + 1;
+    assert(logC > 0 && logC <= numColors);
+    chi_squared_distribution<double> distribution(logC + 1);
+
+    int count = 0;
+    int oldColor = MAX_COLOR_PALETTE;
+    int tmp;
+    while(count < len) {
+        tmp = distribution(generator);
+        if(tmp >= 0 && tmp < numColors) {
+            tmp = (tmp + (tmp == oldColor)) % numColors;
+            oldColor = tmp;
+            count++;
+            generatedTree.insert(NODO(tmp));
+        }
+    }
+}
+
+
+
+
+
+/* CODICE DI RIFERIMENTO ==> 2
+Generazione molto semplice: col classico rand() % colori disponibili.
+*/
+void randomMode(int& len, int& numColors, int& seed){
+    int oldColor = MAX_COLOR_PALETTE;
+    int tmp;
+    for(int i = 0; i < len; i++) {
+        tmp = rand() % numColors;
+        tmp = (tmp + (tmp == oldColor)) % numColors;
+        oldColor = tmp;
+        generatedTree.insert(NODO(tmp));
+    }
+}
+
+
+
+
+
 /*
 Divide il nodo in bucket in base alla sua lunghezza. Ogni bucket sara' un figlio e rappresentera' una "parentesi".
 Ogni bucket viene ridiviso ricorsivamente.
@@ -105,7 +153,7 @@ void recursiveCall(NODO& node, int len, unordered_set<int>& usedColors, int& num
                     advance(it, newColor);
                     newColor = *it;
                 }
-            } while(newColor == forbiddenColor || newColor == node.colore);
+            } while(newColor == forbiddenColor || (newColor == node.colore && (bucketSize > 1 || len == 1)));
             usedColors.insert(newColor);
             forbiddenColor = newColor;
             
@@ -151,7 +199,10 @@ ma molto piu' probabilmente sara':
 (.........)(.......).....(......)
 */
 void treeMode(int& len, int& numColors, int& seed){
-    
+    if(numColors < 3) {
+        randomMode(len, numColors, seed);
+        return;
+    }
     auto usedColors = unordered_set<int>();
     NODO radice (rand() % numColors);
     usedColors.insert(radice.colore);
@@ -160,50 +211,6 @@ void treeMode(int& len, int& numColors, int& seed){
     recursiveCall(radice, len + 2, usedColors, numColors);
 
     visitPrint(radice, true);
-}
-
-
-
-
-/* CODICE DI RIFERIMENTO ==> 1
-Generazione con distribuzione Chi2
-*/
-void chiMode(int& len, int& numColors, int& seed){
-    auto generator = default_random_engine(seed);
-    int logC = LOG2(numColors) + 1;
-    assert(logC > 0 && logC <= numColors);
-    chi_squared_distribution<double> distribution(logC + 1);
-
-    int count = 0;
-    int oldColor = numColors;
-    int tmp;
-    while(count < len) {
-        tmp = distribution(generator);
-        if(tmp >= 0 && tmp < numColors) {
-            tmp = (tmp + (tmp == oldColor)) % numColors;
-            oldColor = tmp;
-            count++;
-            generatedTree.insert(NODO(tmp));
-        }
-    }
-}
-
-
-
-
-
-/* CODICE DI RIFERIMENTO ==> 2
-Generazione molto semplice: col classico rand() % colori disponibili.
-*/
-void randomMode(int& len, int& numColors, int& seed){
-    int oldColor = numColors;
-    int tmp;
-    for(int i = 0; i < len; i++) {
-        tmp = rand() % numColors;
-        tmp = (tmp + (tmp == oldColor)) % numColors;
-        oldColor = tmp;
-        generatedTree.insert(NODO(tmp));
-    }
 }
 
 
@@ -270,10 +277,12 @@ int main(int argc, char** argv) {
     assert(len <= MAX_LEN && len > 0);
 
     int compressedLen = atoi(argv[2]);
-    assert(compressedLen <= len && compressedLen > 0);
+    assert(compressedLen <= len && compressedLen <= MAX_COMPRESSED_LEN && compressedLen > 0);
 
     int numColors = atoi(argv[3]);
     assert(numColors <= MAX_COLOR_PALETTE && numColors >= 1);
+
+    assert(!(compressedLen > 1 && numColors == 1));
 
     int mod = atoi(argv[4]);
     assert(mod < N_MOD && mod >= 0);
