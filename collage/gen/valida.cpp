@@ -3,6 +3,14 @@
 #define MAX_COLOR 255
 #define MAX_LEN 1000000
 #define MAX_COMPRESSED 150
+
+
+#define INVALID_LEN 11
+#define INPUT_TOO_LONG 10
+#define INPUT_TOO_SHORT 9
+#define WRONG_COLORS 8
+#define TOO_MANY_LAYERS 7
+
 using namespace std;
 int main(int argc, char** argv) {
     auto fIn = ifstream(argv[1]);
@@ -10,7 +18,7 @@ int main(int argc, char** argv) {
     int len;
     fIn >> len;
     if(fIn.fail() || len < 1 || len > MAX_LEN) {
-        return -1;
+        return INVALID_LEN;
     }
 
     int tmp;
@@ -18,8 +26,10 @@ int main(int argc, char** argv) {
     int compressedCount = 0;
     for(int i = 0; i < len; i++) {
         fIn >> tmp;
-        if(fIn.fail() || tmp < 0 || tmp > MAX_COLOR) {
-            return -1;
+        if(fIn.fail()) {
+            return INPUT_TOO_SHORT;
+        } else if(tmp < 0 || tmp > MAX_COLOR) {
+            return WRONG_COLORS;
         }
         if(tmp != old) {
             compressedCount++;
@@ -28,10 +38,12 @@ int main(int argc, char** argv) {
     }
 
     fIn >> tmp;
-    if(fIn.fail() && compressedCount <= MAX_COMPRESSED) {
-        return 0;
+    if(!fIn.fail()) {
+        return INPUT_TOO_LONG;
+    } else if (compressedCount > MAX_COMPRESSED) {
+        return TOO_MANY_LAYERS;
     } else {
-        return -1;
+        return 0;
     }
 
 }
