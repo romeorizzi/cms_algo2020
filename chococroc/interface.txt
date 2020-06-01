@@ -1,0 +1,16 @@
+function win_from(n, m);
+
+function cut_direction(n, m);
+function eat_size(n, m);
+
+main {
+    read n, m;
+    call w = win_from(n, m);
+    write w;
+
+    if w {
+        call d = cut_direction(n, m);
+        call s = eat_size(n, m);
+        write d, s;
+    }
+}
