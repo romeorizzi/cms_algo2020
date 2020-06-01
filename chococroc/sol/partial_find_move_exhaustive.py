@@ -1,5 +1,10 @@
+#!/usr/bin/env python3
+import sys
+from sys import setrecursionlimit
+setrecursionlimit(10**8)
+
 def win_from(n, m):
-    assert 1 <= n and 1 <= m
+    assert (1 <= n and 1 <= m)
 
     if n == 1 and m == 1:
         return 0
@@ -28,3 +33,23 @@ def cut_direction(n, m):
 def eat_size(n, m):
     d, s = find_move(n, m)
     return s
+
+if __name__ == "__main__":
+    data = sys.stdin.readlines()
+    assert(len(data) >= 3)
+    action = int(data[0])
+    assert(action == 0 or action == 1)
+    m = int(data[1])
+    n = int(data[2])
+    res = win_from(m,n)
+    print(str(2 - res))
+
+    if(action and res):
+        direction, sz = find_move(m, n)
+        if(direction):
+            print(m)
+            print(n - sz)
+        else:
+            print(m - sz)
+            print(n)
+        

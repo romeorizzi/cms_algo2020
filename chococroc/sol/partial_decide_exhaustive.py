@@ -1,7 +1,12 @@
-def win_from(n, m):
-    assert 1 <= n and 1 <= m
+#!/usr/bin/env python3
+import sys
+from sys import setrecursionlimit
+setrecursionlimit(10**8)
 
-    if n == 1 and m == 1:
+def win_from(n, m):
+    assert(1 <= n and 1 <= m)
+
+    if (n == 1 and m == 1):
         return 0
 
     if (
@@ -18,3 +23,11 @@ def cut_direction(n, m):
 
 def eat_size(n, m):
     return 0
+
+
+if __name__ == "__main__":
+    data = sys.stdin.readlines()
+    assert(len(data) >= 3)
+    m = int(data[1])
+    n = int(data[2])
+    print(str(2 - win_from(m,n)))
