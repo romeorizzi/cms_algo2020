@@ -24,28 +24,37 @@ Il primo numero (0 o 1) dice se devi solo determinare chi vince (1 o 2) oppure a
 
 Poi, nella seconda e terza riga, due stringhe di cifre (la prima diversa da zero) che codificano m ed n in decimale.
 
+## Output:
+
+Scrivere su stdout:  
+- Nella prima riga metti 1 se vince la Pimpa (che farà la prima mossa), 2 se vince Armando.
+- Se vince la Pimpa e in input veniva richiesta anche la mossa vincente, stampare nelle successive due righe le dimensioni del pezzo di cioccolata che viene passato ad Armando.
+
+## Assunzioni:
+
+- $m$,$n$ $\geq 1$
+- $m$,$n$ entrano in un normale int32
 
 ## Esempi
 
-Ancora da fare
+| input from stdin | &nbsp;&nbsp;&nbsp;&nbsp; | output to stdout |
+| ---------------- | ------------------------ | ---------------- |
+| 0<br>10<br>10    | &nbsp;                   | 2                |
+| &nbsp;           | &nbsp;                   | &nbsp;           |
+| 1<br>11<br>10    | &nbsp;                   | 1<br>10<br>10    |
+| &nbsp;           | &nbsp;                   | &nbsp;           |
+| 1<br>10<br>10    | &nbsp;                   | 2                |
 
-|input from stdin | output to stdout |
-|----|---|
-|0 10  10| 2 |
-
-|input from stdin | output to stdout |
-|----|---|
-|1 11  10| 10 10 |
 
 
 
 
 ### Subtask
-- **Subtask 1 [ 0 punti]**: il tuo programma deve risolvere correttamente i casi d'esempio quì sopra.
-- **Subtask 2 [10 punti]**: determinare correttamente chi vince, va bene anche se in tempo esponenziale in $m$ ed $n$.
-- **Subtask 3 [10 punti]**: come sopra, ma in tempo $O(nm)$, ossia in tempo pseudo-polinomiale, (esponenziale nella lunghezza del binary encoding di $m$ ed $n$, puoi quindi esplorare/etichettare l'intero grafo delle configurazioni).
+- **Subtask 1 [ 0 punti]**: il tuo programma deve risolvere correttamente i casi d'esempio qui sopra.
+- **Subtask 2 [15 punti]**: determinare correttamente chi vince, va bene anche se in tempo esponenziale in $m$ ed $n$.
+- **Subtask 3 [15 punti]**: come sopra, ma in tempo $O(nm)$, ossia in tempo pseudo-polinomiale, (esponenziale nella lunghezza del binary encoding di $m$ ed $n$, puoi quindi esplorare/etichettare l'intero grafo delle configurazioni).
 - **Subtask 4 [20 punti]**: come sopra, ma in tempo fortemente polinomiale.
-- **Subtask 5 [10 punti]**: in configurazioni vincenti, dare la mossa corretta, va bene anche se in tempo esponenziale in $m$ ed $n$.
-- **Subtask 6 [10 punti]**: come sopra, ma in tempo $O(nm)$, ossia in tempo pseudo-polinomiale, (esponenziale nella lunghezza del binary encoding di $m$ ed $n$, puoi quindi esplorare/etichettare l'intero grafo delle configurazioni).
+- **Subtask 5 [15 punti]**: in configurazioni vincenti, dare la mossa corretta, va bene anche se in tempo esponenziale in $m$ ed $n$.
+- **Subtask 6 [15 punti]**: come sopra, ma in tempo $O(nm)$, ossia in tempo pseudo-polinomiale, (esponenziale nella lunghezza del binary encoding di $m$ ed $n$, puoi quindi esplorare/etichettare l'intero grafo delle configurazioni).
 - **Subtask 7 [20 punti]**: come sopra, ma in tempo fortemente polinomiale.
 
