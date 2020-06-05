@@ -32,9 +32,8 @@ Scrivere su stdout:
 
 ## Assunzioni:
 
-- $m$,$n$ $\geq 1$
-- nei Subtask 4 e 7 devi utilizzare gli `unsigned long long int`.
-  Negli altri, sia $m$ che $n$ trovano piena rappresentazione entro un normale `int32`
+- $m, n \geq 1$
+- in tutte le istanze sia $m$ che $n$ trovano piena rappresentazione entro un normale `int32`
 
 ## Esempi
 
