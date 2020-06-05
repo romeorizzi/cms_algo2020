@@ -33,7 +33,8 @@ Scrivere su stdout:
 ## Assunzioni:
 
 - $m$,$n$ $\geq 1$
-- $m$,$n$ entrano in un normale int32
+- nei Subtask 4 e 7 devi utilizzare gli `unsigned long long int`.
+  Negli altri, sia $m$ che $n$ trovano piena rappresentazione entro un normale `int32`
 
 ## Esempi
 
