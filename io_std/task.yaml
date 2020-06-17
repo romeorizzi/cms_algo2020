@@ -1,5 +1,5 @@
 name: io_std
-title: Ricevere input ed erogare output sui canali standard
+title: "Input/output da `std`"
 time_limit: 1.0
 memory_limit: 256
 infile: ""

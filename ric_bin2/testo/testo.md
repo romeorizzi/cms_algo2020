@@ -1,4 +1,4 @@
-# Ricerca binaria: approfondimenti (ric_bin2)
+# Ricerca binaria: approfondimenti (ric\_bin2)
 
 ## Descrizione del problema
 
@@ -39,7 +39,7 @@ Chi vuole risolvere un problema come questo, non disdegna affrontare prima i cas
 
 Sei invitato a proseguire nella compilazione di questa tabella.
 
-*Nota 1:* Sul CMS vi è data la possibilità di fornire voi le istanze sulle quali volete che la vostra sottomissione venga valutata. Questo può consentirvi di risolvere dei vostri dubbi in modo autonomo. Ad esempio quì, se volete ottenere conferma sul valore corretto di f(3) e/o dei successivi, potete sottomettere quella specifica istanza e testare su di essa il vostro algoritmo (o magari un algoritmo più stupido e sicuro che si limiti a stampare la risposta che reputate corretta per quell'istanza).
+*Nota 1:* Sul CMS vi è data la possibilità di fornire voi le istanze sulle quali volete che la vostra sottomissione venga valutata. Questo può consentirvi di risolvere dei vostri dubbi in modo autonomo. Ad esempio quì, se volete ottenere conferma sul valore corretto di $f(3)$ e/o dei successivi, potete sottomettere quella specifica istanza e testare su di essa il vostro algoritmo (o magari un algoritmo più stupido e sicuro che si limiti a stampare la risposta che reputate corretta per quell'istanza).
 
 *Nota 2:* Per altro non vi è vietato, anzi siete incoraggiati, a scambiarvi idee ed aiuto tra di voi, e/o a chiedere a noi (sia  sul Gruppo Telegram che privatamente, come reputate più opportuno). Questo perchè non vorrei fraintendeste il vero messaggio della nota sopra, che mira solo a fornirvi uno strumento in più per gestirvi in ogni situazione e magari anche per andare a scoprire e segnalarci eventuali errori nei nostri materiali, codici, e problemi.
 
@@ -48,17 +48,17 @@ Sei invitato a proseguire nella compilazione di questa tabella.
 Torniamo al suggerimento di cominciare provando a stabilire uno per uno i valori nella tabella, partendo dai più piccoli (approccio bottom-up).
 E' un suggerimento davvero molto importante. Un approccio che dovete fare vostro in questo corso dove miriamo a fare di voi dei problem solvers.
 
-Approccio ricorsivo significa proprio questo: che ad un certo punto cerchi di trovare un modo semplice di mettere in relazione i valori di queste righe, riducendo il problema del computo di f(n) per una certa riga (per un certo n) alla stessa questione già risolta per righe più piccole.
+Approccio ricorsivo significa proprio questo: che ad un certo punto cerchi di trovare un modo semplice di mettere in relazione i valori di queste righe, riducendo il problema del computo di $f(n)$ per una certa riga (per un certo $n$) alla stessa questione già risolta per righe più piccole.
 Questo è il grimaldello universale per la soluzione dei problemi nella Concrete Mathematics, ossia in quel ramo della matematica che offre gli sturmenti concettuali ed algoritmici portanti per l'informatica.
 
-La ricorsione viene spesso associata all'approccio visto in rovesciato (approccio top-down), in quanto l'idea è poi quella di trovare il modo di decomporre il problema del computo di f(n) in problemi più piccoli dello stesso tipo (ossia ricompresi nello stesso linguaggio, ossia domande del titpo f(n') ma con n' < n).
+La ricorsione viene spesso associata all'approccio visto in rovesciato (approccio top-down), in quanto l'idea è poi quella di trovare il modo di decomporre il problema del computo di $f(n)$ in problemi più piccoli dello stesso tipo (ossia ricompresi nello stesso linguaggio, ossia domande del titpo $f(n')$ ma con $n' < n$).
 
 Distinguiamo tra due piani: la comprensione della struttura del problema che conduce alla sua soluzione (scoperta del nesso ricorsivo, la chiave d'oro che apre il problema e lo spacca), e come poi questa comprensione strutturale vada sfruttata coniugata in un algoritmo (un metodo generale per la soluzione di quel problema), che in in linea di massima è già un momento successivo che spesso risulta cruciale saper ben separare. (Il momento del progetto dell'implementazione è poi un ulteriore stadio, non stò parlando di questa seconda distinzione anche cruciale ma già secondaria a quella che intendo rimarcare ora.)
 
 Quando per rispondere alla domanda per una certa riga tu dovessi interrogare le risposte per più righe, un algoritmo di tipo ricorsivo (top down) risulterebbe subito inefficiente quando per rispondere ad ogni singola chiamata ne venissero attivate diverse.
-Ma nessuno ti vieta di lavorare direttamente su una tale tabella (tabella di programmazione dinamica) entro il tuo algoritmo, determinando i valori riga per riga, una riga alla volta. Questo può farti passare da un algoritmo ricorsivo che richiede tempo esponenziale (farebbe un numero esponenziale di chiamate) ad un algoritmo che effettua solo un numero lineare di chiamate nella magnitudo di n (ossia se n=100 fa al più O(n) chiamate), ossia che và molto veloce e funziona anche in pratica per valori già interessanti di n. (Se la scrittura O(n) ti è arabo devi andare a riguardarti l'uso della notazione asintotica. Per noi algoritmisti è uno degli strumenti base di lavoro.)
+Ma nessuno ti vieta di lavorare direttamente su una tale tabella (tabella di programmazione dinamica) entro il tuo algoritmo, determinando i valori riga per riga, una riga alla volta. Questo può farti passare da un algoritmo ricorsivo che richiede tempo esponenziale (farebbe un numero esponenziale di chiamate) ad un algoritmo che effettua solo un numero lineare di chiamate nella magnitudo di $n$ (ossia se $n=100$ fa al più $O(n)$ chiamate), ossia che và molto veloce e funziona anche in pratica per valori già interessanti di $n$. (Se la scrittura $O(n)$ ti è arabo devi andare a riguardarti l'uso della notazione asintotica. Per noi algoritmisti è uno degli strumenti base di lavoro.)
 
-E se volessimo poi un algoritmo che gira in tempo polilogaritmico nella magnitudo di n, ossia polinomiale nella lunghezza della codifica binaria (ossia a bits) di n?
+E se volessimo poi un algoritmo che gira in tempo polilogaritmico nella magnitudo di $n$, ossia polinomiale nella lunghezza della codifica binaria (ossia a bits) di $n$?
 Riesci poi a produrre anche questo?
 
 
@@ -77,9 +77,9 @@ Dalle risposte già riportate nella tabella sopra:
 
 
 ## Subtask
-- **Subtask 1 [10 punti]**: n  <= 5.
-- **Subtask 2 [10 punti]**: n  <= 10.
-- **Subtask 3 [20 punti]**: n  <= 100.
-- **Subtask 12 [20 punti]**: n  <= 1000.
-- **Subtask 12 [20 punti]**: n  <= 1.000.000.
-- **Subtask 13 [20 punti]**: n  <= 100.000.000.000
+- **Subtask 1 [10 punti]**: $n \leq 5$.
+- **Subtask 2 [10 punti]**: $n \leq 10$.
+- **Subtask 3 [20 punti]**: $n \leq 100$.
+- **Subtask 12 [20 punti]**: $n \leq 1000$.
+- **Subtask 12 [20 punti]**: $n \leq 1\,000\,000$.
+- **Subtask 13 [20 punti]**: $n \leq 100\,000\,000\,000$.

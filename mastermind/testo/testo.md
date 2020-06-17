@@ -9,7 +9,7 @@ Per sconfiggere il tuo avversario, devi scrivere una procedura che individui il 
 #include "ourLibToPlay.h"
 
 void solve() {
-...
+   ...
 }
 ```
 

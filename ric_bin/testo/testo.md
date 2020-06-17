@@ -1,4 +1,4 @@
-# Ricerca binaria (ric_bin)
+# Ricerca binaria (ric\_bin)
 
 ## Descrizione del problema
 
@@ -7,16 +7,16 @@ Devi scrivere un programma che indovina un numero naturale da $1$ a $n$. Il tuo 
 ```c
 void ricerca(long long int n)
 ```
-che, il grader del sistema di valutazione lancerà dopo aver scelto un numero naturale `x` compreso tra `1` e `n`. Compito della tua funzione è ricostruire quale sia il numero `x` a lei incognito raccogliendo informazioni tramite apposite chiamate alla funzione:
+che, il grader del sistema di valutazione lancerà dopo aver scelto un numero naturale $x$ compreso tra $1$ e $n$. Compito della tua funzione è ricostruire quale sia il numero $x$ a lei incognito raccogliendo informazioni tramite apposite chiamate alla funzione:
 
 ```c
 int confronto_con(long long int g)
 ```
 
 che, servita dal grader, ritorna:
-- `1` se `g > x`
-- `0` se `g = x`
-- `-1` se `g < x`
+- $1$ se $g > x$
+- $0$ se $g = x$
+- $-1$ se $g < x$
 
 Non appena ha tutti gli elementi necessari per conoscere il numero da indovinare, il tuo programma dovrà consegnare la sua risposta definitiva con una chiamata alla funzione:
 
@@ -28,15 +28,15 @@ la partita tra il tuo programma ed il nostro di correzione finisce quì,
   col controllo che 'risposta'='x', ossia che la risposta definitiva prodotta dal tuo algoritmo sia sempre corretta!
 
 ## Subtask
-- **Subtask 0 [5 punti]**: il numero `x` da indovinare è 42.
+- **Subtask 0 [5 punti]**: il numero $x$ da indovinare è 42.
 - **Subtask 1 [7 punti]**: non vi è limite sul numero di chiamate a `confronto_con`.
-- **Subtask 2 [12 punti]**: vengono consentite solo `n/2` chiamate a `confronto_con`.
-- **Subtask 3 [33 punti]**: viene permesso solo quel minimo numero di chiamate a `confronto_con` che pur di giocare ottimamente consenta sempre, anche se sfortunati (caso peggiore), di individuare il numero misterioso `x`.
+- **Subtask 2 [12 punti]**: vengono consentite solo $n/2$ chiamate a `confronto_con`.
+- **Subtask 3 [33 punti]**: viene permesso solo quel minimo numero di chiamate a `confronto_con` che pur di giocare ottimamente consenta sempre, anche se sfortunati (caso peggiore), di individuare il numero misterioso $x$.
 - **Subtask 4 [35 punti]**: come sopra, ma l'avversario è ora libero di cambiare il numero che ha in mente in corso di partita, purché rispetti le informazioni già date nel corso della partita.
 
 ## Assunzioni
 - Il programma termina dopo la prima chiamata alla funzione `answer` oppure allo scadere del tempo limite.
-- `1 <= n <= 100.000.000.000`
+- $1 \leq n \leq 100\,000\,000\,000$
 
 ### Cosa deve contenere il File da Sottomettere, e come viene gestito dal server
 

@@ -1,5 +1,4 @@
-# io_file
-## Gestire input ed output da file
+# Gestire input ed output da file (io\_file)
 
 Ricevete in input un numero intero e,
 in output, dovete ritornare lo stesso identico numero. Nessuna elaborazione è richiesta (è un esercizio di test ed acclimatamento).

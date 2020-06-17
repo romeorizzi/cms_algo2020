@@ -1,4 +1,4 @@
-# La dieta di Poldo, ora ritorna la soluzione! (poldo_sequenza)
+# La dieta di Poldo, ora ritorna la soluzione! (poldo\_sequenza)
 
 ## Descrizione del problema
 

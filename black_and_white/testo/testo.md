@@ -1,4 +1,4 @@
-# Bianco e Nero (black_and_white)
+# Bianco e Nero (black\_and\_white)
 
 ## Descrizione del problema
 

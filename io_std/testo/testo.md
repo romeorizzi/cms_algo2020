@@ -1,5 +1,5 @@
-# io_std
-## Ricevere input ed erogare output sui canali standard
+# Input/output da `std` (io\_std)
+## Ricevere input ed erogare output sui canali standard associati al processo 
 
 Ricevete in input un numero intero e,
 in output, dovete ritornare lo stesso identico numero. Nessuna elaborazione è richiesta (è un esercizio di test ed acclimatamento).

@@ -69,7 +69,7 @@ Nel caso vogliate generare un input, il file `input.txt` deve avere questo forma
 ## Subtask
 
 - **Subtask 1 \[30 punti\]:** $N \leq 1000$.
-- **Subtask 2 \[30 punti\]:** $N \leq 10\. 000$.
+- **Subtask 2 \[30 punti\]:** $N \leq 10\, 000$.
 - **Subtask 3 \[30 punti\]:** $N \leq 100\, 000$.
 - **Subtask 4 \[10 punti\]:** nessuna limitazione specifica.
 

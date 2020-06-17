@@ -1,4 +1,4 @@
-# Can a deck of cards be obtained as the shuffle of two? (is_shuffle_of)
+# Can a deck of cards be obtained as the shuffle of two? (is\_shuffle\_of)
 
 Date due liste totalmente ordinate $L_1$ ed $L_2$, rispettivamente di $|L_1|$ ed $|L_2|$ elementi, un loro _shuffle_ è una qualsiasi lista $S$ di $|L_1|+|L_2|$ elementi dove ogni elemento di $L_1$ o $L_2$ ha trovato il suo posto. Deve però essere rispettato l'ordine entro le due liste di provenienza:
 per $i=1,2$, se da $S$ tolgo gli $|L_i|$ elementi provenuti da $L_i$, allora ritrovo la lista $L_{3-i}$.
