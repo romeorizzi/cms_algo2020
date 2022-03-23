@@ -40,7 +40,16 @@ Potrai scrivere le righe dell'output nell'ordine che preferisci
 
 | input (da stdin) | output (su stdout) |
 |---|---|
-| 3 | 14 |
+| 3 | 5 |
+|| IIIMMM |
+|| IIMIMM |
+|| IIMMIM |
+|| IMIIMM |
+|| IMIMIM |
+
+| input (da stdin) | output (su stdout) |
+|---|---|
+| 4 | 14 |
 || IIIIMMMM |
 || IIIMIMMM |
 || IIIMMIMM |
