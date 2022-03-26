@@ -1,6 +1,6 @@
 name: piastrelle_count
 title: Numero di piastrellature di bagno 1xn
-time_limit: 3.0
+time_limit: 1.0
 memory_limit: 256
 infile: ""
 outfile: ""
