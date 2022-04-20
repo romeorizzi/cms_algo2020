@@ -39,15 +39,17 @@ Inutile che le ripeto quì, ne abbiamo parlato nel problema ric_bin2. Essendo me
 
 ## Esempi
 
-Dalle risposte già riportate nella tabella sopra:
-
 |input from stdin | output to stdout |
 |----|---|
 |2  1| 1 |
 
+Infatti, se ho due uova ed un solo piano, allora per scoprire se l'uovo si rompe o meno quando lanciato da quel piano, mi basta eseguire un solo lancio.
+
 |input from stdin | output to stdout |
 |----|---|
 |2  2| 2 |
+
+Infatti, se ho due uova e due piani, allora mi bastano due lanci (anche se avessi un solo uovo, esiste sempre una politica, di fatto l'unica a quel punto percorribile, che mi garantirebbe di impiegare al più n lanci nel caso peggiore). Un solo lancio non basta perchè se lancio al piano 1 e non si rompe allora non conosco la verità per il piano 2, mentre se lancio al piano 2 e si rompe allora non conosco ancora la verità al piano 1.
 
 ## Subtask
 - **Subtask 1 [10 punti]:** $k = 2$, $n \leq 5$.
